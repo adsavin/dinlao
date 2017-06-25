@@ -1,0 +1,35 @@
+.hero.is-primary {
+    background-color: #620001 !important;
+}
+
+.button.is-primary.is-outlined {
+    background-color: transparent;
+    border-color: #620001 !important;
+    color: #620001 !important;
+}
+
+.button.is-primary:hover, .button.is-primary.is-outlined:hover {
+    background-color: #620001 !important;
+    color: #fff !important;
+}
+
+.button.is-primary {
+    background-color: #620001;
+    color: #fff !important;
+}
+
+a {
+    color: #620001 !important;
+}
+
+a:hover {
+    text-decoration: underline !important;
+}
+
+/*.is-danger:hover {*/
+    /*color: #ffffff !important;*/
+/*}*/
+
+.icon:hover, .fa:hover {
+    text-decoration: none !important;
+}
