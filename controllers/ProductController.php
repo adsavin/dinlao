@@ -4,15 +4,15 @@ namespace app\controllers;
 
 use app\models\Currency;
 use app\models\DocType;
+use app\models\Product;
+use app\models\ProductSearch;
 use app\models\ProductType;
 use app\models\Province;
 use app\models\Unit;
 use Yii;
-use app\models\Product;
-use app\models\ProductSearch;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * ProductController implements the CRUD actions for Product model.

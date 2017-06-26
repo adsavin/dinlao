@@ -46,17 +46,33 @@ $config = [
             ],
         ],
         */
-
+        'assetManager' => [
+            'bundles' => [
+                'dosamigos\google\maps\MapAsset' => [
+                    'options' => [
+                        'key' => 'AIzaSyDBuSAiSvY718_Aascagsk2ydjqVb3WsgM',
+                        'language' => 'la',
+                        'version' => '3.1.18'
+                    ]
+                ]
+            ]
+        ],
         'authClientCollection' => [
             'class' => 'yii\authclient\Collection',
             'clients' => [
                 'facebook' => [
                     'class' => 'yii\authclient\clients\Facebook',
                     'authUrl' => 'https://www.facebook.com/dialog/oauth?display=popup',
-                    'clientId' => 'YOUR APP CLIENT ID',
-                    'clientSecret' => 'YOUR APP CLIENT SECRET',
-                    'attributeNames' => ['name', 'email', 'first_name', 'last_name'],
+                    'clientId' => '325382307872972',
+                    'clientSecret' => '4a4c41e4b31726ac306bbba61b23b9e1',
+                    'attributeNames' => ['name', 'email', 'first_name', 'last_name', 'birthday'],
+                    'scope' => 'user_birthday'
                 ],
+//                'google' => [
+//                    'class' => 'yii\authclient\clients\Google',
+//                    'clientId' => '73926847849-o2issh3f15vo08mb8fvd183b055l0ujk.apps.googleusercontent.com',
+//                    'clientSecret' => 'EsCB-vIETHbc1McPYpGmFJFe',
+//                ],
             ],
         ],
     ],

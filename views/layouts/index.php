@@ -5,14 +5,14 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
 
 <div class="container">
     <a href="index.php" class="nav-item has-shadow is-outlined is-hidden-mobile" style="position: absolute;z-index: 33">
-        <img class="" src="image/logo.jpg" alt="DINDEE.COM" style="max-height: 9rem;box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);">
+        <img class="" src="image/logo.png" alt="DINDEE.COM" style="max-height: 12rem;">
     </a>
 </div>
     <nav class="nav has-shadow" style="position: fixed;background-color: #fff;width: 100%;top: 0">
         <div class="container">
             <div class="nav-left has-shadow">
                 <a href="index.php" class="nav-item has-shadow is-outlined">
-                    <img class="" src="image/logo.jpg" alt="DINDEE.COM">
+                    <img class="" src="image/logo.png" alt="DINDEE.COM">
                 </a>
             </div>
 
@@ -47,14 +47,14 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
             <div class="nav-right nav-menu">
                 <div class="nav-item">
                     <div class="field is-grouped">
-                        <p class="control">
-                            <a class="button is-primary is-outlined" href="index.php?r=site/register">
-                            <span class="icon">
-                              <i class="fa fa-pencil"></i>
-                            </span>
-                                <span>Register</span>
-                            </a>
-                        </p>
+<!--                        <p class="control">-->
+<!--                            <a class="button is-primary is-outlined" href="index.php?r=site/register">-->
+<!--                            <span class="icon">-->
+<!--                              <i class="fa fa-pencil"></i>-->
+<!--                            </span>-->
+<!--                                <span>Register</span>-->
+<!--                            </a>-->
+<!--                        </p>-->
                         <p class="control">
                             <a class="button is-primary is-outlined" href="index.php?r=site/login">
                             <span class="icon">

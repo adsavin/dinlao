@@ -39,9 +39,12 @@ use Yii;
  * @property ProductType $productType
  * @property Unit $unit
  * @property User $user
+ * @property Picture[] $pictures
  */
 class Product extends \yii\db\ActiveRecord
 {
+    public $photofile;
+    public $photofiles;
     public $province_id;
     /**
      * @inheritdoc
@@ -61,6 +64,8 @@ class Product extends \yii\db\ActiveRecord
             [['description', 'urlmap'], 'string'],
             [['price', 'area', 'width', 'height'], 'number'],
             [['created_date'], 'safe'],
+            [['photofile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
+            [['photofiles'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg', 'maxFiles' => 4],
             [['district_id', 'user_id', 'currency_id', 'product_type_id', 'doc_type_id', 'unit_id'], 'integer'],
             [['village', 'lat', 'lon', 'tel', 'email', 'whatsapp', 'line', 'facebook', 'wechat', 'photo'], 'string', 'max' => 255],
             [['status'], 'string', 'max' => 1],
@@ -154,6 +159,14 @@ class Product extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPictures()
+    {
+        return $this->hasMany(Picture::className(), ['product_id' => 'id']);
     }
 
     /**

@@ -4,8 +4,8 @@
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model app\models\LoginForm */
 
-use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\helpers\Html;
 
 $this->title = Yii::t('app','Sign In');
 $this->params['breadcrumbs'][] = $this->title;
@@ -24,13 +24,19 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 <div class="container">
     <div class="columns">
-        <div class="column is-6 has-text-right">
-        <span class="icon is-large">
-            <i class="fa fa-facebook-official"></i>
-        </span>
-        <span class="icon is-large">
-            <i class="fa fa-google-plus-official"></i>
-        </span>
+        <div class="column is-6">
+
+            <?php
+            echo yii\authclient\widgets\AuthChoice::widget([
+                'baseAuthUrl' => ['site/auth'],
+            ]);
+            ?>
+            <h1 class="title is-3">
+                Sign in with social network account
+            </h1>
+            <a class="button is-primary" href="/dindee.com/web/index.php?r=site%2Fauth&amp;authclient=facebook" title="Facebook" data-popup-width="860" data-popup-height="480">
+                <span class="fa fa-facebook"></span>
+            </a>
         </div>
         <div class="column is-6">
             <?php $form = ActiveForm::begin([

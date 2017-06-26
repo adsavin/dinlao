@@ -2,13 +2,13 @@
 
 namespace app\controllers;
 
-use app\models\Province;
-use Yii;
 use app\models\District;
 use app\models\DistrictSearch;
+use app\models\Province;
+use Yii;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * DistrictController implements the CRUD actions for District model.

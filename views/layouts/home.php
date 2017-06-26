@@ -3,7 +3,7 @@
 $this->beginContent('@app/views/layouts/main.php'); ?>
     <div class="container">
         <a href="index.php" class="nav-item has-shadow is-outlined is-hidden-mobile" style="position: absolute;z-index: 33">
-            <img class="" src="image/logo.jpg" alt="DINDEE.COM" style="max-height: 9rem;box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);">
+            <img class="" src="image/logo.png" alt="DINDEE.COM" style="max-height: 9rem;">
         </a>
     </div>
     <nav class="nav has-shadow">
@@ -33,6 +33,9 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
             <!-- This "nav-menu" is hidden on mobile -->
             <!-- Add the modifier "is-active" to display it on mobile -->
             <div class="nav-right nav-menu">
+                <div class="nav-item">
+                    <span>Welcome, <?php echo Yii::$app->session->get("username") ?> </span>
+                </div>
                 <div class="nav-item">
                     <div class="field is-grouped">
                         <p class="control">
@@ -76,46 +79,33 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
                     <div class="columns">
                         <div class="column is-12 box">
                             <aside class="menu">
-                                <p class="menu-label">
-                                    <?= Yii::t('app', 'Favorite') ?>
-                                </p>
-                                <ul class="menu-list">
-                                    <li><a href="index.php?r=product/createLand"><?= Yii::t('app', 'Post New Land') ?></a></li>
-                                    <li><a href="index.php?r=product/createHouse"><?= Yii::t('app', 'Post New House') ?></a></li>
-                                    <li><a href="index.php?r=product/index"><?= Yii::t('app', 'View Post') ?></a></li>
-                                </ul>
-                                <!--                            <p class="menu-label">-->
-                                <!--                                Administration-->
-                                <!--                            </p>-->
-                                <!--                            <ul class="menu-list">-->
-                                <!--                                <li><a>Team Settings</a></li>-->
-                                <!--                                <li>-->
-                                <!--                                    <a class="is-active">Manage Your Team</a>-->
-                                <!--                                    <ul>-->
-                                <!--                                        <li><a>Members</a></li>-->
-                                <!--                                        <li><a>Plugins</a></li>-->
-                                <!--                                        <li><a>Add a member</a></li>-->
-                                <!--                                    </ul>-->
-                                <!--                                </li>-->
-                                <!--                                <li><a>Invitations</a></li>-->
-                                <!--                                <li><a>Cloud Storage Environment Settings</a></li>-->
-                                <!--                                <li><a>Authentication</a></li>-->
-                                <!--                            </ul>-->
-                                <p class="menu-label">
-                                    <?= Yii::t('app', 'Administration') ?>
-                                </p>
-                                <ul class="menu-list">
-                                    <li><a href="index.php?r=product" class=""><?= Yii::t('app', 'Products') ?></a></li>
-                                    <li><a href="index.php?r=user"><?= Yii::t('app', 'Users') ?></a></li>
-
-                                    <li><a href="index.php?r=product-type"><?= Yii::t('app', 'Product Types') ?></a></li>
-                                    <li><a href="index.php?r=unit"><?= Yii::t('app', 'Unit') ?></a></li>
-                                    <li><a href="index.php?r=province"><?= Yii::t('app', 'Province') ?></a></li>
-                                    <li><a href="index.php?r=district"><?= Yii::t('app', 'District') ?></a></li>
-
-                                    <li><a href="index.php?r=currency"><?= Yii::t('app', 'Currency') ?></a></li>
-                                    <li><a href="index.php?r=doc-type"><?= Yii::t('app', 'Document') ?></a></li>
-                                </ul>
+                                <?php
+                                $user = Yii::$app->session->get("user");
+                                $parents = ["Favorite", "Profile", "Web Master", "Administration"];
+                                foreach ($parents as $parent) :
+                                    $criteria = \app\models\Menu::find();
+                                    $criteria->where(["parent" => $parent]);
+                                    if($user->role == "A") {
+                                        $criteria->andWhere("role in (:role1, :role2, :role3)", [":role1" => "*", ":role2"=>"M", ":role3" => "A"]);
+                                    } else {
+                                        $criteria->andWhere("role in (:role1, :role2)", [":role1" => "*", ":role2" => $user->role]);
+                                    }
+                                    $menus = $criteria->all();
+                                    if(isset($menus))  :
+                                        if(count($menus) == 0) continue;
+                                        ?>
+                                        <p class="menu-label">
+                                            <?= Yii::t('app', $parent) ?>
+                                        </p>
+                                        <ul class="menu-list">
+                                            <?php foreach ($menus as $menu) :  ?>
+                                                <li><a href="index.php?r=<?= $menu->url ?>"><?= Yii::t('app', $menu->label) ?></a></li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    <?php
+                                    endif;
+                                endforeach;
+                                ?>
                             </aside>
                         </div>
                     </div>
@@ -125,6 +115,15 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
         <div class="column is-9 box">
             <div class="columns">
                 <div class="column is-12">
+                    <?php
+                    foreach (["warning", "info", "success", "danger"] as $class) :
+                        $flash = Yii::$app->session->getFlash($class);
+                        if(isset($flash)): ?>
+                            <div class="notification is-<?= $class ?>"><?= Yii::t("app", $flash) ?></div>
+                            <?php
+                        endif;
+                    endforeach;
+                    ?>
                     <?= $content ?>
                 </div>
             </div>

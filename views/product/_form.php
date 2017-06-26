@@ -1,7 +1,7 @@
 <?php
 
-use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Product */
@@ -82,6 +82,53 @@ use yii\bootstrap\ActiveForm;
         </div>
         <div class="column is-one-third">
     <?= $form->field($model, 'village')->textInput(['class'=>'input', 'maxlength' => true]) ?>
+        </div>
+    </div>
+
+    <div class="columns">
+        <div class="column is-10 is-offset-1">
+            <?php
+            $coor = new \dosamigos\google\maps\LatLng([
+                'lat' => isset($model->lat) ? $model->lat : 17.96333505412437,
+                'lng' => isset($model->lon) ? $model->lon : 102.60682459920645
+            ]);
+            $map = new \dosamigos\google\maps\Map([
+                'center' => $coor,
+                'zoom' => 12,
+                'width' => '100%',
+                'height' => '400',
+                'mapTypeId' => 'hybrid'
+            ]);
+            $map->appendScript("var markers = []");
+            $onclick = new \dosamigos\google\maps\Event([
+                "trigger" => "click",
+                "js" => "
+                    for (var i = 0; i < markers.length; i++) markers[i].setMap(null);
+                    document.getElementById('product-lat').value = event.latLng.lat();
+                    document.getElementById('product-lon').value = event.latLng.lng();
+                    markers.push(new google.maps.Marker({
+                        position: {lat: event.latLng.lat(), lng: event.latLng.lng()},
+                        map: gmap0,
+                      }));
+                "
+            ]);
+            $map->addEvent($onclick);
+            if (isset($model->lat) && isset($model->lon)) {
+                $marker = new \dosamigos\google\maps\overlays\Marker([
+                    'position' => $coor,
+                    'title' => $model->village
+                ]);
+
+                // Provide a shared InfoWindow to the marker
+                $marker->attachInfoWindow(
+                    new \dosamigos\google\maps\overlays\InfoWindow([
+                        'content' => '<p>' . $model->village . '</p>'
+                    ])
+                );
+                $map->addOverlay($marker);
+            }
+            echo $map->display();
+            ?>
         </div>
     </div>
 
