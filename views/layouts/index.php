@@ -56,11 +56,8 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
 <!--                            </a>-->
 <!--                        </p>-->
                         <p class="control">
-                            <a class="button is-primary is-outlined" href="index.php?r=site/login">
-                            <span class="icon">
-                              <i class="fa fa-sign-in"></i>
-                            </span>
-                                <span>Sign In</span>
+                            <a class="button is-primary" href="index.php?r=site/login">
+                                <span><?= Yii::t('app','Sign In') ?></span>
                             </a>
                         </p>
                     </div>

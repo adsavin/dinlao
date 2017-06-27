@@ -5,12 +5,9 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'dindee',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log', 'lang'],
+    'bootstrap' => ['log'],
+    'sourceLanguage' => 'en-US',
     'components' => [
-        'lang' => [
-            'class' => 'pvlg\language\Language',
-            'queryParam' => 'lang',
-        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'idkjhsiluywehtgkljashftqiluhwkiluhnjknliwudskjgah',
@@ -77,6 +74,19 @@ $config = [
 //                    'clientId' => '73926847849-o2issh3f15vo08mb8fvd183b055l0ujk.apps.googleusercontent.com',
 //                    'clientSecret' => 'EsCB-vIETHbc1McPYpGmFJFe',
 //                ],
+            ],
+        ],
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    //'basePath' => '@app/messages',
+                    'sourceLanguage' => 'en-US',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                        'app/error' => 'error.php',
+                    ],
+                ],
             ],
         ],
     ],
