@@ -17,6 +17,8 @@ use Yii;
  * @property string $registerd_date
  * @property string $role
  * @property string $picture
+ * @property string $facebookid
+ * @property string $facebookname
  *
  * @property Product[] $products
  */

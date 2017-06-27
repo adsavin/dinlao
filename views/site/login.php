@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="hero-body">
         <div class="container">
             <h1 class="title has-text-right">
-                DINDEE.COM - Properties Advertisement
+                DINLAO.COM - Properties Advertisement
             </h1>
             <h1 class="subtitle has-text-right">
                 Where you buy & sell the land & house <br /><a class="button">What we do</a>
@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <h1 class="title is-3">
                 Sign in with social network account
             </h1>
-            <a class="button is-primary" href="/dindee.com/web/index.php?r=site%2Fauth&amp;authclient=facebook" title="Facebook" data-popup-width="860" data-popup-height="480">
+            <a class="button is-primary" href="index.php?r=site%2Fauth&amp;authclient=facebook" title="Facebook" data-popup-width="860" data-popup-height="480">
                 <span class="fa fa-facebook"></span>
             </a>
         </div>

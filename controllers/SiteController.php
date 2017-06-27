@@ -73,16 +73,17 @@ class SiteController extends Controller
         try {
             $userAttributes = $client->getUserAttributes();
             $user = User::find()
-                ->where(["email" => $userAttributes['email']])
+                ->where(isset($userAttributes['email'])? ["email" => $userAttributes['email']] :["facebookid" => $userAttributes['id']] )
                 ->one();
             if(!isset($user)) {
                 $user = new User();
                 $user->registerd_date = date("Y:m:d H:i:s");
                 $user->password = $userAttributes["id"];
-                $user->id = $userAttributes["id"];
-                $user->email = $userAttributes["email"];
+                $user->facebookid = $userAttributes["id"];
+                $user->email = isset($userAttributes["email"])? $userAttributes["email"]:$userAttributes["id"];
                 $user->status = "A";
             }
+            $user->facebookname = $userAttributes["name"];
             $user->firstname = $userAttributes["first_name"];
             $user->lastname = $userAttributes["last_name"];
             $user->birthdate = date('Y-m-d H:i:s', strtotime($userAttributes["birthday"]));

@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'DINDEE.COM - HOME';
+$this->title = 'DINLAO.COM - HOME';
 
 $coor = new \dosamigos\google\maps\LatLng([
     'lat' => 17.96333505412437,
@@ -20,7 +20,7 @@ $map = new \dosamigos\google\maps\Map([
     <div class="hero-body">
         <div class="container">
                     <h1 class="title has-text-right">
-                        DINDEE.COM - Properties Advertisement
+                        DINLAO.COM - Properties Advertisement
                     </h1>
                     <h1 class="subtitle has-text-right">
                         Where you buy & sell the land & house <br /><a class="button">What we do</a>
@@ -34,7 +34,7 @@ $map = new \dosamigos\google\maps\Map([
         ?>
         <div class="columns">
             <div class="column is-10">
-                <h1 class="title is-3"><?= Yii::t('app', $model->name) ?></h1>
+                <h1 class="title is-3"><i class="fa fa-star"></i> <?= Yii::t('app', $model->name) . " " . Yii::t('app', 'Recommended') ?></h1>
             </div>
             <div class="column is-2 has-text-right">
                 <a href="index.php?r=site/land" class="button is-outlined is-primary">
@@ -119,25 +119,25 @@ $map = new \dosamigos\google\maps\Map([
                             </div>
                         <?php endforeach; ?>
                 </div>
-                <div class="columns">
-                    <div class="column is-offset-half is-half box">
-                        <nav class="pagination">
-                            <a class="pagination-previous" title="This is the first page" disabled><i class="fa fa-arrow-left"></i></a>
-                            <a class="pagination-next"><i class="fa fa-arrow-right"></i></a>
-                            <ul class="pagination-list">
-                                <li>
-                                    <a class="pagination-link is-current">1</a>
-                                </li>
-                                <li>
-                                    <a class="pagination-link">2</a>
-                                </li>
-                                <li>
-                                    <a class="pagination-link">3</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+<!--                <div class="columns">-->
+<!--                    <div class="column is-offset-half is-half box">-->
+<!--                        <nav class="pagination">-->
+<!--                            <a class="pagination-previous" title="This is the first page" disabled><i class="fa fa-arrow-left"></i></a>-->
+<!--                            <a class="pagination-next"><i class="fa fa-arrow-right"></i></a>-->
+<!--                            <ul class="pagination-list">-->
+<!--                                <li>-->
+<!--                                    <a class="pagination-link is-current">1</a>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <a class="pagination-link">2</a>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <a class="pagination-link">3</a>-->
+<!--                                </li>-->
+<!--                            </ul>-->
+<!--                        </nav>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
         </div>
         <hr />

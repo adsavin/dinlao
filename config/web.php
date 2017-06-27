@@ -5,8 +5,12 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'dindee',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log', 'lang'],
     'components' => [
+        'lang' => [
+            'class' => 'pvlg\language\Language',
+            'queryParam' => 'lang',
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'idkjhsiluywehtgkljashftqiluhwkiluhnjknliwudskjgah',
@@ -63,8 +67,8 @@ $config = [
                 'facebook' => [
                     'class' => 'yii\authclient\clients\Facebook',
                     'authUrl' => 'https://www.facebook.com/dialog/oauth?display=popup',
-                    'clientId' => '325382307872972',
-                    'clientSecret' => '4a4c41e4b31726ac306bbba61b23b9e1',
+                    'clientId' => '1869360129980672',
+                    'clientSecret' => 'e22706c5e66e7a61716677ea309f288d',
                     'attributeNames' => ['name', 'email', 'first_name', 'last_name', 'birthday'],
                     'scope' => 'user_birthday'
                 ],

@@ -7,6 +7,7 @@ use app\assets\AppAsset;
 use yii\helpers\Html;
 
 AppAsset::register($this);
+if(Yii::$app->language == "en-US") Yii::$app->language = "en";
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
