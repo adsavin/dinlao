@@ -6,8 +6,8 @@
 use app\assets\AppAsset;
 use yii\helpers\Html;
 
-AppAsset::register($this);
-if(Yii::$app->language == "en-US") Yii::$app->language = "en";
+//AppAsset::register($this);
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -20,6 +20,13 @@ if(Yii::$app->language == "en-US") Yii::$app->language = "en";
     <link rel="stylesheet" href="css/bulma.css" />
     <link rel="stylesheet" href="css/font-awesome.css" />
     <link rel="stylesheet" href="css/site.css">
+    <style rel="stylesheet">
+        <?php if(Yii::$app->language == "la-LA"): ?>
+        body, button, input, select, textarea {
+            font-family: "Noto Sans Lao", "Noto Sans Southeast Asian", "Noto Serif Southeast Asian", "Noto Serif Lao", "Saysettha OT","Phetsarath OT", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        }
+        <?php endif; ?>
+    </style>
 </head>
 <body>
 <?php $this->beginBody() ?>
