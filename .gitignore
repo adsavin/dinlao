@@ -39,3 +39,4 @@ composer.lock
 /web/upload/*
 /web/upload/photo/
 /web/upload/photo/*
+/runtime/debug/
