@@ -29,16 +29,11 @@
         </div>
     </div>
     <div class="columns">
-        <div class="column is-offset-6 is-6 has-text-right">
-            <span class=""><?= Yii::t("app", 'Share this page to') ?></span>
-            <span class="icon"><i class="fa fa-facebook"></i></span>
-            <span class="icon"><i class="fa fa-instagram"></i></span>
-            <span class="icon"><i class="fa fa-twitter"></i></span>
-            <div class="columns">
-                <div class="column is-4 has-text-centered">
-
-                </div>
-            </div>
+        <div class="column has-text-centered">
+            <a href="index.php?r=site/sharetofacebook&id=" class="button is-outlined is-primary">
+                <?= Yii::t("app", 'Share to ') ?>
+                <i class="fa fa-facebook"></i>acebook
+            </a>
         </div>
     </div>
     <div class="box">

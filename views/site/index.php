@@ -19,12 +19,12 @@ $map = new \dosamigos\google\maps\Map([
 <div class="hero is-primary" style="margin-bottom: 50px;padding-top: 4rem">
     <div class="hero-body">
         <div class="container">
-                    <h1 class="title has-text-right">
-                        DINLAO.COM - Properties Advertisement
-                    </h1>
-                    <h1 class="subtitle has-text-right">
-                        Where you buy & sell the land & house <br /><a class="button">What we do</a>
-                    </h1>
+            <h1 class="title has-text-right is-5-mobile"><?= Yii::$app->params["domain"] ?></h1>
+            <h1 class="subtitle has-text-right">
+                <?= Yii::t("app","Properties Advertisement") ?><br />
+                <?= Yii::t('app', 'Where buyers & sellers meet') ?> <br />
+                <a href="index.php?r=site/aboutus" class="button"><?= Yii::t('app','What we do') ?></a>
+            </h1>
         </div>
     </div>
 </div>
@@ -33,22 +33,22 @@ $map = new \dosamigos\google\maps\Map([
         if(count($model->products) == 0) continue;
         ?>
         <div class="columns">
-            <div class="column is-10">
-                <h1 class="title is-3"><i class="fa fa-star"></i> <?= Yii::t('app', $model->name) . " " . Yii::t('app', 'Recommended') ?></h1>
+            <div class="column">
+                <h1 class="title is-3"><?= Yii::t('app', 'Recommended') ?></h1>
             </div>
-            <div class="column is-2 has-text-right">
-                <a href="index.php?r=site/land" class="button is-outlined is-primary">
+            <div class="column has-text-right">
+                <a href="index.php?r=site/viewall" class="button is-outlined is-primary is-hidden-mobile">
                     <span><?= Yii::t('app', 'More') ?></span>
-                    <span class="icon">
-                  <i class="fa fa-plus-circle"></i>
-                </span>
+                        <span class="icon">
+                      <i class="fa fa-plus-circle"></i>
+                    </span>
                 </a>
             </div>
         </div>
 
         <div class="columns box">
             <div class="column is-12">
-                <div class="columns">
+                <div class="columns" style="overflow-x: scroll">
                     <?php foreach ($model->products as $product):
                         if (isset($product->lat) && isset($product->lon)) {
                             $marker = new \dosamigos\google\maps\overlays\Marker([
@@ -73,11 +73,13 @@ $map = new \dosamigos\google\maps\Map([
                             $map->addOverlay($marker);
                         }
                         ?>
-                            <div class="column is-3 is-4-mobile">
+                            <div class="column is-3">
                                 <div class="card">
                                     <div class="card-image">
                                         <figure class="image is-4by3">
-                                            <img src="upload/photo/<?= $product->photo ?>" alt="Image">
+                                            <a href="index.php?r=site/view&id=<?= $product->id ?>">
+                                                <img src="upload/photo/<?= $product->photo ?>" alt="Image">
+                                            </a>
                                         </figure>
                                     </div>
                                     <div class="card-content">
@@ -89,7 +91,9 @@ $map = new \dosamigos\google\maps\Map([
                                                 </p>
                                             </div>
                                         </div>
-                                        <a class="button is-fullwidth is-primary is-outlined" href="index.php?r=site/viewland&id=<?= $product->id ?>" ><?= Yii::t('app', 'Detail') ?></a>
+                                        <a class="button is-fullwidth is-primary is-outlined is-hidden" href="index.php?r=site/viewland&id=<?= $product->id ?>" >
+                                            <?= Yii::t('app', 'Detail') ?>
+                                        </a>
                                         <div class="content has-text-centered">
                                             <article>
                                                 <?= $product->description ?>
@@ -119,6 +123,9 @@ $map = new \dosamigos\google\maps\Map([
                             </div>
                         <?php endforeach; ?>
                 </div>
+                <a href="index.php?r=site/viewall" class="button is-outlined is-primary is-fullwidth">
+                    <span><?= Yii::t('app', 'More') ?></span>
+                </a>
 <!--                <div class="columns">-->
 <!--                    <div class="column is-offset-half is-half box">-->
 <!--                        <nav class="pagination">-->

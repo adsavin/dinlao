@@ -31,6 +31,8 @@ tests/_support/_generated
 /runtime/*
 composer.lock
 /runtime/
+/runtime/debug/*.data
+/runtime/logs/app.log
 /vendor/
 /web/assets/
 /web/upload/
