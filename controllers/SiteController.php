@@ -78,34 +78,37 @@ class SiteController extends Controller
                 ->one();
             if(!isset($user)) {
                 $user = new User();
-                $user->registerd_date = date("Y:m:d H:i:s");
+                $user->registerd_date = date("Y-m-d H:i:s");
                 $user->password = $userAttributes["id"];
                 $user->facebookid = $userAttributes["id"];
                 $user->email = isset($userAttributes["email"])? $userAttributes["email"]:$userAttributes["id"];
                 $user->status = "A";
+                $user->role = "U";
+                $user->birthdate = date('Y-m-d H:i:s');
             }
             $user->facebookname = $userAttributes["name"];
             $user->firstname = $userAttributes["first_name"];
             $user->lastname = $userAttributes["last_name"];
-            $user->birthdate = date('Y-m-d H:i:s', strtotime($userAttributes["birthday"]));
-            $user->role = "U";
             if(!$user->save()) {
-                print_r($user->errors);
-                exit;
+                throw new Exception(json_encode($user->errors));
             }
             $user->password = "";
             Yii::$app->user->login($user, 0);
             Yii::$app->session->set("username", $userAttributes["name"]);
             Yii::$app->session->set("user", $user);
-            return $this->redirect(["home"]);
+            return $this->redirect(["site/home"]);
         } catch (Exception $ex) {
             Yii::error($ex);
-            print_r($ex);
-            exit;
+            Yii::$app->session->setFlash('danger', $ex->getMessage());
+            return $this->redirect(["site/index"]);
         }
     }
 
     public function actionHome() {
+        $user = Yii::$app->session->get('user');
+        if(!isset($user)) {
+            return $this->redirect(["site/index"]);
+        }
         $this->layout = "home";
         return $this->render("home");
     }
@@ -117,6 +120,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $user = Yii::$app->session->get('user');
+        if(isset($user)) {
+            return $this->redirect(["site/home"]);
+        }
+
         $models = ProductType::find()->all();
         $this->layout = "index";
         return $this->render('index', [
@@ -151,6 +159,9 @@ class SiteController extends Controller
      */
     public function actionLogout()
     {
+        Yii::$app->session->destroy();
+        Yii::$app->session->destroySession("user");
+        Yii::$app->session->set("user", null);
         Yii::$app->user->logout();
         return $this->redirect(["site/index"]);
     }

@@ -17,7 +17,7 @@ class ProvinceSearch extends Province
     {
         return [
             [['id'], 'integer'],
-            [['code', 'name'], 'safe'],
+            [['code', 'name', 'namelao'], 'safe'],
         ];
     }
 
@@ -61,7 +61,8 @@ class ProvinceSearch extends Province
         ]);
 
         $query->andFilterWhere(['like', 'code', $this->code])
-            ->andFilterWhere(['like', 'name', $this->name]);
+            ->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'namelao', $this->namelao]);
 
         return $dataProvider;
     }

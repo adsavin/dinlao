@@ -17,7 +17,7 @@ class DistrictSearch extends District
     {
         return [
             [['id', 'province_id'], 'integer'],
-            [['name'], 'safe'],
+            [['name', 'namelao'], 'safe'],
         ];
     }
 
@@ -61,7 +61,8 @@ class DistrictSearch extends District
             'province_id' => $this->province_id,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name]);
+        $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'namelao', $this->namelao]);
 
         return $dataProvider;
     }

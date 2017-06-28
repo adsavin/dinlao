@@ -9,6 +9,7 @@ use Yii;
  *
  * @property integer $id
  * @property string $name
+ * @property string $namelao
  * @property integer $province_id
  *
  * @property Province $province
@@ -30,9 +31,9 @@ class District extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'province_id'], 'required'],
+            [['name', 'namelao', 'province_id'], 'required'],
             [['province_id'], 'integer'],
-            [['name'], 'string', 'max' => 255],
+            [['name', 'namelao'], 'string', 'max' => 255],
             [['name'], 'unique'],
             [['province_id'], 'exist', 'skipOnError' => true, 'targetClass' => Province::className(), 'targetAttribute' => ['province_id' => 'id']],
         ];
@@ -46,6 +47,7 @@ class District extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'name' => Yii::t('app', 'Name'),
+            'namelao' => Yii::t('app', 'Lao Name'),
             'province_id' => Yii::t('app', 'Province'),
         ];
     }

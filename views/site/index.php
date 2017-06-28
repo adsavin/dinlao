@@ -49,7 +49,7 @@ $map = new \dosamigos\google\maps\Map([
         <div class="columns box">
             <div class="column is-12">
                 <div class="columns" style="overflow-x: scroll">
-                    <?php foreach ($model->products as $product):
+                    <?php foreach ($model->products as $key => $product):
                         if (isset($product->lat) && isset($product->lon)) {
                             $marker = new \dosamigos\google\maps\overlays\Marker([
                                 'position' => new \dosamigos\google\maps\LatLng([
@@ -73,7 +73,7 @@ $map = new \dosamigos\google\maps\Map([
                             $map->addOverlay($marker);
                         }
                         ?>
-                            <div class="column is-3">
+                            <div class="column is-3 <?= ($key > 5)?'is-hidden-mobile':'' ?>">
                                 <div class="card">
                                     <div class="card-image">
                                         <figure class="image is-4by3">

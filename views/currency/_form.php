@@ -22,6 +22,7 @@ use yii\helpers\Html;
             ]);
     ?>
     <?= $form->field($model, 'code')->textInput(['class'=>'input', 'maxlength' => true]) ?>
+    <?= $form->field($model, 'namelao')->textInput(['class'=>'input', 'maxlength' => true]) ?>
     <?= $form->field($model, 'name')->textInput(['class'=>'input', 'maxlength' => true]) ?>
     <?= Html::submitButton( Yii::t('app', 'Save'), ['class' => 'button is-primary']) ?>
     <?php ActiveForm::end(); ?>

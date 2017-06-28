@@ -1,27 +1,40 @@
 <?php
 /* @var $this yii\web\View */
 $this->beginContent('@app/views/layouts/main.php'); ?>
-    <div class="container">
-        <a href="index.php" class="nav-item has-shadow is-outlined is-hidden-mobile" style="position: absolute;z-index: 33">
-            <img class="" src="image/logo.png" alt="DINDEE.COM" style="max-height: 9rem;">
-        </a>
-    </div>
+
+<div class="container is-hidden-mobile">
+    <a href="index.php" class="nav-item has-shadow is-outlined" style="position: absolute;z-index: 33">
+        <img class="" src="image/logo.png" alt="DINLAO.COM" style="max-height: 12rem;">
+    </a>
+</div>
+<div class="container is-hidden-desktop">
+    <a href="index.php" class="nav-item has-shadow is-outlined" style="position: absolute;z-index: 33">
+        <img class="" src="image/logo.png" alt="DINLAO.COM" style="max-height: 6rem;">
+    </a>
+</div>
+
     <nav class="nav has-shadow">
         <div class="container">
-<!--            <div class="nav-left">-->
-<!--                <a class="nav-item" href="home.php">-->
-<!--                  <span class="icon">-->
-<!--                    <i class="fa fa-home"></i>-->
-<!--                  </span>-->
-<!--                </a>-->
-<!--            </div>-->
-<!---->
-<!--            <div class="nav-center">-->
-<!--                <a class="nav-item">-->
-<!--                    <img src="" alt="DINDEE.COM">-->
-<!--                </a>-->
-<!--            </div>-->
+            <div class="nav-left has-shadow">
+                <a href="index.php" class="nav-item has-shadow is-outlined is-hidden-mobile">
+                    <span class="icon">
+                        <i class="fa fa-home"></i>
+                    </span>
+                </a>
+            </div>
 
+            <div class="nav-center has-shadow">
+                <div class="nav-item is-hidden-mobile">
+                    <a class="button is-primary is-outlined" href="<?= Yii::$app->params["facebookpage"] ?>" target="_blank">
+                        <span class="icon">
+                            <i class="fa fa-facebook"></i>
+                        </span>
+                        <span>
+                            <?= Yii::t('app', 'acebook') ?>
+                        </span>
+                    </a>
+                </div>
+            </div>
             <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
             <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
             <span class="nav-toggle">
@@ -33,20 +46,16 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
             <!-- This "nav-menu" is hidden on mobile -->
             <!-- Add the modifier "is-active" to display it on mobile -->
             <div class="nav-right nav-menu">
-                <div class="nav-item">
+                <div class="nav-item is-hidden-mobile">
                     <span>Welcome, <?php echo Yii::$app->session->get("username") ?> </span>
                 </div>
                 <div class="nav-item">
-                    <div class="field is-grouped">
-                        <p class="control">
-                            <a class="button is-danger is-outlined" href="index.php?r=site/logout">
-                                <span class="icon">
-                                  <i class="fa fa-sign-out"></i>
-                                </span>
-                                <span>Sign Out</span>
-                            </a>
-                        </p>
-                    </div>
+                    <a class="button is-danger is-outlined" href="index.php?r=site/logout">
+                        <span class="icon">
+                          <i class="fa fa-sign-out"></i>
+                        </span>
+                        <span>Sign Out</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -131,3 +140,12 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
     </div>
 </div>
 <?php $this->endContent(); ?>
+
+
+<script>
+    $(document).ready(function () {
+        $(".nav-toggle").click(function () {
+            $(".nav-menu").toggleClass("is-active");
+        });
+    })
+</script>

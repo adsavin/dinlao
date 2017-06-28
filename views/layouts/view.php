@@ -18,8 +18,8 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
         <div class="nav-left has-shadow">
             <a href="index.php" class="nav-item has-shadow is-outlined is-hidden-mobile">
                 <span class="icon">
-                        <i class="fa fa-home"></i>
-                    </span>
+                    <i class="fa fa-home"></i>
+                </span>
             </a>
         </div>
 
@@ -49,7 +49,7 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
     <!-- This "nav-menu" is hidden on mobile -->
     <!-- Add the modifier "is-active" to display it on mobile -->
     <div class="nav-right nav-menu">
-        <div class="nav-item">
+        <div class="nav-item is-pulled-right">
             <div class="field is-grouped">
                 <p class="control">
                     <a class="button is-primary is-outlined" href="index.php?r=site/login">

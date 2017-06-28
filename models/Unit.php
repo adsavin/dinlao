@@ -9,7 +9,8 @@ use Yii;
  *
  * @property integer $id
  * @property string $code
- * @property string $nam
+ * @property string $name
+ * @property string $namelao
  *
  * @property Product[] $products
  */
@@ -31,7 +32,7 @@ class Unit extends \yii\db\ActiveRecord
         return [
             [['code', 'nam'], 'required'],
             [['code'], 'string', 'max' => 10],
-            [['nam'], 'string', 'max' => 255],
+            [['name', 'namelao'], 'string', 'max' => 255],
             [['code'], 'unique'],
         ];
     }
@@ -44,7 +45,8 @@ class Unit extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'code' => Yii::t('app', 'Code'),
-            'nam' => Yii::t('app', 'Nam'),
+            'name' => Yii::t('app', 'Name'),
+            'namelao' => Yii::t('app', 'Lao Name'),
         ];
     }
 

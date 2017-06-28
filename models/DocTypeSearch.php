@@ -17,7 +17,7 @@ class DocTypeSearch extends DocType
     {
         return [
             [['id'], 'integer'],
-            [['code', 'name'], 'safe'],
+            [['code', 'name', 'namelao'], 'safe'],
         ];
     }
 
@@ -61,6 +61,7 @@ class DocTypeSearch extends DocType
         ]);
 
         $query->andFilterWhere(['like', 'code', $this->code])
+            ->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'name', $this->name]);
 
         return $dataProvider;

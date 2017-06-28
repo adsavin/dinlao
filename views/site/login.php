@@ -39,6 +39,13 @@ $this->params['breadcrumbs'][] = $this->title;
             </a>
         </div>
         <div class="column is-6">
+            <div class="columns">
+                <div class="column is-10 is-offset-1">
+                    <a class="button is-primary is-fullwidth href="index.php?r=site%2Fauth&amp;authclient=facebook" title="Facebook" data-popup-width="860" data-popup-height="480">
+                        <span class="fa fa-facebook"></span>
+                    </a>
+                </div>
+            </div>
             <?php $form = ActiveForm::begin([
                 'id' => 'login-form',
                 'layout' => 'horizontal',

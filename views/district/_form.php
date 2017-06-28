@@ -22,6 +22,7 @@ use yii\helpers\Html;
         'errorCssClass' => 'is-danger'
     ]);
     ?>
+    <?= $form->field($model, 'namelao')->textInput(['class'=>'input', 'maxlength' => true]) ?>
     <?= $form->field($model, 'name')->textInput(['class'=>'input', 'maxlength' => true]) ?>
     <?= $form->field($model, 'province_id', [
         'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',

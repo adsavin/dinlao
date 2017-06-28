@@ -17,7 +17,7 @@ class UnitSearch extends Unit
     {
         return [
             [['id'], 'integer'],
-            [['code', 'nam'], 'safe'],
+            [['code', 'name', 'namelao'], 'safe'],
         ];
     }
 
@@ -61,7 +61,8 @@ class UnitSearch extends Unit
         ]);
 
         $query->andFilterWhere(['like', 'code', $this->code])
-            ->andFilterWhere(['like', 'nam', $this->nam]);
+            ->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'namelao', $this->namelao]);
 
         return $dataProvider;
     }

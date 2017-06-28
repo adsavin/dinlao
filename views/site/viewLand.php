@@ -3,8 +3,8 @@
         <div class="container has-text-centered">
             <div class="columns">
                 <div class="column is-4 is-offset-4">
-                    <figure class="image is-2by1" style="width: 100%">
-                        <img src="upload/photo/<?= $model->photo ?>" alt="Image" style="height: 100%;height: 10rem">
+                    <figure class="image" style="">
+                        <img src="upload/photo/<?= $model->photo ?>" alt="Image" >
                     </figure>
                 </div>
             </div>
@@ -34,6 +34,15 @@
                 <?= Yii::t("app", 'Share to ') ?>
                 <i class="fa fa-facebook"></i>acebook
             </a>
+            <div class="fb-share-button"
+                 data-href="http://dinlao.com/web/index.php?r=site/view&amp;id=1"
+                 data-layout="button" data-size="large"
+                 data-mobile-iframe="true">
+                <a class="fb-xfbml-parse-ignore" target="_blank"
+                   href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdinlao.com%2Fweb%2Findex.php%3Fr%3Dsite%252Fview%26id%3D<?= $model->id ?>&amp;src=sdkpreparse">
+                    <?= Yii::t('app', 'Share to Facebook') ?>
+                </a>
+            </div>
         </div>
     </div>
     <div class="box">

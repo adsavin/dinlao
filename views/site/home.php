@@ -1,5 +1,5 @@
 <?php
-    $this->title = Yii::t('app', 'Contact');
+    $this->title = Yii::t('app', 'Home');
     foreach (Yii::$app->params["topmenu"] as $item): ?>
 <h1 class="title"><?= Yii::t('app', $item) ?></h1>
     <?php
@@ -18,7 +18,7 @@
         <div class="columns">
         <?php foreach ($models as $key => $model) : ?>
             <div class="column">
-                <a href="index.php?r=site/create&code=L" class="is-fullwidth button is-primary"><?= $model->label ?></a>
+                <a href="index.php?r=<?= $model->url ?>" class="is-fullwidth button is-primary"><?= $model->label ?></a>
             </div>
         <?php endforeach; ?>
         </div>
