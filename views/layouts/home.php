@@ -54,7 +54,7 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
                         <span class="icon">
                           <i class="fa fa-sign-out"></i>
                         </span>
-                        <span>Sign Out</span>
+                        <span><?= Yii::t('app', 'Sign Out') ?></span>
                     </a>
                 </div>
             </div>

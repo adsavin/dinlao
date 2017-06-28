@@ -24,28 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 <div class="container">
     <div class="columns">
-        <div class="column is-6">
-
-            <?php
-            echo yii\authclient\widgets\AuthChoice::widget([
-                'baseAuthUrl' => ['site/auth'],
-            ]);
-            ?>
-            <h1 class="title is-3">
-                Sign in with social network account
-            </h1>
-            <a class="button is-primary" href="index.php?r=site%2Fauth&amp;authclient=facebook" title="Facebook" data-popup-width="860" data-popup-height="480">
-                <span class="fa fa-facebook"></span>
-            </a>
-        </div>
-        <div class="column is-6">
-            <div class="columns">
-                <div class="column is-10 is-offset-1">
-                    <a class="button is-primary is-fullwidth href="index.php?r=site%2Fauth&amp;authclient=facebook" title="Facebook" data-popup-width="860" data-popup-height="480">
-                        <span class="fa fa-facebook"></span>
-                    </a>
-                </div>
-            </div>
+        <div class="column is-6 is-6 is-offset-3">
             <?php $form = ActiveForm::begin([
                 'id' => 'login-form',
                 'layout' => 'horizontal',
@@ -61,6 +40,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 'errorCssClass' => 'is-danger'
             ]); ?>
+            <p class="title has-text-centered"><?= Yii::t('app', 'Sign in by facebook') ?></p>
+            <a class="button is-primary is-fullwidth" href="index.php?r=site%2Fauth&amp;authclient=facebook" title="Facebook" data-popup-width="860" data-popup-height="480">
+                <i class="fa fa-facebook"></i>
+                <?= Yii::t('app', 'Sign In') ?>
+            </a>
+            <hr/>
             <p class="title"><?= Html::encode($this->title) ?></p>
             <p class="subtitle">Please fill out the following fields to sign in:</p>
             <?= $form->field($model, 'email')->textInput(['class' => 'input', 'placeholder' => 'Email']) ?>

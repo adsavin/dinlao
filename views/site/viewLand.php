@@ -1,3 +1,7 @@
+<?php
+/* @var $model \app\models\Product */
+?>
+
 <div class="hero is-primary" style="height: 13rem;padding-top: 3rem">
     <div class="hero-body">
         <div class="container has-text-centered">
@@ -19,9 +23,9 @@
             $items = [];
             foreach ($model->pictures as $picture) {
                 $items[] = [
-                    'url' => 'upload/photo/'.$picture->name,
-                    'src' => 'upload/photo/'.$picture->name,
-                    'options' => ['title' => $picture->name]
+                    'url' => 'upload/photo/'.$picture->filename,
+                    'src' => 'upload/photo/'.$picture->filename,
+                    'options' => ['title' => $picture->filename]
                 ];
             }
             ?>
