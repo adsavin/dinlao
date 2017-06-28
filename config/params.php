@@ -3,8 +3,6 @@
 return [
     'company_name' => 'LaoDebug',
     'adminEmail' => 'laodebug@gmail.com',
-    'languages' => [
-        'en' => 'english',
-        'ru' => 'russian',
-    ]
+    'facebookpage' => "https://www.facebook.com/dinlaocom-808362835994330/",
+    'topmenu' => ["Favorite", "Profile", "Web Master", "Administration"]
 ];

@@ -2,32 +2,36 @@
 /* @var $this \yii\web\Controller */
 
 $this->beginContent('@app/views/layouts/main.php'); ?>
+<div class="container">
+    <a href="index.php" class="nav-item has-shadow is-outlined is-hidden-mobile" style="position: absolute;z-index: 33">
+        <img class="" src="image/logo.png" alt="DINLAO.COM" style="max-height: 12rem;">
+    </a>
+</div>
+
 <nav class="nav has-shadow" style="position: fixed;background-color: #fff;width: 100%;top:0">
     <div class="container">
         <div class="nav-left has-shadow">
             <a href="index.php" class="nav-item has-shadow is-outlined">
-                <img class="" src="image/logo.png" alt="DINDEE.COM">
+                <span class="icon">
+                        <i class="fa fa-home"></i>
+                    </span>
             </a>
         </div>
 
-        <div class="nav-center"">
-        <a class="nav-item">
-                  <span class="icon">
+        <div class="nav-center has-shadow">
+            <div class="nav-item ">
+                <a class="button is-primary is-outlined" href="<?= Yii::$app->params["facebookpage"] ?>" target="_blank">
+                      <span class="icon">
                     <i class="fa fa-facebook"></i>
-                  </span>
-        </a>
-        <a class="nav-item">
-                  <span class="icon">
-                    <i class="fa fa-instagram"></i>
-                  </span>
-        </a>
-        <a class="nav-item">
-                  <span class="icon">
-                    <i class="fa fa-twitter"></i>
-                  </span>
-        </a>
-        </a>
-    </div>
+                  </span> <?= Yii::t('app', 'acebook') ?>
+                </a>
+                <!--                <a class="nav-item">-->
+                <!--                  <span class="icon">-->
+                <!--                    <i class="fa fa-twitter"></i>-->
+                <!--                  </span>-->
+                <!--                </a>-->
+            </div>
+        </div>
 
     <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
     <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->

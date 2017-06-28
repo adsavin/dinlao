@@ -32,6 +32,7 @@ use Yii;
  * @property string $height
  * @property string $urlmap
  * @property integer $unit_id
+ * @property string $facebook_url
  *
  * @property Currency $currency
  * @property District $district

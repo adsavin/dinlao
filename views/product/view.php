@@ -22,42 +22,48 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
-        <div class="columns">
-            <div class="column is-12">
-                <h1 class="title"><?= $model->productType->name ?></h1>
-                <figure class="is-fullwidth">
-                    <img class="is-fullwidth" src="upload/photo/<?= $model->photo ?>">
-                </figure>
-            </div>
-        </div>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            [
-                'attribute' => 'price',
-                'value' => number_format($model->price, 2) ." ". $model->currency->code
-            ],
-            [
-                'attribute' => 'area',
-                'format' =>'raw',
-                'value' => number_format($model->area, 2) ." ".$model->unit->code."<sup>2</sup> (W: ".number_format($model->width, 2) .", H: ". number_format($model->height, 2).")",
-            ],
-            [
-                'attribute' => 'doc_type_id',
-                'value' => $model->productType->name
-            ],
-            'village',
-            [
-                'label' => Yii::t("app", "District"),
-                'value' => $model->district->name
-            ],
-            [
-                'label' => Yii::t("app", "Province"),
-                'value' => $model->district->province->name
-            ],
-        ],
-    ]) ?>
+    <div class="columns">
+        <div class="column is-12 has-text-centered">
+            <h1 class="title"><?= $model->productType->name ?></h1>
+            <figure class="is-fullwidth">
+                <img class="is-fullwidth" src="upload/photo/<?= $model->photo ?>">
+            </figure>
+        </div>
+    </div>
+
+    <div class="columns">
+        <div class="column is-10 is-offset-1 has-text-centered">
+            <?= DetailView::widget([
+                'model' => $model,
+                'attributes' => [
+                    [
+                        'attribute' => 'price',
+                        'value' => number_format($model->price, 2) ." ". $model->currency->code
+                    ],
+                    [
+                        'attribute' => 'area',
+                        'format' =>'raw',
+                        'value' => number_format($model->area, 2) ." ".$model->unit->code."<sup>2</sup> (W: ".number_format($model->width, 2) .", H: ". number_format($model->height, 2).")",
+                    ],
+                    [
+                        'attribute' => 'doc_type_id',
+                        'value' => $model->docType->name
+                    ],
+                    'village',
+                    [
+                        'label' => Yii::t("app", "District"),
+                        'value' => $model->district->name
+                    ],
+                    [
+                        'label' => Yii::t("app", "Province"),
+                        'value' => $model->district->province->name
+                    ],
+                ],
+            ]) ?>
+        </div>
+    </div>
+
     <div class="columns">
         <div class="column is-10 is-offset-1">
             <?php
@@ -75,13 +81,14 @@ $this->params['breadcrumbs'][] = $this->title;
             if (isset($model->lat) && isset($model->lon)) {
                 $marker = new \dosamigos\google\maps\overlays\Marker([
                     'position' => $coor,
-                    'title' => $model->village
+                    'title' => $model->village,
+                    'animation' => \dosamigos\google\maps\overlays\Animation::BOUNCE
                 ]);
 
                 // Provide a shared InfoWindow to the marker
                 $marker->attachInfoWindow(
                     new \dosamigos\google\maps\overlays\InfoWindow([
-                        'content' => '<p>' . $model->village . '</p>'
+                        'content' => '<p>' . $model->village . '</p>',
                     ])
                 );
                 $map->addOverlay($marker);
@@ -104,10 +111,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     ($model->line !=""? "<p><i class='fa fa-line-chart'></i> ".$model->line ."</p>":"").
                     ($model->email !=""? "<p><i class='fa fa-envelope'></i> ".$model->email ."</p>":"")
             ],
-            [
-                'attribute' => 'user_id',
-                'value' => $model->user->firstname . " ".$model->user->lastname . " (".$model->user->email.")"
-            ],
+//            [
+//                'attribute' => 'user_id',
+//                'value' => $model->user->firstname . " ".$model->user->lastname . " (".$model->user->email.")"
+//            ],
             'created_date:datetime',
             [
                 'attribute' => 'status',
@@ -118,3 +125,11 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
 
 </div>
+<style>
+    th {
+        width: 50%;
+    }
+    tr th:first-child {
+        text-align: right;
+    }
+</style>

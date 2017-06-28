@@ -73,7 +73,7 @@ $map = new \dosamigos\google\maps\Map([
                             $map->addOverlay($marker);
                         }
                         ?>
-                            <div class="column is-3">
+                            <div class="column is-3 is-4-mobile">
                                 <div class="card">
                                     <div class="card-image">
                                         <figure class="image is-4by3">

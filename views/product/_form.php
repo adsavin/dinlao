@@ -8,9 +8,11 @@ use yii\helpers\Html;
 /* @var $form yii\bootstrap\ActiveForm */
 ?>
 <div class="product-form">
-    <?php $form = ActiveForm::begin([
+    <?php
+    $form = ActiveForm::begin([
         'id' => 'form',
         'layout' => 'horizontal',
+        'options' => ['enctype' => 'multipart/form-data'],
         'fieldConfig' => [
             'template' => "<div class=\"column is-12\">{label}\n{input}\n{error}</div>",
             'horizontalCssClasses' => [
@@ -20,71 +22,77 @@ use yii\helpers\Html;
         'errorCssClass' => 'is-danger'
     ]); ?>
     <div class="columns">
-        <div class="column is-half">
-            <?= $form->field($model, 'product_type_id', [
-                'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
-            ])->dropDownList(
-                \yii\helpers\ArrayHelper::map($productTypes, "id", "name")
-            ) ?>
+        <div class="column is-4">
+            <?= $form->field($model, 'photofile')->fileInput(['class'=>'is-hidden','accept' => 'image/*'])->label(false) ?>
+            <button type="button" class="button is-fullwidth" id="addphoto"><i class="fa fa-camera"></i> </button>
+            <figure class="has-text-centered">
+                <img id="previewphoto" src="<?= isset($model->photo)?'upload/photo/'.$model->photo:'' ?>"/>
+            </figure>
         </div>
-        <div class="column is-half">
+        <div class="column is-8">
             <?= $form->field($model, 'doc_type_id', [
                 'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
             ])->dropDownList(\yii\helpers\ArrayHelper::map($docTypes, "id", "name")) ?>
+            <div class="columns">
+                <div class="column is-9">
+                    <?= $form->field($model, 'price')->textInput(['class'=>'input', 'maxlength' => true]) ?>
+                </div>
+                <div class="column is-3">
+                    <?= $form->field($model, 'currency_id', [
+                        'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
+                    ])->dropDownList(\yii\helpers\ArrayHelper::map($currencies, "id" ,"code")) ?>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-9">
+                    <?= $form->field($model, 'area')->textInput(['class'=>'input', 'maxlength' => true]) ?>
+                </div>
+                <div class="column is-3">
+                    <?= $form->field($model, 'unit_id', [
+                        'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
+                    ])->dropDownList(\yii\helpers\ArrayHelper::map(
+                        $units, "id", "code"
+                    )) ?>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-half">
+                    <?= $form->field($model, 'width')->textInput(['class'=>'input', 'maxlength' => true]) ?>
+                </div>
+                <div class="column is-half">
+                    <?= $form->field($model, 'height')->textInput(['class'=>'input', 'maxlength' => true]) ?>
+                </div>
+            </div>
         </div>
     </div>
+    <hr />
+    <h1 class="subtitle"><?= Yii::t("app", "Attached Photos") ?></h1>
+        <div class="columns">
+            <?php
+            $pictures =$model->getPictures()->all();
 
-    <?= $form->field($model, 'description')->textarea(['class'=>'input', 'rows' => 6]) ?>
+            for($j=0; $j<4; $j++): ?>
+            <div class="column is-3">
+                <?= $form->field($model, "photofiles[".$j."]")->fileInput(["class" => "is-hidden photos", 'accept' => 'image/*', "data-id" =>$j])->label(false) ?>
+                <button type="button" class="button is-fullwidth addphoto" data-id="<?= $j ?>">
+                    <span class="icon"><i class="fa fa-camera"></i></span>
+                </button>
+                <figure class="has-text-centered">
+                    <img id="previewphoto-<?= $j ?>" src="<?= isset($pictures[$j])?'upload/photo/'.$pictures[$j]->filename:'' ?>">
+                </figure>
+            </div>
+            <?php endfor; ?>
+        </div>
 
     <div class="columns">
-        <div class="column is-10">
-            <?= $form->field($model, 'price')->textInput(['class'=>'input', 'maxlength' => true]) ?>
-        </div>
-        <div class="column is-2">
-            <?= $form->field($model, 'currency_id', [
-                'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
-            ])->dropDownList(\yii\helpers\ArrayHelper::map($currencies, "id" ,"code")) ?>
+        <div class="column is-12">
+            <?= $form->field($model, 'description')->textarea(['class'=>'input', 'rows' => 6]) ?>
         </div>
     </div>
 
-    <div class="columns">
-        <div class="column is-10">
-            <?= $form->field($model, 'area')->textInput(['class'=>'input', 'maxlength' => true]) ?>
-        </div>
-        <div class="column is-2">
-            <?= $form->field($model, 'unit_id', [
-                'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
-            ])->dropDownList(\yii\helpers\ArrayHelper::map(
-                $units, "id", "code"
-            )) ?>
-        </div>
-    </div>
-
-    <div class="columns">
-        <div class="column is-half">
-    <?= $form->field($model, 'width')->textInput(['class'=>'input', 'maxlength' => true]) ?>
-        </div>
-        <div class="column is-half">
-    <?= $form->field($model, 'height')->textInput(['class'=>'input', 'maxlength' => true]) ?>
-        </div>
-    </div>
-
-    <div class="columns">
-        <div class="column is-one-third">
-    <?= $form->field($model, 'province_id', [
-        'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
-    ])->dropDownList(\yii\helpers\ArrayHelper::map($provinces, "id", "name")) ?>
-        </div>
-        <div class="column is-one-third">
-    <?= $form->field($model, 'district_id', [
-        'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
-    ])->dropDownList([]) ?>
-        </div>
-        <div class="column is-one-third">
-    <?= $form->field($model, 'village')->textInput(['class'=>'input', 'maxlength' => true]) ?>
-        </div>
-    </div>
-
+    <hr />
+    <h1 class="title is-4"><?= Yii::t("app", "Location") ?></h1>
+    <h1 class="subtitle is-5"><?= Yii::t("app", "Click on map to locate the location") ?></h1>
     <div class="columns">
         <div class="column is-10 is-offset-1">
             <?php
@@ -143,6 +151,24 @@ use yii\helpers\Html;
 
     <div class="columns">
         <div class="column is-one-third">
+            <?= $form->field($model, 'province_id', [
+                'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
+            ])->dropDownList(\yii\helpers\ArrayHelper::map($provinces, "id", "name")) ?>
+        </div>
+        <div class="column is-one-third">
+            <?= $form->field($model, 'district_id', [
+                'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
+            ])->dropDownList(\yii\helpers\ArrayHelper::map($districts, "id", "name")) ?>
+        </div>
+        <div class="column is-one-third">
+            <?= $form->field($model, 'village')->textInput(['class'=>'input', 'maxlength' => true]) ?>
+        </div>
+    </div>
+
+    <hr />
+    <h1 class="subtitle"><?= Yii::t("app", "Contact Information") ?></h1>
+    <div class="columns">
+        <div class="column is-one-third">
             <?= $form->field($model, 'tel')->textInput(['class'=>'input', 'maxlength' => true]) ?>
         </div>
         <div class="column is-one-third">
@@ -163,16 +189,67 @@ use yii\helpers\Html;
             <?= $form->field($model, 'email')->textInput(['class'=>'input', 'maxlength' => true]) ?>
         </div>
     </div>
-    <?= $form->field($model, 'photo')->textInput(['class'=>'input', 'maxlength' => true]) ?>
-    <?= $form->field($model, 'status', [
-        'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
-    ])->dropDownList([
-        "A" => 'Available',
-        "H" => 'Hide',
-        "S" => 'Show',
-    ]) ?>
+    <div class="columns">
+        <div class="column is-12 has-text-centered">
+            <?= $form->field($model, 'status', [
+                'inputTemplate' => '<p class="control" style="text-align: center"><span class="select">{input}</span></p>',
+            ])->dropDownList([
+                "A" => 'Available',
+                "H" => 'Hide',
+                "S" => 'Show',
+            ]) ?>
+        </div>
+    </div>
     <div class="has-text-centered">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' =>'button is-primary']) ?>
     </div>
     <?php ActiveForm::end(); ?>
 </div>
+
+<?php
+$this->registerJs("
+    $(\".addphoto\").click(function() {
+        var id = $(this).data(\"id\");
+        $(\"#product-photofiles-\"+id).click();
+    });
+
+    $(\".photos\").change(function () {
+        var id = $(this).data(\"id\");
+        previewImage(this, $(\"#previewphoto-\"+id));
+    })
+    
+    $('#addphoto').click(function() {
+        $(\"#product-photofile\").click();
+    });
+    
+    $('#product-photofile').change(function() {
+        previewImage(this, $(\"#previewphoto\"));
+    });      
+     
+    $('#product-province_id').change(function() {
+        $('#product-district_id').empty();
+        var id = $(this).val();
+        $.get('index.php?r=site/getdistricts', {'province': id}, function(responses) {
+            try{
+                responses = JSON.parse(responses);
+            } catch(ex) {
+                alert('Error');
+            }
+            if(responses) {
+                for(var i=0;i<responses.length;i++) {
+                    $('#product-district_id').append('<option value=\"'+responses[i].id+'\">'+responses[i].name+'</option>');
+                }
+            }
+        });
+    });
+
+  function previewImage(input, \$preview) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            \$preview.attr('src', e.target.result);
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+  }");
+?>

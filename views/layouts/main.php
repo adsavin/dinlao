@@ -26,6 +26,11 @@ use yii\helpers\Html;
             font-family: "Noto Sans Lao", "Noto Sans Southeast Asian", "Noto Serif Southeast Asian", "Noto Serif Lao", "Saysettha OT","Phetsarath OT", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
         }
         <?php endif; ?>
+        <?php if(Yii::$app->language == "en-US"): ?>
+        #changelang {
+            font-family: "Noto Sans Lao", "Noto Sans Southeast Asian", "Noto Serif Southeast Asian", "Noto Serif Lao", "Saysettha OT","Phetsarath OT", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        }
+        <?php endif; ?>
     </style>
 </head>
 <body>
@@ -34,21 +39,31 @@ use yii\helpers\Html;
 <footer class="footer" style="margin-top: 50px">
     <div class="container">
         <div class="columns">
-            <div class="column is-4 has-text-centered">
+            <div class="column has-text-centered">
                 <p><a href="index.php?r=site/login"><?= Yii::t("app","Sign In") ?></a></p>
                 <p><a href="index.php?r=site/register"><?= Yii::t("app","Register") ?></a></p>
             </div>
-            <div class="column is-4 has-text-centered">
+            <div class="column has-text-centered">
                 <p><a href="index.php?r=site/login"><?= Yii::t("app","Contact Us") ?></a></p>
                 <p><a href="index.php?r=site/register"><?= Yii::t("app","Terms & Conditions") ?></a></p>
             </div>
-            <div class="column is-4 has-text-centered">
+            <div class="column has-text-centered">
                     <p>
                         &copy; <?= Yii::$app->params["company_name"] ?> <?= date('Y') ?>
                     </p>
                     <p>
                         <?= Yii::$app->params["adminEmail"] ?>
                     </p>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column is-12 has-text-centered">
+                <div class="fb-like" data-href="<?= Yii::$app->params["facebookpage"] ?>"
+                     data-layout="button_count"
+                     data-action="like"
+                     data-size="large"
+                     data-show-faces="true"
+                     data-share="true"></div>
             </div>
         </div>
     </div>

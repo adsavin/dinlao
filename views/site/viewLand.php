@@ -160,5 +160,6 @@
                 </nav>
             </div>
         </div>
+        <div class="fb-comments" data-href="<?= $model->facebook_url ?>" data-numposts="5"></div>
     </div>
 </div>

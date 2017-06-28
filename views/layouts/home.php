@@ -60,7 +60,7 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
             <a href="home.php">
               <span class="icon">
                 <i class="fa fa-home"></i>
-              </span> Home
+              </span> <?= Yii::t('app','Home') ?>
             </a>
             <?php
             if(isset($this->params['breadcrumbs']))

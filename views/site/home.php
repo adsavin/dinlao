@@ -1,7 +1,26 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: adsavin
- * Date: 6/21/17
- * Time: 11:48 PM
- */
+    $this->title = Yii::t('app', 'Contact');
+    foreach (Yii::$app->params["topmenu"] as $item): ?>
+<h1 class="title"><?= Yii::t('app', $item) ?></h1>
+    <?php
+    $user = Yii::$app->session->get("user");
+    $models = \app\models\Menu::find();
+    $models->andWhere(["parent" => $item]);
+    switch ($user->role) {
+        case "U":
+            $models->andWhere("role in(:role1, :role2)", [":role1" => "*", ":role2" => "U"]);break;
+        case "M":
+            $models->andWhere("role in(:role1, :role2, :role3)", [":role1" => "*", ":role2" => "U", ":role3" => "M"]);break;
+    }
+
+    $models = $models->all();
+    if(isset($models)) : ?>
+        <div class="columns">
+        <?php foreach ($models as $key => $model) : ?>
+            <div class="column">
+                <a href="index.php?r=site/create&code=L" class="is-fullwidth button is-primary"><?= $model->label ?></a>
+            </div>
+        <?php endforeach; ?>
+        </div>
+        <?php endif; ?>
+    <?php endforeach; ?>

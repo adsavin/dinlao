@@ -31,3 +31,9 @@ tests/_support/_generated
 /runtime/*
 composer.lock
 /runtime/
+/vendor/
+/web/assets/
+/web/upload/
+/web/upload/*
+/web/upload/photo/
+/web/upload/photo/*
