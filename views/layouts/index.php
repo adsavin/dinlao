@@ -59,8 +59,7 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
                         </p>
 
                         <p class="control">
-<!--                            <a class="button is-primary" href="index.php?r=site%2Fauth&amp;authclient=facebook" title="Facebook" data-popup-width="860" data-popup-height="480">-->
-                            <a href="index.php?r=site/login" class="button is-primary">
+                            <a class="button is-primary" href="index.php?r=site%2Fauth&amp;authclient=facebook" title="Facebook" data-popup-width="860" data-popup-height="480">
                                 <span><?= Yii::t('app','Sign In') ?></span>
                             </a>
                         </p>
