@@ -47,17 +47,28 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
             <!-- Add the modifier "is-active" to display it on mobile -->
             <div class="nav-right nav-menu">
                 <div class="nav-item is-hidden-mobile">
-                    <span>Welcome, <?php
-                        print_r(Yii::$app->user->identity);
-//                        echo Yii::$app->user->getIdentity()->first_name ?><!-- </span>-->
+                    <span>Welcome, <?= isset(Yii::$app->user->identity)?Yii::$app->user->identity->firstname:Yii::$app->session["user"]->firstname ?> </span>
+                </div>
+
+                <div class="nav-item">
+                    <p class="control">
+                        <a class="button is-primary is-outlined" href="index.php?r=site/changelang" id="changelang">
+                                <span class="icon">
+                                  <i class="fa fa-language"></i>
+                                </span>
+                            <span><?= Yii::$app->language == "en-US"?"ພາສາລາວ":"English" ?></span>
+                        </a>
+                    </p>
                 </div>
                 <div class="nav-item">
-                    <a class="button is-danger is-outlined" href="index.php?r=site/logout">
-                        <span class="icon">
-                          <i class="fa fa-sign-out"></i>
-                        </span>
-                        <span><?= Yii::t('app', 'Sign Out') ?></span>
-                    </a>
+                    <p class="control">
+                        <a class="button is-danger is-outlined" href="index.php?r=site/logout">
+                            <span class="icon">
+                              <i class="fa fa-sign-out"></i>
+                            </span>
+                            <span><?= Yii::t('app', 'Sign Out') ?></span>
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -110,7 +121,7 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
                                         </p>
                                         <ul class="menu-list">
                                             <?php foreach ($menus as $menu) :  ?>
-                                                <li><a href="index.php?r=<?= $menu->url ?>"><?= Yii::t('app', $menu->label) ?></a></li>
+                                                <li><a class="<?= Yii::$app->controller->id.'/'.Yii::$app->controller->action->id == $menu->url?'active':'' ?>" href="index.php?r=<?= $menu->url ?>"><?= Yii::t('app', $menu->label) ?></a></li>
                                             <?php endforeach; ?>
                                         </ul>
                                     <?php

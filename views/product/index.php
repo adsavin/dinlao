@@ -18,7 +18,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <p class="is-fullwidth text-right pull-right">
         <?= Html::a('<i class="fa fa-plus"></i> '.Yii::t('app', 'Add'), ['create'], ['class' => 'button is-primary']) ?>
     </p>
-<?php Pjax::begin(); ?>    <?= GridView::widget([
+<?php Pjax::begin(); ?>
+    <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
@@ -27,7 +28,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'village',
                 'filterInputOptions' => ['class' => 'input']
             ],
-
             [
                 'attribute' => 'area',
                 'filterInputOptions' => ['class' => 'input']
@@ -40,26 +40,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'tel',
                 'filterInputOptions' => ['class' => 'input']
             ],
-//            'description:ntext',
-//            'created_date',
-//             'district_id',
-//             'user_id',
-//             'status',
-//             'lat',
-//             'lon',
-//             'email:email',
-//             'whatsapp',
-//             'line',
-//             'facebook',
-//             'wechat',
-//             'currency_id',
-//             'photo',
-//             'product_type_id',
-//             'doc_type_id',
-//             'width',
-//             'height',
-//             'urlmap:ntext',
-//             'unit_id',
             [
                 'label' => Yii::t('app', 'Actions'),
                 'format' => 'raw',
