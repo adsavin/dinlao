@@ -15,10 +15,12 @@ use app\models\ProductType;
 use app\models\Province;
 use app\models\Unit;
 use app\models\User;
+use GuzzleHttp\Psr7\Uri;
 use Yii;
 use yii\db\Exception;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
+use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\UploadedFile;
 
@@ -206,7 +208,7 @@ class SiteController extends Controller
             Yii::$app->user->login(Yii::$app->session['user']);
         } else {
             Yii::$app->user->logout();
-            return $this->redirect(["site/login"]);
+            Url::to(["/site/index"]);
         }
     }
 

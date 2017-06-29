@@ -121,7 +121,7 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
                                         </p>
                                         <ul class="menu-list">
                                             <?php foreach ($menus as $menu) :  ?>
-                                                <li><a class="<?= Yii::$app->controller->id.'/'.Yii::$app->controller->action->id == $menu->url?'active':'' ?>" href="index.php?r=<?= $menu->url ?>"><?= Yii::t('app', $menu->label) ?></a></li>
+                                                <li><a class="" href="index.php?r=<?= $menu->url ?>"><?= Yii::t('app', $menu->label) ?></a></li>
                                             <?php endforeach; ?>
                                         </ul>
                                     <?php

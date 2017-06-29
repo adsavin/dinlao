@@ -14780,3 +14780,1438 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1498717563.897
     'REQUEST_TIME' => 1498717563
 ]
+2017-06-29 12:06:25 [::1][-][8lguj1md95ibkltis7dtf00nc6][error][yii\base\InvalidParamException] yii\base\InvalidParamException: Unable to resolve the relative route: site/login. No active controller is available. in C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\helpers\BaseUrl.php:137
+Stack trace:
+#0 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\helpers\BaseUrl.php(99): yii\helpers\BaseUrl::normalizeRoute('site/login')
+#1 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\helpers\BaseUrl.php(214): yii\helpers\BaseUrl::toRoute(Array, false)
+#2 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\web\Controller.php(202): yii\helpers\BaseUrl::to(Array)
+#3 C:\xampp\htdocs\dinlao\controllers\SiteController.php(209): yii\web\Controller->redirect(Array)
+#4 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Object.php(107): app\controllers\SiteController->init()
+#5 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Controller.php(86): yii\base\Object->__construct(Array)
+#6 [internal function]: yii\base\Controller->__construct('site', Object(yii\web\Application), Array)
+#7 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs(Array)
+#8 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('app\\controllers...', Array, Array)
+#9 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\BaseYii.php(344): yii\di\Container->get('app\\controllers...', Array)
+#10 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Module.php(638): yii\BaseYii::createObject('app\\controllers...', Array)
+#11 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Module.php(591): yii\base\Module->createControllerByID('site')
+#12 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Module.php(517): yii\base\Module->createController('')
+#13 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('', Array)
+#14 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Application.php(379): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 C:\xampp\htdocs\dinlao\web\index.php(13): yii\base\Application->run()
+#16 {main}
+2017-06-29 12:06:25 [::1][-][8lguj1md95ibkltis7dtf00nc6][info][application] $_COOKIE = [
+    'Idea-8e240e46' => '2b6f35c8-f4fb-431e-9201-5d80d6d06542'
+    'KCFINDER_showname' => 'on'
+    'KCFINDER_showsize' => 'off'
+    'KCFINDER_showtime' => 'off'
+    'KCFINDER_order' => 'name'
+    'KCFINDER_orderDesc' => 'off'
+    'KCFINDER_view' => 'thumbs'
+    'KCFINDER_displaySettings' => 'on'
+    'user_id' => '2'
+    'user_username' => 'admin'
+    'user_level' => 'admin'
+    'Phpstorm-5ce9a503' => '8fe13a82-0d81-408c-aea3-62e305f8bffb'
+    '_csrf' => 'eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VÞÜc¦<î~ÿšÓ¢¦óöCÓmÝ£}ÖH{Ñ\";}'
+    'PHPSESSID' => '8lguj1md95ibkltis7dtf00nc6'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_DNT' => '1'
+    'HTTP_REFERER' => 'http://localhost/dinlao/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,th;q=0.6'
+    'HTTP_COOKIE' => 'Idea-8e240e46=2b6f35c8-f4fb-431e-9201-5d80d6d06542; KCFINDER_showname=on; KCFINDER_showsize=off; KCFINDER_showtime=off; KCFINDER_order=name; KCFINDER_orderDesc=off; KCFINDER_view=thumbs; KCFINDER_displaySettings=on; user_id=2; user_username=admin; user_level=admin; Phpstorm-5ce9a503=8fe13a82-0d81-408c-aea3-62e305f8bffb; _csrf=eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V%DE%DC%02c%A6%3C%EE%7F%7E%FF%9A%0E%D3%A2%05%A6%12%F3%F6C%D3m%DD%A3%7D%D6H%05%7B%D1%07%22%3B%7D; PHPSESSID=8lguj1md95ibkltis7dtf00nc6'
+    'PATH' => 'C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\tools\\mingw64\\bin;;C:\\Users\\adsavin\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/dinlao/web/index.php'
+    'REMOTE_PORT' => '60793'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/dinlao/web/'
+    'SCRIPT_NAME' => '/dinlao/web/index.php'
+    'PHP_SELF' => '/dinlao/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1498730785.371
+    'REQUEST_TIME' => 1498730785
+]
+2017-06-29 12:06:27 [::1][-][8lguj1md95ibkltis7dtf00nc6][error][yii\base\InvalidParamException] yii\base\InvalidParamException: Unable to resolve the relative route: site/login. No active controller is available. in C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\helpers\BaseUrl.php:137
+Stack trace:
+#0 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\helpers\BaseUrl.php(99): yii\helpers\BaseUrl::normalizeRoute('site/login')
+#1 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\helpers\BaseUrl.php(214): yii\helpers\BaseUrl::toRoute(Array, false)
+#2 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\web\Controller.php(202): yii\helpers\BaseUrl::to(Array)
+#3 C:\xampp\htdocs\dinlao\controllers\SiteController.php(209): yii\web\Controller->redirect(Array)
+#4 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Object.php(107): app\controllers\SiteController->init()
+#5 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Controller.php(86): yii\base\Object->__construct(Array)
+#6 [internal function]: yii\base\Controller->__construct('site', Object(yii\web\Application), Array)
+#7 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs(Array)
+#8 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('app\\controllers...', Array, Array)
+#9 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\BaseYii.php(344): yii\di\Container->get('app\\controllers...', Array)
+#10 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Module.php(638): yii\BaseYii::createObject('app\\controllers...', Array)
+#11 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Module.php(591): yii\base\Module->createControllerByID('site')
+#12 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Module.php(517): yii\base\Module->createController('')
+#13 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('', Array)
+#14 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Application.php(379): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 C:\xampp\htdocs\dinlao\web\index.php(13): yii\base\Application->run()
+#16 {main}
+2017-06-29 12:06:26 [::1][-][8lguj1md95ibkltis7dtf00nc6][info][application] $_COOKIE = [
+    'Idea-8e240e46' => '2b6f35c8-f4fb-431e-9201-5d80d6d06542'
+    'KCFINDER_showname' => 'on'
+    'KCFINDER_showsize' => 'off'
+    'KCFINDER_showtime' => 'off'
+    'KCFINDER_order' => 'name'
+    'KCFINDER_orderDesc' => 'off'
+    'KCFINDER_view' => 'thumbs'
+    'KCFINDER_displaySettings' => 'on'
+    'user_id' => '2'
+    'user_username' => 'admin'
+    'user_level' => 'admin'
+    'Phpstorm-5ce9a503' => '8fe13a82-0d81-408c-aea3-62e305f8bffb'
+    '_csrf' => 'eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VÞÜc¦<î~ÿšÓ¢¦óöCÓmÝ£}ÖH{Ñ\";}'
+    'PHPSESSID' => '8lguj1md95ibkltis7dtf00nc6'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_DNT' => '1'
+    'HTTP_REFERER' => 'http://localhost/dinlao/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,th;q=0.6'
+    'HTTP_COOKIE' => 'Idea-8e240e46=2b6f35c8-f4fb-431e-9201-5d80d6d06542; KCFINDER_showname=on; KCFINDER_showsize=off; KCFINDER_showtime=off; KCFINDER_order=name; KCFINDER_orderDesc=off; KCFINDER_view=thumbs; KCFINDER_displaySettings=on; user_id=2; user_username=admin; user_level=admin; Phpstorm-5ce9a503=8fe13a82-0d81-408c-aea3-62e305f8bffb; _csrf=eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V%DE%DC%02c%A6%3C%EE%7F%7E%FF%9A%0E%D3%A2%05%A6%12%F3%F6C%D3m%DD%A3%7D%D6H%05%7B%D1%07%22%3B%7D; PHPSESSID=8lguj1md95ibkltis7dtf00nc6'
+    'PATH' => 'C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\tools\\mingw64\\bin;;C:\\Users\\adsavin\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/dinlao/web/index.php'
+    'REMOTE_PORT' => '60794'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/dinlao/web/'
+    'SCRIPT_NAME' => '/dinlao/web/index.php'
+    'PHP_SELF' => '/dinlao/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1498730786.979
+    'REQUEST_TIME' => 1498730786
+]
+2017-06-29 12:06:46 [::1][-][8lguj1md95ibkltis7dtf00nc6][error][yii\base\InvalidParamException] yii\base\InvalidParamException: Unable to resolve the relative route: site/login. No active controller is available. in C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\helpers\BaseUrl.php:137
+Stack trace:
+#0 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\helpers\BaseUrl.php(99): yii\helpers\BaseUrl::normalizeRoute('site/login')
+#1 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\helpers\BaseUrl.php(214): yii\helpers\BaseUrl::toRoute(Array, false)
+#2 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\web\Controller.php(202): yii\helpers\BaseUrl::to(Array)
+#3 C:\xampp\htdocs\dinlao\controllers\SiteController.php(209): yii\web\Controller->redirect(Array)
+#4 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Object.php(107): app\controllers\SiteController->init()
+#5 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Controller.php(86): yii\base\Object->__construct(Array)
+#6 [internal function]: yii\base\Controller->__construct('site', Object(yii\web\Application), Array)
+#7 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs(Array)
+#8 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('app\\controllers...', Array, Array)
+#9 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\BaseYii.php(344): yii\di\Container->get('app\\controllers...', Array)
+#10 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Module.php(638): yii\BaseYii::createObject('app\\controllers...', Array)
+#11 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Module.php(591): yii\base\Module->createControllerByID('site')
+#12 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Module.php(517): yii\base\Module->createController('index')
+#13 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('site/index', Array)
+#14 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Application.php(379): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 C:\xampp\htdocs\dinlao\web\index.php(13): yii\base\Application->run()
+#16 {main}
+2017-06-29 12:06:46 [::1][-][8lguj1md95ibkltis7dtf00nc6][info][application] $_GET = [
+    'r' => 'site/index'
+]
+
+$_COOKIE = [
+    'Idea-8e240e46' => '2b6f35c8-f4fb-431e-9201-5d80d6d06542'
+    'KCFINDER_showname' => 'on'
+    'KCFINDER_showsize' => 'off'
+    'KCFINDER_showtime' => 'off'
+    'KCFINDER_order' => 'name'
+    'KCFINDER_orderDesc' => 'off'
+    'KCFINDER_view' => 'thumbs'
+    'KCFINDER_displaySettings' => 'on'
+    'user_id' => '2'
+    'user_username' => 'admin'
+    'user_level' => 'admin'
+    'Phpstorm-5ce9a503' => '8fe13a82-0d81-408c-aea3-62e305f8bffb'
+    '_csrf' => 'eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VÞÜc¦<î~ÿšÓ¢¦óöCÓmÝ£}ÖH{Ñ\";}'
+    'PHPSESSID' => '8lguj1md95ibkltis7dtf00nc6'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_DNT' => '1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,th;q=0.6'
+    'HTTP_COOKIE' => 'Idea-8e240e46=2b6f35c8-f4fb-431e-9201-5d80d6d06542; KCFINDER_showname=on; KCFINDER_showsize=off; KCFINDER_showtime=off; KCFINDER_order=name; KCFINDER_orderDesc=off; KCFINDER_view=thumbs; KCFINDER_displaySettings=on; user_id=2; user_username=admin; user_level=admin; Phpstorm-5ce9a503=8fe13a82-0d81-408c-aea3-62e305f8bffb; _csrf=eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V%DE%DC%02c%A6%3C%EE%7F%7E%FF%9A%0E%D3%A2%05%A6%12%F3%F6C%D3m%DD%A3%7D%D6H%05%7B%D1%07%22%3B%7D; PHPSESSID=8lguj1md95ibkltis7dtf00nc6'
+    'PATH' => 'C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\tools\\mingw64\\bin;;C:\\Users\\adsavin\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/dinlao/web/index.php'
+    'REMOTE_PORT' => '60837'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/index'
+    'REQUEST_URI' => '/dinlao/web/index.php?r=site/index'
+    'SCRIPT_NAME' => '/dinlao/web/index.php'
+    'PHP_SELF' => '/dinlao/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1498730806.36
+    'REQUEST_TIME' => 1498730806
+]
+2017-06-29 12:08:19 [::1][-][8lguj1md95ibkltis7dtf00nc6][error][ParseError] ParseError: syntax error, unexpected '}' in C:\xampp\htdocs\dinlao\controllers\SiteController.php:212
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('app\\controllers...')
+#1 [internal function]: spl_autoload_call('app\\controllers...')
+#2 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Module.php(633): class_exists('app\\controllers...')
+#3 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Module.php(591): yii\base\Module->createControllerByID('site')
+#4 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Module.php(517): yii\base\Module->createController('index')
+#5 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('site/index', Array)
+#6 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Application.php(379): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\xampp\htdocs\dinlao\web\index.php(13): yii\base\Application->run()
+#8 {main}
+2017-06-29 12:08:19 [::1][-][8lguj1md95ibkltis7dtf00nc6][info][application] $_GET = [
+    'r' => 'site/index'
+]
+
+$_COOKIE = [
+    'Idea-8e240e46' => '2b6f35c8-f4fb-431e-9201-5d80d6d06542'
+    'KCFINDER_showname' => 'on'
+    'KCFINDER_showsize' => 'off'
+    'KCFINDER_showtime' => 'off'
+    'KCFINDER_order' => 'name'
+    'KCFINDER_orderDesc' => 'off'
+    'KCFINDER_view' => 'thumbs'
+    'KCFINDER_displaySettings' => 'on'
+    'user_id' => '2'
+    'user_username' => 'admin'
+    'user_level' => 'admin'
+    'Phpstorm-5ce9a503' => '8fe13a82-0d81-408c-aea3-62e305f8bffb'
+    '_csrf' => 'eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VÞÜc¦<î~ÿšÓ¢¦óöCÓmÝ£}ÖH{Ñ\";}'
+    'PHPSESSID' => '8lguj1md95ibkltis7dtf00nc6'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_DNT' => '1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,th;q=0.6'
+    'HTTP_COOKIE' => 'Idea-8e240e46=2b6f35c8-f4fb-431e-9201-5d80d6d06542; KCFINDER_showname=on; KCFINDER_showsize=off; KCFINDER_showtime=off; KCFINDER_order=name; KCFINDER_orderDesc=off; KCFINDER_view=thumbs; KCFINDER_displaySettings=on; user_id=2; user_username=admin; user_level=admin; Phpstorm-5ce9a503=8fe13a82-0d81-408c-aea3-62e305f8bffb; _csrf=eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V%DE%DC%02c%A6%3C%EE%7F%7E%FF%9A%0E%D3%A2%05%A6%12%F3%F6C%D3m%DD%A3%7D%D6H%05%7B%D1%07%22%3B%7D; PHPSESSID=8lguj1md95ibkltis7dtf00nc6'
+    'PATH' => 'C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\tools\\mingw64\\bin;;C:\\Users\\adsavin\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/dinlao/web/index.php'
+    'REMOTE_PORT' => '61005'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/index'
+    'REQUEST_URI' => '/dinlao/web/index.php?r=site/index'
+    'SCRIPT_NAME' => '/dinlao/web/index.php'
+    'PHP_SELF' => '/dinlao/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1498730899.972
+    'REQUEST_TIME' => 1498730899
+]
+2017-06-29 12:08:25 [::1][-][8lguj1md95ibkltis7dtf00nc6][error][yii\base\InvalidParamException] yii\base\InvalidParamException: Unable to resolve the relative route: site/login. No active controller is available. in C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\helpers\BaseUrl.php:137
+Stack trace:
+#0 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\helpers\BaseUrl.php(99): yii\helpers\BaseUrl::normalizeRoute('site/login')
+#1 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\helpers\BaseUrl.php(214): yii\helpers\BaseUrl::toRoute(Array, false)
+#2 C:\xampp\htdocs\dinlao\controllers\SiteController.php(211): yii\helpers\BaseUrl::to(Array)
+#3 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Object.php(107): app\controllers\SiteController->init()
+#4 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Controller.php(86): yii\base\Object->__construct(Array)
+#5 [internal function]: yii\base\Controller->__construct('site', Object(yii\web\Application), Array)
+#6 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs(Array)
+#7 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('app\\controllers...', Array, Array)
+#8 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\BaseYii.php(344): yii\di\Container->get('app\\controllers...', Array)
+#9 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Module.php(638): yii\BaseYii::createObject('app\\controllers...', Array)
+#10 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Module.php(591): yii\base\Module->createControllerByID('site')
+#11 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Module.php(517): yii\base\Module->createController('index')
+#12 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('site/index', Array)
+#13 C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2\base\Application.php(379): yii\web\Application->handleRequest(Object(yii\web\Request))
+#14 C:\xampp\htdocs\dinlao\web\index.php(13): yii\base\Application->run()
+#15 {main}
+2017-06-29 12:08:24 [::1][-][8lguj1md95ibkltis7dtf00nc6][info][application] $_GET = [
+    'r' => 'site/index'
+]
+
+$_COOKIE = [
+    'Idea-8e240e46' => '2b6f35c8-f4fb-431e-9201-5d80d6d06542'
+    'KCFINDER_showname' => 'on'
+    'KCFINDER_showsize' => 'off'
+    'KCFINDER_showtime' => 'off'
+    'KCFINDER_order' => 'name'
+    'KCFINDER_orderDesc' => 'off'
+    'KCFINDER_view' => 'thumbs'
+    'KCFINDER_displaySettings' => 'on'
+    'user_id' => '2'
+    'user_username' => 'admin'
+    'user_level' => 'admin'
+    'Phpstorm-5ce9a503' => '8fe13a82-0d81-408c-aea3-62e305f8bffb'
+    '_csrf' => 'eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VÞÜc¦<î~ÿšÓ¢¦óöCÓmÝ£}ÖH{Ñ\";}'
+    'PHPSESSID' => '8lguj1md95ibkltis7dtf00nc6'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_DNT' => '1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,th;q=0.6'
+    'HTTP_COOKIE' => 'Idea-8e240e46=2b6f35c8-f4fb-431e-9201-5d80d6d06542; KCFINDER_showname=on; KCFINDER_showsize=off; KCFINDER_showtime=off; KCFINDER_order=name; KCFINDER_orderDesc=off; KCFINDER_view=thumbs; KCFINDER_displaySettings=on; user_id=2; user_username=admin; user_level=admin; Phpstorm-5ce9a503=8fe13a82-0d81-408c-aea3-62e305f8bffb; _csrf=eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V%DE%DC%02c%A6%3C%EE%7F%7E%FF%9A%0E%D3%A2%05%A6%12%F3%F6C%D3m%DD%A3%7D%D6H%05%7B%D1%07%22%3B%7D; PHPSESSID=8lguj1md95ibkltis7dtf00nc6'
+    'PATH' => 'C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\tools\\mingw64\\bin;;C:\\Users\\adsavin\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/dinlao/web/index.php'
+    'REMOTE_PORT' => '61007'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/index'
+    'REQUEST_URI' => '/dinlao/web/index.php?r=site/index'
+    'SCRIPT_NAME' => '/dinlao/web/index.php'
+    'PHP_SELF' => '/dinlao/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1498730904.981
+    'REQUEST_TIME' => 1498730904
+]
+2017-06-29 12:08:49 [::1][-][-][error][yii\i18n\PhpMessageSource::loadFallbackMessages] The message file for category 'yii' does not exist: C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2/messages//yii.php Fallback file does not exist as well: C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2/messages//yii.php
+    in C:\xampp\htdocs\dinlao\views\site\login.php:51
+    in C:\xampp\htdocs\dinlao\controllers\SiteController.php:134
+2017-06-29 12:08:49 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_COOKIE = [
+    'Idea-8e240e46' => '2b6f35c8-f4fb-431e-9201-5d80d6d06542'
+    'KCFINDER_showname' => 'on'
+    'KCFINDER_showsize' => 'off'
+    'KCFINDER_showtime' => 'off'
+    'KCFINDER_order' => 'name'
+    'KCFINDER_orderDesc' => 'off'
+    'KCFINDER_view' => 'thumbs'
+    'KCFINDER_displaySettings' => 'on'
+    'user_id' => '2'
+    'user_username' => 'admin'
+    'user_level' => 'admin'
+    'Phpstorm-5ce9a503' => '8fe13a82-0d81-408c-aea3-62e305f8bffb'
+    '_csrf' => 'eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VÞÜc¦<î~ÿšÓ¢¦óöCÓmÝ£}ÖH{Ñ\";}'
+    'PHPSESSID' => '8lguj1md95ibkltis7dtf00nc6'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_DNT' => '1'
+    'HTTP_REFERER' => 'http://localhost/dinlao/web/index.php?r=site/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,th;q=0.6'
+    'HTTP_COOKIE' => 'Idea-8e240e46=2b6f35c8-f4fb-431e-9201-5d80d6d06542; KCFINDER_showname=on; KCFINDER_showsize=off; KCFINDER_showtime=off; KCFINDER_order=name; KCFINDER_orderDesc=off; KCFINDER_view=thumbs; KCFINDER_displaySettings=on; user_id=2; user_username=admin; user_level=admin; Phpstorm-5ce9a503=8fe13a82-0d81-408c-aea3-62e305f8bffb; _csrf=eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V%DE%DC%02c%A6%3C%EE%7F%7E%FF%9A%0E%D3%A2%05%A6%12%F3%F6C%D3m%DD%A3%7D%D6H%05%7B%D1%07%22%3B%7D; PHPSESSID=8lguj1md95ibkltis7dtf00nc6'
+    'PATH' => 'C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\tools\\mingw64\\bin;;C:\\Users\\adsavin\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/dinlao/web/index.php'
+    'REMOTE_PORT' => '61073'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/dinlao/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/dinlao/web/index.php'
+    'PHP_SELF' => '/dinlao/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1498730929.385
+    'REQUEST_TIME' => 1498730929
+]
+2017-06-29 12:08:55 [::1][4][-][error][yii\i18n\PhpMessageSource::loadFallbackMessages] The message file for category 'yii' does not exist: C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2/messages//yii.php Fallback file does not exist as well: C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2/messages//yii.php
+    in C:\xampp\htdocs\dinlao\controllers\SiteController.php:70
+2017-06-29 12:08:52 [::1][4][-][info][application] $_GET = [
+    'r' => 'site/auth'
+    'authclient' => 'facebook'
+    'code' => 'AQCbD_eU-OvK0E_wJzMu8dsPLQDkKDlVUQJ5A7QSzPxYGKRiJUIcBO24fmTT7XyEWFVYiC5Kkb1V4vl_dC4h3TQz_lsoxyk8J4t4dlDD6W474hyHDm7D6v3-tsX4BmqYtAKAaxXRHyrxMo68304NHlj8qt0ouR84G511o3nRTHtY3PGeV75T1skYn80n8ui5j8wKmlw-NtjrAoKwxIRrXb6Cmztt6ei-i35NViXnKVuzkh9wPtYqiQRMGo7d6qQ25_do0f6qiQRQsN4FFWCaLwEfWAeF5ah-HeGAiq0BulwVMbPF0yOaeMal6AaKkp0FYTwXK3nSlK1o9i58GgCz-zoj'
+    'state' => '13e0ce00c8095d3d36f12912db48b3cff170cc3dd017270ad34c93d954dd42d3'
+]
+
+$_COOKIE = [
+    'Idea-8e240e46' => '2b6f35c8-f4fb-431e-9201-5d80d6d06542'
+    'KCFINDER_showname' => 'on'
+    'KCFINDER_showsize' => 'off'
+    'KCFINDER_showtime' => 'off'
+    'KCFINDER_order' => 'name'
+    'KCFINDER_orderDesc' => 'off'
+    'KCFINDER_view' => 'thumbs'
+    'KCFINDER_displaySettings' => 'on'
+    'user_id' => '2'
+    'user_username' => 'admin'
+    'user_level' => 'admin'
+    'Phpstorm-5ce9a503' => '8fe13a82-0d81-408c-aea3-62e305f8bffb'
+    '_csrf' => 'eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VÞÜc¦<î~ÿšÓ¢¦óöCÓmÝ£}ÖH{Ñ\";}'
+    'PHPSESSID' => '8lguj1md95ibkltis7dtf00nc6'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'yii\\authclient\\clients\\Facebook_facebook_token' => yii\authclient\OAuthToken#1
+    (
+        [tokenParamKey] => 'access_token'
+        [tokenSecretParamKey] => 'oauth_token_secret'
+        [createTimestamp] => 1498730934
+        [yii\authclient\OAuthToken:_expireDurationParamKey] => 'expires_in'
+        [yii\authclient\OAuthToken:_params] => [
+            'access_token' => 'EAAakLFKBOQABAJ8K6P6HhxXSTCfcOFIXRa7NeBZC2NiBT2nFXsCajFC1lQJC2ONUbjY6Tu36Y8XgesfMqFz7rQS9eZCKJCsNCezYqtT70wicZB5yaRr2KihFZAj72MwEZCjYF7UYrIoZCZAx3GYFNZBvha5FSnHz48lrEbjwpZAZAXfAZDZD'
+            'token_type' => 'bearer'
+            'expires_in' => 5165450
+        ]
+    )
+    '__id' => 4
+    'username' => 'Advin Thepphakan'
+    'user' => app\models\User#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 4
+            'email' => '1718286221533246'
+            'password' => ''
+            'firstname' => 'Advin'
+            'lastname' => 'Thepphakan'
+            'birthdate' => '1989-08-22 00:00:00'
+            'status' => 'A'
+            'registerd_date' => '2017-06-27 05:04:33'
+            'role' => 'A'
+            'picture' => null
+            'facebookid' => '1718286221533246'
+            'facebookname' => 'Advin Thepphakan'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => null
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_DNT' => '1'
+    'HTTP_REFERER' => 'http://localhost/dinlao/web/index.php?r=site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,th;q=0.6'
+    'HTTP_COOKIE' => 'Idea-8e240e46=2b6f35c8-f4fb-431e-9201-5d80d6d06542; KCFINDER_showname=on; KCFINDER_showsize=off; KCFINDER_showtime=off; KCFINDER_order=name; KCFINDER_orderDesc=off; KCFINDER_view=thumbs; KCFINDER_displaySettings=on; user_id=2; user_username=admin; user_level=admin; Phpstorm-5ce9a503=8fe13a82-0d81-408c-aea3-62e305f8bffb; _csrf=eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V%DE%DC%02c%A6%3C%EE%7F%7E%FF%9A%0E%D3%A2%05%A6%12%F3%F6C%D3m%DD%A3%7D%D6H%05%7B%D1%07%22%3B%7D; PHPSESSID=8lguj1md95ibkltis7dtf00nc6'
+    'PATH' => 'C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\tools\\mingw64\\bin;;C:\\Users\\adsavin\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/dinlao/web/index.php'
+    'REMOTE_PORT' => '61083'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fauth&authclient=facebook&code=AQCbD_eU-OvK0E_wJzMu8dsPLQDkKDlVUQJ5A7QSzPxYGKRiJUIcBO24fmTT7XyEWFVYiC5Kkb1V4vl_dC4h3TQz_lsoxyk8J4t4dlDD6W474hyHDm7D6v3-tsX4BmqYtAKAaxXRHyrxMo68304NHlj8qt0ouR84G511o3nRTHtY3PGeV75T1skYn80n8ui5j8wKmlw-NtjrAoKwxIRrXb6Cmztt6ei-i35NViXnKVuzkh9wPtYqiQRMGo7d6qQ25_do0f6qiQRQsN4FFWCaLwEfWAeF5ah-HeGAiq0BulwVMbPF0yOaeMal6AaKkp0FYTwXK3nSlK1o9i58GgCz-zoj&state=13e0ce00c8095d3d36f12912db48b3cff170cc3dd017270ad34c93d954dd42d3'
+    'REQUEST_URI' => '/dinlao/web/index.php?r=site%2Fauth&authclient=facebook&code=AQCbD_eU-OvK0E_wJzMu8dsPLQDkKDlVUQJ5A7QSzPxYGKRiJUIcBO24fmTT7XyEWFVYiC5Kkb1V4vl_dC4h3TQz_lsoxyk8J4t4dlDD6W474hyHDm7D6v3-tsX4BmqYtAKAaxXRHyrxMo68304NHlj8qt0ouR84G511o3nRTHtY3PGeV75T1skYn80n8ui5j8wKmlw-NtjrAoKwxIRrXb6Cmztt6ei-i35NViXnKVuzkh9wPtYqiQRMGo7d6qQ25_do0f6qiQRQsN4FFWCaLwEfWAeF5ah-HeGAiq0BulwVMbPF0yOaeMal6AaKkp0FYTwXK3nSlK1o9i58GgCz-zoj&state=13e0ce00c8095d3d36f12912db48b3cff170cc3dd017270ad34c93d954dd42d3'
+    'SCRIPT_NAME' => '/dinlao/web/index.php'
+    'PHP_SELF' => '/dinlao/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1498730932.941
+    'REQUEST_TIME' => 1498730932
+]
+2017-06-29 12:08:59 [::1][4][-][error][yii\i18n\PhpMessageSource::loadFallbackMessages] The message file for category 'yii' does not exist: C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2/messages//yii.php Fallback file does not exist as well: C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2/messages//yii.php
+    in C:\xampp\htdocs\dinlao\models\SourceMessageSearch.php:32
+    in C:\xampp\htdocs\dinlao\models\SourceMessageSearch.php:54
+    in C:\xampp\htdocs\dinlao\controllers\SourceMessageController.php:56
+2017-06-29 12:08:59 [::1][4][-][info][application] $_GET = [
+    'r' => 'source-message/index'
+]
+
+$_COOKIE = [
+    'Idea-8e240e46' => '2b6f35c8-f4fb-431e-9201-5d80d6d06542'
+    'KCFINDER_showname' => 'on'
+    'KCFINDER_showsize' => 'off'
+    'KCFINDER_showtime' => 'off'
+    'KCFINDER_order' => 'name'
+    'KCFINDER_orderDesc' => 'off'
+    'KCFINDER_view' => 'thumbs'
+    'KCFINDER_displaySettings' => 'on'
+    'user_id' => '2'
+    'user_username' => 'admin'
+    'user_level' => 'admin'
+    'Phpstorm-5ce9a503' => '8fe13a82-0d81-408c-aea3-62e305f8bffb'
+    '_csrf' => 'eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VÞÜc¦<î~ÿšÓ¢¦óöCÓmÝ£}ÖH{Ñ\";}'
+    'PHPSESSID' => 'uuo5odr0lhi4te5fp21lvj17q3'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'yii\\authclient\\clients\\Facebook_facebook_token' => yii\authclient\OAuthToken#1
+    (
+        [tokenParamKey] => 'access_token'
+        [tokenSecretParamKey] => 'oauth_token_secret'
+        [createTimestamp] => 1498730934
+        [yii\authclient\OAuthToken:_expireDurationParamKey] => 'expires_in'
+        [yii\authclient\OAuthToken:_params] => [
+            'access_token' => 'EAAakLFKBOQABAJ8K6P6HhxXSTCfcOFIXRa7NeBZC2NiBT2nFXsCajFC1lQJC2ONUbjY6Tu36Y8XgesfMqFz7rQS9eZCKJCsNCezYqtT70wicZB5yaRr2KihFZAj72MwEZCjYF7UYrIoZCZAx3GYFNZBvha5FSnHz48lrEbjwpZAZAXfAZDZD'
+            'token_type' => 'bearer'
+            'expires_in' => 5165450
+        ]
+    )
+    'username' => 'Advin Thepphakan'
+    'user' => app\models\User#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 4
+            'email' => '1718286221533246'
+            'password' => ''
+            'firstname' => 'Advin'
+            'lastname' => 'Thepphakan'
+            'birthdate' => '1989-08-22 00:00:00'
+            'status' => 'A'
+            'registerd_date' => '2017-06-27 05:04:33'
+            'role' => 'A'
+            'picture' => null
+            'facebookid' => '1718286221533246'
+            'facebookname' => 'Advin Thepphakan'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => null
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    '__id' => 4
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_DNT' => '1'
+    'HTTP_REFERER' => 'http://localhost/dinlao/web/index.php?r=site%2Fhome'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,th;q=0.6'
+    'HTTP_COOKIE' => 'Idea-8e240e46=2b6f35c8-f4fb-431e-9201-5d80d6d06542; KCFINDER_showname=on; KCFINDER_showsize=off; KCFINDER_showtime=off; KCFINDER_order=name; KCFINDER_orderDesc=off; KCFINDER_view=thumbs; KCFINDER_displaySettings=on; user_id=2; user_username=admin; user_level=admin; Phpstorm-5ce9a503=8fe13a82-0d81-408c-aea3-62e305f8bffb; _csrf=eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V%DE%DC%02c%A6%3C%EE%7F%7E%FF%9A%0E%D3%A2%05%A6%12%F3%F6C%D3m%DD%A3%7D%D6H%05%7B%D1%07%22%3B%7D; PHPSESSID=uuo5odr0lhi4te5fp21lvj17q3'
+    'PATH' => 'C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\tools\\mingw64\\bin;;C:\\Users\\adsavin\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/dinlao/web/index.php'
+    'REMOTE_PORT' => '61083'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=source-message/index'
+    'REQUEST_URI' => '/dinlao/web/index.php?r=source-message/index'
+    'SCRIPT_NAME' => '/dinlao/web/index.php'
+    'PHP_SELF' => '/dinlao/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1498730939.859
+    'REQUEST_TIME' => 1498730939
+]
+2017-06-29 12:09:05 [::1][4][-][error][yii\i18n\PhpMessageSource::loadFallbackMessages] The message file for category 'yii' does not exist: C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2/messages//yii.php Fallback file does not exist as well: C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2/messages//yii.php
+    in C:\xampp\htdocs\dinlao\views\product\_form.php:26
+    in C:\xampp\htdocs\dinlao\views\product\create.php:20
+    in C:\xampp\htdocs\dinlao\controllers\ProductController.php:176
+2017-06-29 12:09:04 [::1][4][-][info][application] $_GET = [
+    'r' => 'product/create'
+    'code' => 'L'
+]
+
+$_COOKIE = [
+    'Idea-8e240e46' => '2b6f35c8-f4fb-431e-9201-5d80d6d06542'
+    'KCFINDER_showname' => 'on'
+    'KCFINDER_showsize' => 'off'
+    'KCFINDER_showtime' => 'off'
+    'KCFINDER_order' => 'name'
+    'KCFINDER_orderDesc' => 'off'
+    'KCFINDER_view' => 'thumbs'
+    'KCFINDER_displaySettings' => 'on'
+    'user_id' => '2'
+    'user_username' => 'admin'
+    'user_level' => 'admin'
+    'Phpstorm-5ce9a503' => '8fe13a82-0d81-408c-aea3-62e305f8bffb'
+    '_csrf' => 'eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VÞÜc¦<î~ÿšÓ¢¦óöCÓmÝ£}ÖH{Ñ\";}'
+    'PHPSESSID' => 'p19qamo31aci03g4lpd2cefrf5'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'yii\\authclient\\clients\\Facebook_facebook_token' => yii\authclient\OAuthToken#1
+    (
+        [tokenParamKey] => 'access_token'
+        [tokenSecretParamKey] => 'oauth_token_secret'
+        [createTimestamp] => 1498730934
+        [yii\authclient\OAuthToken:_expireDurationParamKey] => 'expires_in'
+        [yii\authclient\OAuthToken:_params] => [
+            'access_token' => 'EAAakLFKBOQABAJ8K6P6HhxXSTCfcOFIXRa7NeBZC2NiBT2nFXsCajFC1lQJC2ONUbjY6Tu36Y8XgesfMqFz7rQS9eZCKJCsNCezYqtT70wicZB5yaRr2KihFZAj72MwEZCjYF7UYrIoZCZAx3GYFNZBvha5FSnHz48lrEbjwpZAZAXfAZDZD'
+            'token_type' => 'bearer'
+            'expires_in' => 5165450
+        ]
+    )
+    'username' => 'Advin Thepphakan'
+    'user' => app\models\User#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 4
+            'email' => '1718286221533246'
+            'password' => ''
+            'firstname' => 'Advin'
+            'lastname' => 'Thepphakan'
+            'birthdate' => '1989-08-22 00:00:00'
+            'status' => 'A'
+            'registerd_date' => '2017-06-27 05:04:33'
+            'role' => 'A'
+            'picture' => null
+            'facebookid' => '1718286221533246'
+            'facebookname' => 'Advin Thepphakan'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => null
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    '__id' => 4
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_DNT' => '1'
+    'HTTP_REFERER' => 'http://localhost/dinlao/web/index.php?r=source-message/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,th;q=0.6'
+    'HTTP_COOKIE' => 'Idea-8e240e46=2b6f35c8-f4fb-431e-9201-5d80d6d06542; KCFINDER_showname=on; KCFINDER_showsize=off; KCFINDER_showtime=off; KCFINDER_order=name; KCFINDER_orderDesc=off; KCFINDER_view=thumbs; KCFINDER_displaySettings=on; user_id=2; user_username=admin; user_level=admin; Phpstorm-5ce9a503=8fe13a82-0d81-408c-aea3-62e305f8bffb; _csrf=eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V%DE%DC%02c%A6%3C%EE%7F%7E%FF%9A%0E%D3%A2%05%A6%12%F3%F6C%D3m%DD%A3%7D%D6H%05%7B%D1%07%22%3B%7D; PHPSESSID=p19qamo31aci03g4lpd2cefrf5'
+    'PATH' => 'C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\tools\\mingw64\\bin;;C:\\Users\\adsavin\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/dinlao/web/index.php'
+    'REMOTE_PORT' => '61083'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=product/create&code=L'
+    'REQUEST_URI' => '/dinlao/web/index.php?r=product/create&code=L'
+    'SCRIPT_NAME' => '/dinlao/web/index.php'
+    'PHP_SELF' => '/dinlao/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1498730944.98
+    'REQUEST_TIME' => 1498730944
+]
+2017-06-29 12:11:54 [::1][-][-][error][yii\i18n\PhpMessageSource::loadFallbackMessages] The message file for category 'yii' does not exist: C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2/messages//yii.php Fallback file does not exist as well: C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2/messages//yii.php
+    in C:\xampp\htdocs\dinlao\views\site\login.php:51
+    in C:\xampp\htdocs\dinlao\controllers\SiteController.php:134
+2017-06-29 12:11:54 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_COOKIE = [
+    'Idea-8e240e46' => '2b6f35c8-f4fb-431e-9201-5d80d6d06542'
+    'KCFINDER_showname' => 'on'
+    'KCFINDER_showsize' => 'off'
+    'KCFINDER_showtime' => 'off'
+    'KCFINDER_order' => 'name'
+    'KCFINDER_orderDesc' => 'off'
+    'KCFINDER_view' => 'thumbs'
+    'KCFINDER_displaySettings' => 'on'
+    'user_id' => '2'
+    'user_username' => 'admin'
+    'user_level' => 'admin'
+    'Phpstorm-5ce9a503' => '8fe13a82-0d81-408c-aea3-62e305f8bffb'
+    '_csrf' => 'eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VÞÜc¦<î~ÿšÓ¢¦óöCÓmÝ£}ÖH{Ñ\";}'
+    'PHPSESSID' => 'sj6n5civot7rft8g6dd6qvni64'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_DNT' => '1'
+    'HTTP_REFERER' => 'http://localhost/dinlao/web/index.php?r=site%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,th;q=0.6'
+    'HTTP_COOKIE' => 'Idea-8e240e46=2b6f35c8-f4fb-431e-9201-5d80d6d06542; KCFINDER_showname=on; KCFINDER_showsize=off; KCFINDER_showtime=off; KCFINDER_order=name; KCFINDER_orderDesc=off; KCFINDER_view=thumbs; KCFINDER_displaySettings=on; user_id=2; user_username=admin; user_level=admin; Phpstorm-5ce9a503=8fe13a82-0d81-408c-aea3-62e305f8bffb; _csrf=eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V%DE%DC%02c%A6%3C%EE%7F%7E%FF%9A%0E%D3%A2%05%A6%12%F3%F6C%D3m%DD%A3%7D%D6H%05%7B%D1%07%22%3B%7D; PHPSESSID=sj6n5civot7rft8g6dd6qvni64'
+    'PATH' => 'C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\tools\\mingw64\\bin;;C:\\Users\\adsavin\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/dinlao/web/index.php'
+    'REMOTE_PORT' => '61507'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/login'
+    'REQUEST_URI' => '/dinlao/web/index.php?r=site/login'
+    'SCRIPT_NAME' => '/dinlao/web/index.php'
+    'PHP_SELF' => '/dinlao/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1498731114.098
+    'REQUEST_TIME' => 1498731114
+]
+2017-06-29 12:11:59 [::1][4][-][error][yii\i18n\PhpMessageSource::loadFallbackMessages] The message file for category 'yii' does not exist: C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2/messages//yii.php Fallback file does not exist as well: C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2/messages//yii.php
+    in C:\xampp\htdocs\dinlao\controllers\SiteController.php:70
+2017-06-29 12:11:57 [::1][4][-][info][application] $_GET = [
+    'r' => 'site/auth'
+    'authclient' => 'facebook'
+    'code' => 'AQAo8ig3l_0gcMjG1OgTCCdAZJJeLSg6nalt24QDHrPRqWjFHwMdnLwYI1cpD0Ir0MqopxwwNSaCz6AfKEKGzPLrk47V7zXgIMFbi8odToLvN7RbpoZMZJK2AIPgd6gO1_QNhZjht6mprgzZsyH1h0TNUNNO4uAu_82gN0GFiYp_NDeOv9fjcWGY8wViCWZzpsSmhCxe_sjYsWhB1O8d7d-IRJy7uhXh5OAPR2kKyG9ju5qEZ3UmEtfZuXN9Xz7X3yx9OHpLVtUx3sKJFESz7VYzK_Dq_hlwXLA0Gks8pVgzdQve23zq7GeUEnmr5C6lP7ZcgGgasuwKgQhC5YbtKTWQ'
+    'state' => '762929a9f6497dff4e44bd4bcb73133057a8e3e57a4cbb815b6a37afee424bb0'
+]
+
+$_COOKIE = [
+    'Idea-8e240e46' => '2b6f35c8-f4fb-431e-9201-5d80d6d06542'
+    'KCFINDER_showname' => 'on'
+    'KCFINDER_showsize' => 'off'
+    'KCFINDER_showtime' => 'off'
+    'KCFINDER_order' => 'name'
+    'KCFINDER_orderDesc' => 'off'
+    'KCFINDER_view' => 'thumbs'
+    'KCFINDER_displaySettings' => 'on'
+    'user_id' => '2'
+    'user_username' => 'admin'
+    'user_level' => 'admin'
+    'Phpstorm-5ce9a503' => '8fe13a82-0d81-408c-aea3-62e305f8bffb'
+    '_csrf' => 'eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VÞÜc¦<î~ÿšÓ¢¦óöCÓmÝ£}ÖH{Ñ\";}'
+    'PHPSESSID' => 'sj6n5civot7rft8g6dd6qvni64'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'yii\\authclient\\clients\\Facebook_facebook_token' => yii\authclient\OAuthToken#1
+    (
+        [tokenParamKey] => 'access_token'
+        [tokenSecretParamKey] => 'oauth_token_secret'
+        [createTimestamp] => 1498731118
+        [yii\authclient\OAuthToken:_expireDurationParamKey] => 'expires_in'
+        [yii\authclient\OAuthToken:_params] => [
+            'access_token' => 'EAAakLFKBOQABAJ6qieIXg4prTaIPBMu0GEFcLK4XIJSoaUMZA6BmLYYGTdu001UyYZCULCUtZBiXgATtA9xvIHeQVIbnZAuT8IAEqwZBHHm4HsCME2nUhzjmiZCZCPZAZCPfEppuYAmGjRz8y781GoHrXPYIfuNtOmznXSP5kZATJU2QZDZD'
+            'token_type' => 'bearer'
+            'expires_in' => 5165266
+        ]
+    )
+    '__id' => 4
+    'username' => 'Advin Thepphakan'
+    'user' => app\models\User#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 4
+            'email' => '1718286221533246'
+            'password' => ''
+            'firstname' => 'Advin'
+            'lastname' => 'Thepphakan'
+            'birthdate' => '1989-08-22 00:00:00'
+            'status' => 'A'
+            'registerd_date' => '2017-06-27 05:04:33'
+            'role' => 'A'
+            'picture' => null
+            'facebookid' => '1718286221533246'
+            'facebookname' => 'Advin Thepphakan'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => null
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_DNT' => '1'
+    'HTTP_REFERER' => 'http://localhost/dinlao/web/index.php?r=site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,th;q=0.6'
+    'HTTP_COOKIE' => 'Idea-8e240e46=2b6f35c8-f4fb-431e-9201-5d80d6d06542; KCFINDER_showname=on; KCFINDER_showsize=off; KCFINDER_showtime=off; KCFINDER_order=name; KCFINDER_orderDesc=off; KCFINDER_view=thumbs; KCFINDER_displaySettings=on; user_id=2; user_username=admin; user_level=admin; Phpstorm-5ce9a503=8fe13a82-0d81-408c-aea3-62e305f8bffb; _csrf=eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V%DE%DC%02c%A6%3C%EE%7F%7E%FF%9A%0E%D3%A2%05%A6%12%F3%F6C%D3m%DD%A3%7D%D6H%05%7B%D1%07%22%3B%7D; PHPSESSID=sj6n5civot7rft8g6dd6qvni64'
+    'PATH' => 'C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\tools\\mingw64\\bin;;C:\\Users\\adsavin\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/dinlao/web/index.php'
+    'REMOTE_PORT' => '61507'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fauth&authclient=facebook&code=AQAo8ig3l_0gcMjG1OgTCCdAZJJeLSg6nalt24QDHrPRqWjFHwMdnLwYI1cpD0Ir0MqopxwwNSaCz6AfKEKGzPLrk47V7zXgIMFbi8odToLvN7RbpoZMZJK2AIPgd6gO1_QNhZjht6mprgzZsyH1h0TNUNNO4uAu_82gN0GFiYp_NDeOv9fjcWGY8wViCWZzpsSmhCxe_sjYsWhB1O8d7d-IRJy7uhXh5OAPR2kKyG9ju5qEZ3UmEtfZuXN9Xz7X3yx9OHpLVtUx3sKJFESz7VYzK_Dq_hlwXLA0Gks8pVgzdQve23zq7GeUEnmr5C6lP7ZcgGgasuwKgQhC5YbtKTWQ&state=762929a9f6497dff4e44bd4bcb73133057a8e3e57a4cbb815b6a37afee424bb0'
+    'REQUEST_URI' => '/dinlao/web/index.php?r=site%2Fauth&authclient=facebook&code=AQAo8ig3l_0gcMjG1OgTCCdAZJJeLSg6nalt24QDHrPRqWjFHwMdnLwYI1cpD0Ir0MqopxwwNSaCz6AfKEKGzPLrk47V7zXgIMFbi8odToLvN7RbpoZMZJK2AIPgd6gO1_QNhZjht6mprgzZsyH1h0TNUNNO4uAu_82gN0GFiYp_NDeOv9fjcWGY8wViCWZzpsSmhCxe_sjYsWhB1O8d7d-IRJy7uhXh5OAPR2kKyG9ju5qEZ3UmEtfZuXN9Xz7X3yx9OHpLVtUx3sKJFESz7VYzK_Dq_hlwXLA0Gks8pVgzdQve23zq7GeUEnmr5C6lP7ZcgGgasuwKgQhC5YbtKTWQ&state=762929a9f6497dff4e44bd4bcb73133057a8e3e57a4cbb815b6a37afee424bb0'
+    'SCRIPT_NAME' => '/dinlao/web/index.php'
+    'PHP_SELF' => '/dinlao/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1498731117.617
+    'REQUEST_TIME' => 1498731117
+]
+2017-06-29 12:13:32 [::1][4][-][error][yii\i18n\PhpMessageSource::loadFallbackMessages] The message file for category 'yii' does not exist: C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2/messages//yii.php Fallback file does not exist as well: C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2/messages//yii.php
+    in C:\xampp\htdocs\dinlao\controllers\SiteController.php:70
+2017-06-29 12:13:30 [::1][4][-][info][application] $_GET = [
+    'r' => 'site/auth'
+    'authclient' => 'facebook'
+    'code' => 'AQC44QP6S4_cPJ-Y_lLPbNi156qbbFnZB4ZbrO8s0_Q5lkBCUA8Qh7RDCGI8XfKqHOmMC9KhWypSSCD5d28Ihzwcuyy5pghtuByuZ6YUr-wJI3iV-zRs8NeoBYeIHa71EyIGatrh4nDPiEZHs0SRtB1_-mJjupIj13V4jO-3cI7CsB3LAKFHDmQ__1bX8bXuP1tyKXp1DBvJRgHu6z7OOmANWDMEfn7pCfQVdZYqgh-xQ-8DMfyklnrR2KSC5ZxyJZYWZJdRaZu-e63hWLqj0DuLa0J4FkKI2nsuetzAkG7tRVjJRRR3KgiHvx-5KO_APA3x40GHdBycsbhfv_TM_iRT'
+    'state' => '9bc83785d97e8adbc830d18925e1db11f4d50af27c80a9841bdf2c9daa1cc512'
+]
+
+$_COOKIE = [
+    'Idea-8e240e46' => '2b6f35c8-f4fb-431e-9201-5d80d6d06542'
+    'KCFINDER_showname' => 'on'
+    'KCFINDER_showsize' => 'off'
+    'KCFINDER_showtime' => 'off'
+    'KCFINDER_order' => 'name'
+    'KCFINDER_orderDesc' => 'off'
+    'KCFINDER_view' => 'thumbs'
+    'KCFINDER_displaySettings' => 'on'
+    'user_id' => '2'
+    'user_username' => 'admin'
+    'user_level' => 'admin'
+    'Phpstorm-5ce9a503' => '8fe13a82-0d81-408c-aea3-62e305f8bffb'
+    '_csrf' => 'eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VÞÜc¦<î~ÿšÓ¢¦óöCÓmÝ£}ÖH{Ñ\";}'
+    'PHPSESSID' => '8eh0pjnf5rdgd4oqrlg7ja2ed7'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'yii\\authclient\\clients\\Facebook_facebook_token' => yii\authclient\OAuthToken#1
+    (
+        [tokenParamKey] => 'access_token'
+        [tokenSecretParamKey] => 'oauth_token_secret'
+        [createTimestamp] => 1498731211
+        [yii\authclient\OAuthToken:_expireDurationParamKey] => 'expires_in'
+        [yii\authclient\OAuthToken:_params] => [
+            'access_token' => 'EAAakLFKBOQABANXHvM32ZAz8RnpbuVttdEHRRQuEExvu0lrVCnLlZBsWNkVklqTPrcL1XnCSaTBB50SiZCGNcp0vJo0pNHSV1lpIUYcRRqytb18w07H9S2BxJhQmjx4C5fuGhORT9HIFrWxJm5Xxt3JwSMPq7UNItzkGVT4VgZDZD'
+            'token_type' => 'bearer'
+            'expires_in' => 5165173
+        ]
+    )
+    '__id' => 4
+    'username' => 'Advin Thepphakan'
+    'user' => app\models\User#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 4
+            'email' => '1718286221533246'
+            'password' => ''
+            'firstname' => 'Advin'
+            'lastname' => 'Thepphakan'
+            'birthdate' => '1989-08-22 00:00:00'
+            'status' => 'A'
+            'registerd_date' => '2017-06-27 05:04:33'
+            'role' => 'A'
+            'picture' => null
+            'facebookid' => '1718286221533246'
+            'facebookname' => 'Advin Thepphakan'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => null
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_DNT' => '1'
+    'HTTP_REFERER' => 'http://localhost/dinlao/web/index.php?r=site%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,th;q=0.6'
+    'HTTP_COOKIE' => 'Idea-8e240e46=2b6f35c8-f4fb-431e-9201-5d80d6d06542; KCFINDER_showname=on; KCFINDER_showsize=off; KCFINDER_showtime=off; KCFINDER_order=name; KCFINDER_orderDesc=off; KCFINDER_view=thumbs; KCFINDER_displaySettings=on; user_id=2; user_username=admin; user_level=admin; Phpstorm-5ce9a503=8fe13a82-0d81-408c-aea3-62e305f8bffb; _csrf=eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V%DE%DC%02c%A6%3C%EE%7F%7E%FF%9A%0E%D3%A2%05%A6%12%F3%F6C%D3m%DD%A3%7D%D6H%05%7B%D1%07%22%3B%7D; PHPSESSID=8eh0pjnf5rdgd4oqrlg7ja2ed7'
+    'PATH' => 'C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\tools\\mingw64\\bin;;C:\\Users\\adsavin\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/dinlao/web/index.php'
+    'REMOTE_PORT' => '61669'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fauth&authclient=facebook&code=AQC44QP6S4_cPJ-Y_lLPbNi156qbbFnZB4ZbrO8s0_Q5lkBCUA8Qh7RDCGI8XfKqHOmMC9KhWypSSCD5d28Ihzwcuyy5pghtuByuZ6YUr-wJI3iV-zRs8NeoBYeIHa71EyIGatrh4nDPiEZHs0SRtB1_-mJjupIj13V4jO-3cI7CsB3LAKFHDmQ__1bX8bXuP1tyKXp1DBvJRgHu6z7OOmANWDMEfn7pCfQVdZYqgh-xQ-8DMfyklnrR2KSC5ZxyJZYWZJdRaZu-e63hWLqj0DuLa0J4FkKI2nsuetzAkG7tRVjJRRR3KgiHvx-5KO_APA3x40GHdBycsbhfv_TM_iRT&state=9bc83785d97e8adbc830d18925e1db11f4d50af27c80a9841bdf2c9daa1cc512'
+    'REQUEST_URI' => '/dinlao/web/index.php?r=site%2Fauth&authclient=facebook&code=AQC44QP6S4_cPJ-Y_lLPbNi156qbbFnZB4ZbrO8s0_Q5lkBCUA8Qh7RDCGI8XfKqHOmMC9KhWypSSCD5d28Ihzwcuyy5pghtuByuZ6YUr-wJI3iV-zRs8NeoBYeIHa71EyIGatrh4nDPiEZHs0SRtB1_-mJjupIj13V4jO-3cI7CsB3LAKFHDmQ__1bX8bXuP1tyKXp1DBvJRgHu6z7OOmANWDMEfn7pCfQVdZYqgh-xQ-8DMfyklnrR2KSC5ZxyJZYWZJdRaZu-e63hWLqj0DuLa0J4FkKI2nsuetzAkG7tRVjJRRR3KgiHvx-5KO_APA3x40GHdBycsbhfv_TM_iRT&state=9bc83785d97e8adbc830d18925e1db11f4d50af27c80a9841bdf2c9daa1cc512'
+    'SCRIPT_NAME' => '/dinlao/web/index.php'
+    'PHP_SELF' => '/dinlao/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1498731210.354
+    'REQUEST_TIME' => 1498731210
+]
+2017-06-29 12:13:41 [::1][4][-][error][yii\i18n\PhpMessageSource::loadFallbackMessages] The message file for category 'yii' does not exist: C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2/messages//yii.php Fallback file does not exist as well: C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2/messages//yii.php
+    in C:\xampp\htdocs\dinlao\views\product\_form.php:26
+    in C:\xampp\htdocs\dinlao\views\product\create.php:20
+    in C:\xampp\htdocs\dinlao\controllers\ProductController.php:176
+2017-06-29 12:13:41 [::1][4][-][info][application] $_GET = [
+    'r' => 'product/create'
+    'code' => 'L'
+]
+
+$_COOKIE = [
+    'Idea-8e240e46' => '2b6f35c8-f4fb-431e-9201-5d80d6d06542'
+    'KCFINDER_showname' => 'on'
+    'KCFINDER_showsize' => 'off'
+    'KCFINDER_showtime' => 'off'
+    'KCFINDER_order' => 'name'
+    'KCFINDER_orderDesc' => 'off'
+    'KCFINDER_view' => 'thumbs'
+    'KCFINDER_displaySettings' => 'on'
+    'user_id' => '2'
+    'user_username' => 'admin'
+    'user_level' => 'admin'
+    'Phpstorm-5ce9a503' => '8fe13a82-0d81-408c-aea3-62e305f8bffb'
+    '_csrf' => 'eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VÞÜc¦<î~ÿšÓ¢¦óöCÓmÝ£}ÖH{Ñ\";}'
+    'PHPSESSID' => 'jb0ec6nnqcthe3ggu3oo0tb1m2'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'yii\\authclient\\clients\\Facebook_facebook_token' => yii\authclient\OAuthToken#1
+    (
+        [tokenParamKey] => 'access_token'
+        [tokenSecretParamKey] => 'oauth_token_secret'
+        [createTimestamp] => 1498731211
+        [yii\authclient\OAuthToken:_expireDurationParamKey] => 'expires_in'
+        [yii\authclient\OAuthToken:_params] => [
+            'access_token' => 'EAAakLFKBOQABANXHvM32ZAz8RnpbuVttdEHRRQuEExvu0lrVCnLlZBsWNkVklqTPrcL1XnCSaTBB50SiZCGNcp0vJo0pNHSV1lpIUYcRRqytb18w07H9S2BxJhQmjx4C5fuGhORT9HIFrWxJm5Xxt3JwSMPq7UNItzkGVT4VgZDZD'
+            'token_type' => 'bearer'
+            'expires_in' => 5165173
+        ]
+    )
+    'username' => 'Advin Thepphakan'
+    'user' => app\models\User#2
+    (
+        [yii\db\BaseActiveRecord:_attributes] => [
+            'id' => 4
+            'email' => '1718286221533246'
+            'password' => ''
+            'firstname' => 'Advin'
+            'lastname' => 'Thepphakan'
+            'birthdate' => '1989-08-22 00:00:00'
+            'status' => 'A'
+            'registerd_date' => '2017-06-27 05:04:33'
+            'role' => 'A'
+            'picture' => null
+            'facebookid' => '1718286221533246'
+            'facebookname' => 'Advin Thepphakan'
+        ]
+        [yii\db\BaseActiveRecord:_oldAttributes] => null
+        [yii\db\BaseActiveRecord:_related] => []
+        [yii\base\Model:_errors] => null
+        [yii\base\Model:_validators] => null
+        [yii\base\Model:_scenario] => 'default'
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => []
+    )
+    '__id' => 4
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_DNT' => '1'
+    'HTTP_REFERER' => 'http://localhost/dinlao/web/index.php?r=site%2Fhome'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,th;q=0.6'
+    'HTTP_COOKIE' => 'Idea-8e240e46=2b6f35c8-f4fb-431e-9201-5d80d6d06542; KCFINDER_showname=on; KCFINDER_showsize=off; KCFINDER_showtime=off; KCFINDER_order=name; KCFINDER_orderDesc=off; KCFINDER_view=thumbs; KCFINDER_displaySettings=on; user_id=2; user_username=admin; user_level=admin; Phpstorm-5ce9a503=8fe13a82-0d81-408c-aea3-62e305f8bffb; _csrf=eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V%DE%DC%02c%A6%3C%EE%7F%7E%FF%9A%0E%D3%A2%05%A6%12%F3%F6C%D3m%DD%A3%7D%D6H%05%7B%D1%07%22%3B%7D; PHPSESSID=jb0ec6nnqcthe3ggu3oo0tb1m2'
+    'PATH' => 'C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\tools\\mingw64\\bin;;C:\\Users\\adsavin\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/dinlao/web/index.php'
+    'REMOTE_PORT' => '61710'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=product/create&code=L'
+    'REQUEST_URI' => '/dinlao/web/index.php?r=product/create&code=L'
+    'SCRIPT_NAME' => '/dinlao/web/index.php'
+    'PHP_SELF' => '/dinlao/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1498731221.778
+    'REQUEST_TIME' => 1498731221
+]
+2017-06-29 12:32:10 [::1][-][-][error][yii\i18n\PhpMessageSource::loadFallbackMessages] The message file for category 'yii' does not exist: C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2/messages//yii.php Fallback file does not exist as well: C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2/messages//yii.php
+    in C:\xampp\htdocs\dinlao\components\TranslationEventHandler.php:28
+    in C:\xampp\htdocs\dinlao\views\site\viewLand.php:32
+    in C:\xampp\htdocs\dinlao\controllers\SiteController.php:183
+2017-06-29 12:32:10 [::1][-][-][error][application] {"language":["Language cannot be blank."]}
+    in C:\xampp\htdocs\dinlao\components\TranslationEventHandler.php:35
+    in C:\xampp\htdocs\dinlao\views\site\viewLand.php:32
+    in C:\xampp\htdocs\dinlao\controllers\SiteController.php:183
+2017-06-29 12:32:10 [::1][-][-][error][application] {"language":["Language cannot be blank."]}
+    in C:\xampp\htdocs\dinlao\components\TranslationEventHandler.php:35
+    in C:\xampp\htdocs\dinlao\views\site\viewLand.php:41
+    in C:\xampp\htdocs\dinlao\controllers\SiteController.php:183
+2017-06-29 12:32:10 [::1][-][-][error][application] {"language":["Language cannot be blank."]}
+    in C:\xampp\htdocs\dinlao\components\TranslationEventHandler.php:35
+    in C:\xampp\htdocs\dinlao\views\site\viewLand.php:99
+    in C:\xampp\htdocs\dinlao\controllers\SiteController.php:183
+2017-06-29 12:32:10 [::1][-][-][error][application] {"language":["Language cannot be blank."]}
+    in C:\xampp\htdocs\dinlao\components\TranslationEventHandler.php:35
+    in C:\xampp\htdocs\dinlao\views\site\viewLand.php:112
+    in C:\xampp\htdocs\dinlao\controllers\SiteController.php:183
+2017-06-29 12:32:10 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/view'
+    'id' => '4'
+]
+
+$_COOKIE = [
+    'Idea-8e240e46' => '2b6f35c8-f4fb-431e-9201-5d80d6d06542'
+    'KCFINDER_showname' => 'on'
+    'KCFINDER_showsize' => 'off'
+    'KCFINDER_showtime' => 'off'
+    'KCFINDER_order' => 'name'
+    'KCFINDER_orderDesc' => 'off'
+    'KCFINDER_view' => 'thumbs'
+    'KCFINDER_displaySettings' => 'on'
+    'user_id' => '2'
+    'user_username' => 'admin'
+    'user_level' => 'admin'
+    'Phpstorm-5ce9a503' => '8fe13a82-0d81-408c-aea3-62e305f8bffb'
+    '_csrf' => 'eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VÞÜc¦<î~ÿšÓ¢¦óöCÓmÝ£}ÖH{Ñ\";}'
+    'PHPSESSID' => 'nr21jep0klnr7otlljsiu40el3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_DNT' => '1'
+    'HTTP_REFERER' => 'http://localhost/dinlao/web/index.php?r=site%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,th;q=0.6'
+    'HTTP_COOKIE' => 'Idea-8e240e46=2b6f35c8-f4fb-431e-9201-5d80d6d06542; KCFINDER_showname=on; KCFINDER_showsize=off; KCFINDER_showtime=off; KCFINDER_order=name; KCFINDER_orderDesc=off; KCFINDER_view=thumbs; KCFINDER_displaySettings=on; user_id=2; user_username=admin; user_level=admin; Phpstorm-5ce9a503=8fe13a82-0d81-408c-aea3-62e305f8bffb; _csrf=eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V%DE%DC%02c%A6%3C%EE%7F%7E%FF%9A%0E%D3%A2%05%A6%12%F3%F6C%D3m%DD%A3%7D%D6H%05%7B%D1%07%22%3B%7D; PHPSESSID=nr21jep0klnr7otlljsiu40el3'
+    'PATH' => 'C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\tools\\mingw64\\bin;;C:\\Users\\adsavin\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/dinlao/web/index.php'
+    'REMOTE_PORT' => '63962'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/view&id=4'
+    'REQUEST_URI' => '/dinlao/web/index.php?r=site/view&id=4'
+    'SCRIPT_NAME' => '/dinlao/web/index.php'
+    'PHP_SELF' => '/dinlao/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1498732330.123
+    'REQUEST_TIME' => 1498732330
+]
+2017-06-29 12:32:41 [::1][-][-][error][yii\i18n\PhpMessageSource::loadFallbackMessages] The message file for category 'yii' does not exist: C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2/messages//yii.php Fallback file does not exist as well: C:\xampp\htdocs\dinlao\vendor\yiisoft\yii2/messages//yii.php
+    in C:\xampp\htdocs\dinlao\views\site\viewLand.php:96
+    in C:\xampp\htdocs\dinlao\controllers\SiteController.php:183
+2017-06-29 12:32:40 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/view'
+    'id' => '4'
+]
+
+$_COOKIE = [
+    'Idea-8e240e46' => '2b6f35c8-f4fb-431e-9201-5d80d6d06542'
+    'KCFINDER_showname' => 'on'
+    'KCFINDER_showsize' => 'off'
+    'KCFINDER_showtime' => 'off'
+    'KCFINDER_order' => 'name'
+    'KCFINDER_orderDesc' => 'off'
+    'KCFINDER_view' => 'thumbs'
+    'KCFINDER_displaySettings' => 'on'
+    'user_id' => '2'
+    'user_username' => 'admin'
+    'user_level' => 'admin'
+    'Phpstorm-5ce9a503' => '8fe13a82-0d81-408c-aea3-62e305f8bffb'
+    '_csrf' => 'eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VÞÜc¦<î~ÿšÓ¢¦óöCÓmÝ£}ÖH{Ñ\";}'
+    'PHPSESSID' => 'nr21jep0klnr7otlljsiu40el3'
+    'fbsr_325382307872972' => 'mnBQSWVkmZgkrn_8h4LTSWrS9afZg3M8_go87IwQH_Y.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUUJadGNscU1HYXhLaU5aZkJHakZfYkstQzlaZ0ZUbTkwNUFreDJKVXI3bjd4RWZLdGxoa1RUUWZWUk5QcWNhQUVjV2xFRzBIRWl5dWp1Mlp1TXZBYURpWjdMNERMZjNQQ2JKcF9wcktHczZXS0V1VWpZYVBKaUtGaTE4cl9pMzVuRFkzVUhUczFWVEJTVkF3dDFmaVUyV0JvVDYyQm9SLTRDTzBkTFJMaUFLejNkR1Q1TzF4T3RhZDhfaDRJYXV4c3BZM2xHbEtJVi13OW1Jc3lyZGRhWFk1dDBYS3BseTFOY1Rla1puOVhwam1XTmtNU1FKZGxQbGl1eEVQRkZSbTNzd0lQdGdYNGNTMkw4SWs3LUVCTUtGRXhPMUdrdmRMajNKalpXSHl5aENDUnZycmlIVjRFUUEzSGRqQzItMXRyZHNBUnJFaDVTVV93eVFhbkRSZmRLViIsImlzc3VlZF9hdCI6MTQ5ODczMjMzMSwidXNlcl9pZCI6IjE3MTY1MjcwNDUwNDI0OTcifQ'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_DNT' => '1'
+    'HTTP_REFERER' => 'http://localhost/dinlao/web/index.php?r=site%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,th;q=0.6'
+    'HTTP_COOKIE' => 'Idea-8e240e46=2b6f35c8-f4fb-431e-9201-5d80d6d06542; KCFINDER_showname=on; KCFINDER_showsize=off; KCFINDER_showtime=off; KCFINDER_order=name; KCFINDER_orderDesc=off; KCFINDER_view=thumbs; KCFINDER_displaySettings=on; user_id=2; user_username=admin; user_level=admin; Phpstorm-5ce9a503=8fe13a82-0d81-408c-aea3-62e305f8bffb; _csrf=eea025ce03d2208d3f57a80e0367003b9e8c781aa7898975eed98c1ebafc593fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V%DE%DC%02c%A6%3C%EE%7F%7E%FF%9A%0E%D3%A2%05%A6%12%F3%F6C%D3m%DD%A3%7D%D6H%05%7B%D1%07%22%3B%7D; PHPSESSID=nr21jep0klnr7otlljsiu40el3; fbsr_325382307872972=mnBQSWVkmZgkrn_8h4LTSWrS9afZg3M8_go87IwQH_Y.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImNvZGUiOiJBUUJadGNscU1HYXhLaU5aZkJHakZfYkstQzlaZ0ZUbTkwNUFreDJKVXI3bjd4RWZLdGxoa1RUUWZWUk5QcWNhQUVjV2xFRzBIRWl5dWp1Mlp1TXZBYURpWjdMNERMZjNQQ2JKcF9wcktHczZXS0V1VWpZYVBKaUtGaTE4cl9pMzVuRFkzVUhUczFWVEJTVkF3dDFmaVUyV0JvVDYyQm9SLTRDTzBkTFJMaUFLejNkR1Q1TzF4T3RhZDhfaDRJYXV4c3BZM2xHbEtJVi13OW1Jc3lyZGRhWFk1dDBYS3BseTFOY1Rla1puOVhwam1XTmtNU1FKZGxQbGl1eEVQRkZSbTNzd0lQdGdYNGNTMkw4SWs3LUVCTUtGRXhPMUdrdmRMajNKalpXSHl5aENDUnZycmlIVjRFUUEzSGRqQzItMXRyZHNBUnJFaDVTVV93eVFhbkRSZmRLViIsImlzc3VlZF9hdCI6MTQ5ODczMjMzMSwidXNlcl9pZCI6IjE3MTY1MjcwNDUwNDI0OTcifQ'
+    'PATH' => 'C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;E:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\instantclient_12_1;C:\\Program Files\\NetBeans 8.2\\java\\maven\\bin;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Users\\adsavin\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files\\TortoiseHg\\;C:\\Program Files (x86)\\OpenSSH\\bin;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\tools\\go\\bin;C:\\Program Files\\Geth;C:\\Go\\bin;C:\\tools\\mingw64\\bin;;C:\\Users\\adsavin\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/dinlao/web/index.php'
+    'REMOTE_PORT' => '64033'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site/view&id=4'
+    'REQUEST_URI' => '/dinlao/web/index.php?r=site/view&id=4'
+    'SCRIPT_NAME' => '/dinlao/web/index.php'
+    'PHP_SELF' => '/dinlao/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1498732360.892
+    'REQUEST_TIME' => 1498732360
+]
