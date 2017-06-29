@@ -28,6 +28,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filterInputOptions' => ['class'=>'input'],
             ],
             [
+                'attribute' => 'namelao',
+                'filterInputOptions' => ['class'=>'input'],
+            ],
+            [
                 'attribute' => 'name',
                 'filterInputOptions' => ['class'=>'input'],
             ],

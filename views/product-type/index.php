@@ -32,6 +32,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filterInputOptions' => ['class'=>'input'],
             ],
             [
+                'attribute' => 'namelao',
+                'filterInputOptions' => ['class'=>'input'],
+            ],
+            [
                 'label' => Yii::t('app', 'Actions'),
                 'format' => 'raw',
                 'value' => function($data) {

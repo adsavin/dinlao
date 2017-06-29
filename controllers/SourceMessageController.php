@@ -7,6 +7,7 @@ use Yii;
 use app\models\SourceMessage;
 use app\models\SourceMessageSearch;
 use yii\db\Exception;
+use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -27,9 +28,6 @@ class SourceMessageController extends Controller
 
         if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
             Yii::$app->user->login(Yii::$app->session['user']);
-        } else {
-            Yii::$app->user->logout();
-            return $this->redirect(["site/login"]);
         }
     }
 

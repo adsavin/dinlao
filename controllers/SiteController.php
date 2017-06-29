@@ -206,9 +206,6 @@ class SiteController extends Controller
 
         if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
             Yii::$app->user->login(Yii::$app->session['user']);
-        } else {
-            Yii::$app->user->logout();
-            Url::to(["/site/index"]);
         }
     }
 

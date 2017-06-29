@@ -10,7 +10,7 @@ $coor = new \dosamigos\google\maps\LatLng([
 ]);
 $map = new \dosamigos\google\maps\Map([
     'center' => $coor,
-    'zoom' => 8,
+    'zoom' => 5,
     'width' => '100%',
     'height' => '600',
     'mapTypeId' => 'hybrid'
@@ -85,9 +85,9 @@ $map = new \dosamigos\google\maps\Map([
                                     <div class="card-content">
                                         <div class="media">
                                             <div class="media-content">
-                                                <p class="title is-4 has-text-centered"><strong><?= number_format($product->price, 2)." ". $product->currency->code ?></strong></p>
+                                                <p class="title is-4 has-text-centered"><strong><?= number_format($product->price)." ". $product->currency->code ?></strong></p>
                                                 <p class="subtitle is-6 has-text-centered">
-                                                    <strong><?= $product->width ." " . $product->unit->code." x ".$product->height ." " . $product->unit->code ?></strong>
+                                                    <strong><?= number_format($product->width) ." " . $product->unit->code." x ". number_format($product->height) ." " . $product->unit->code ?></strong>
                                                 </p>
                                             </div>
                                         </div>

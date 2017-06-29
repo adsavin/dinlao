@@ -22,13 +22,17 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [
+                'attribute' => 'province_id',
+                'value' => 'province.name',
+//                'filter' => Html::dropDownList('province_id', [], \yii\helpers\ArrayHelper::map($provinces, "id", "name"), ['class' =>]),
+                'filterInputOptions' => ['class'=>'input'],
+            ],
+            [
                 'attribute' => 'name',
                 'filterInputOptions' => ['class'=>'input'],
             ],
             [
-                'attribute' => 'province_id',
-                'value' => 'province.name',
-//                'filter' => Html::dropDownList('province_id', [], \yii\helpers\ArrayHelper::map($provinces, "id", "name"), ['class' =>]),
+                'attribute' => 'namelao',
                 'filterInputOptions' => ['class'=>'input'],
             ],
             [
