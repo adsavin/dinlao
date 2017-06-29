@@ -1,45 +1,53 @@
 <?php
 
-use yii\grid\GridView;
 use yii\helpers\Html;
+use yii\grid\GridView;
 use yii\widgets\Pjax;
-
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\ProductSearch */
+/* @var $searchModel app\models\SourceMessageSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Products');
+$this->title = Yii::t('app', 'Source Messages');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="product-index">
+<div class="source-message-index">
+
     <h1 class="title is-3"><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p class="is-fullwidth text-right pull-right">
         <?= Html::a('<i class="fa fa-plus"></i> '.Yii::t('app', 'Add'), ['create'], ['class' => 'button is-primary']) ?>
     </p>
-<?php Pjax::begin(); ?>
+    <?php Pjax::begin(); ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [
-                'attribute' => 'village',
+                'attribute' => 'category',
                 'filterInputOptions' => ['class' => 'input']
             ],
             [
-                'attribute' => 'area',
+                'attribute' => 'message',
+                'format' => 'ntext',
                 'filterInputOptions' => ['class' => 'input']
             ],
             [
-                'attribute' => 'price',
-                'filterInputOptions' => ['class' => 'input']
+                'label' => Yii::t('app', 'Translation'),
+                'format' => 'ntext',
+                'value' => function($data) {
+                    if(isset($data->messages)) {
+                        foreach ($data->messages as $message) {
+                            if($message->language) {
+                                return $message->translation;
+                            }
+                        }
+                    }
+                    return "";
+                }
             ],
-            [
-                'attribute' => 'tel',
-                'filterInputOptions' => ['class' => 'input']
-            ],
+
             [
                 'label' => Yii::t('app', 'Actions'),
                 'format' => 'raw',
@@ -51,4 +59,5 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ],
     ]); ?>
-<?php Pjax::end(); ?></div>
+    <?php Pjax::end(); ?>
+</div>

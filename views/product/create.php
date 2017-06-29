@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Product */
 
-$this->title = $code == "L"? Yii::t('app', 'Post New Land') : Yii::t('app', 'Post New House');
+$this->title = $code == "L"? Yii::t('app', 'New Post') : Yii::t('app', 'New Post');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="product-create">

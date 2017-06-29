@@ -18,26 +18,16 @@
 
 <div class="container" style="margin-top: 20%">
     <div class="columns">
-        <div class="column is-12 has-text-centered">
-            <?php
-            $items = [];
-            foreach ($model->pictures as $picture) {
-                $items[] = [
-                    'url' => 'upload/photo/'.$picture->filename,
-                    'src' => 'upload/photo/'.$picture->filename,
-                    'options' => ['title' => $picture->filename]
-                ];
-            }
-            ?>
-            <?= dosamigos\gallery\Gallery::widget(['items' => $items]);?>
+        <?php foreach ($model->pictures as $picture): ?>
+        <div class="column">
+            <figure>
+                <img class="" src="upload/photo/<?= $picture->filename ?>"/>
+            </figure>
         </div>
+        <?php endforeach; ?>
     </div>
     <div class="columns">
-        <div class="column has-text-centered">
-            <a href="index.php?r=site/sharetofacebook&id=" class="button is-outlined is-primary">
-                <?= Yii::t("app", 'Share to ') ?>
-                <i class="fa fa-facebook"></i>acebook
-            </a>
+        <div class="column has-text-right">
             <div class="fb-share-button"
                  data-href="http://dinlao.com/web/index.php?r=site/view&amp;id=1"
                  data-layout="button" data-size="large"

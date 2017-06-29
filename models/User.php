@@ -30,7 +30,8 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         $model = User::find()->where("email=:email", [
             ":email" => $id
         ])->one();
-
+        if(isset($model))
+        print_r($model->attributes);
         return isset($model) ? new static($model) : null;
     }
 

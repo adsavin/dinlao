@@ -10,7 +10,7 @@ $coor = new \dosamigos\google\maps\LatLng([
 ]);
 $map = new \dosamigos\google\maps\Map([
     'center' => $coor,
-    'zoom' => 12,
+    'zoom' => 8,
     'width' => '100%',
     'height' => '600',
     'mapTypeId' => 'hybrid'
@@ -34,7 +34,7 @@ $map = new \dosamigos\google\maps\Map([
         ?>
         <div class="columns">
             <div class="column">
-                <h1 class="title is-3"><?= Yii::t('app', 'Recommended') ?></h1>
+                <h1 class="title is-3 is-offset-2"><?= Yii::t('app', 'New Post') ?></h1>
             </div>
             <div class="column has-text-right">
                 <a href="index.php?r=site/viewall" class="button is-outlined is-primary is-hidden-mobile">
