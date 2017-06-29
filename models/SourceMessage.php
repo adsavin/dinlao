@@ -10,11 +10,13 @@ use Yii;
  * @property integer $id
  * @property string $category
  * @property string $message
+ * @property string $translation
  *
  * @property Message[] $messages
  */
 class SourceMessage extends \yii\db\ActiveRecord
 {
+    public $translation;
     /**
      * @inheritdoc
      */
@@ -29,7 +31,7 @@ class SourceMessage extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['message'], 'string'],
+            [['message', 'translation'], 'string'],
             [['category'], 'string', 'max' => 255],
         ];
     }
@@ -43,6 +45,7 @@ class SourceMessage extends \yii\db\ActiveRecord
             'id' => Yii::t('app', 'ID'),
             'category' => Yii::t('app', 'Category'),
             'message' => Yii::t('app', 'Message'),
+            'translation' => Yii::t('app', 'Translation'),
         ];
     }
 
