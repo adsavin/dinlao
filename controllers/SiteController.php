@@ -179,7 +179,7 @@ class SiteController extends Controller
 
     public function actionView($id) {
         $model = $this->findProduct($id);
-        $this->layout = "index";
+        $this->layout = "view";
         return $this->render("viewLand", ['model' => $model]);
     }
 

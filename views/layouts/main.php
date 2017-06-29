@@ -16,9 +16,9 @@ use yii\helpers\Html;
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:title" content="dinlao.com" />
+    <meta property="og:title" content="DINLAO.COM" />
     <meta property="og:type" content="Properties Advertisement" />
-    <meta property="og:url" content="<?= Yii::t('app', 'DinLao.com - Properties Advertisement, where buyers & sellers meet') ?>" />
+    <meta property="og:url" content="dinlao.com" />
     <meta property="og:image" content="http://dinlao.com/web/image/logo.png" />
     <meta property="og:site_name" content="Any related term to your site" />
 

@@ -185,9 +185,10 @@ class ProductController extends Controller
         }
         $user = Yii::$app->session->get('user');
         if($model->user_id != $user->id) {
-            Yii::$app->session->setFlash("warning", Yii::t("app", "Permission denied!"));
+            Yii::$app->session->setFlash("warning", Yii::t("app", "Permission denied"));
             return $this->redirect(["product/mypost"]);
         }
+
 
         if ($model->load(Yii::$app->request->post())) {
             $transaction = Yii::$app->db->beginTransaction();
@@ -197,24 +198,26 @@ class ProductController extends Controller
                 $photo = UploadedFile::getInstance($model, "photofile");
                 if(isset($photo)) {
                     $model->photo = date("YmdHis") . rand(100, 999) . "." . $photo->extension;
+                    if(!$model->save())
+                        throw new Exception(json_encode($model->errors));
+
                     $filename = "upload/photo/" . $model->photo;
                     if (!file_exists($filename))
                         if (!$photo->saveAs($filename))
                             throw new Exception(Yii::t("app", "Cannot Upload Photo " . $photo->error));
                 }
 
-                if(!$model->save())
-                    throw new Exception(json_encode($model->errors));
-
                 $photos = UploadedFile::getInstances($model, "photofiles");
                 if(isset($photos)) {
                     foreach ($photos as $key => $photo) {
                         if(!isset($photo)) continue;
                         if(isset($model->pictures[$key])) {
-                            $f = "upload/photo/".$model->pictures[$key]->filename;
-                            if(file_exists($f)) {
+                            if(file_exists("upload/photo/".$model->pictures[$key]->filename)) {
+                                $f ="upload/photo/".$model->pictures[$key]->filename;
                                 unset($f);
                             }
+
+
                             Picture::deleteAll(['filename' => $model->pictures[$key]->filename, 'product_id' => $model->pictures[$key]->product_id]);
                         }
                         $newphoto = new Picture();

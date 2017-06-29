@@ -32,20 +32,6 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 
-    <?php if(count($model->pictures) > 0): ?>
-    <h1 class="title is-4"><?= Yii::t('app', 'Attached Photos') ?></h1>
-    <div class="columns">
-        <?php foreach ($model->pictures as $picture): ?>
-            <div class="column">
-                <figure class="">
-                    <img class="" src="upload/photo/<?= $picture->filename ?>">
-                </figure>
-            </div>
-        <?php endforeach; ?>
-    </div>
-    <?php endif; ?>
-
-    <h1 class="title is-4"><?= Yii::t('app', 'Detail') ?></h1>
     <div class="columns">
         <div class="column is-10 is-offset-1 has-text-centered">
             <?= DetailView::widget([

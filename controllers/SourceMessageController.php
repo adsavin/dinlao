@@ -2,11 +2,9 @@
 
 namespace app\controllers;
 
-use app\models\Message;
 use Yii;
 use app\models\SourceMessage;
 use app\models\SourceMessageSearch;
-use yii\db\Exception;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -102,33 +100,9 @@ class SourceMessageController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        if(isset($model->messages))
-            if(count($model->messages) > 0) {
-                $model->translation = $model->messages[0]->translation;
-            }
 
-        if ($model->load(Yii::$app->request->post())) {
-            $connection = Yii::$app->db->beginTransaction();
-            try {
-                if(!$model->save())
-                    throw new Exception(Yii::t('app', json_encode($model->errors)));
-                $message = Message::findOne($model->id);
-                if(!isset($message)) {
-                    $message = new Message();
-                    $message->id = $model->id;
-                }
-                $post = Yii::$app->request->post("SourceMessage");
-                $message->translation = $post["translation"];
-                $message->language = "la-LA";
-                if(!$message->save())
-                    throw new Exception(Yii::t('app', json_encode($model->errors)));
-                $connection->commit();
-                return $this->redirect(['index']);
-            } catch (Exception $ex) {
-                $connection->rollBack();
-                Yii::$app->session->setFlash("danger", json_encode($ex->getMessage()));
-                return $this->redirect(["source-message/update", "id" => $id]);
-            }
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
