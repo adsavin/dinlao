@@ -13,7 +13,6 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="currency-create">
     <h1 class="title is-3"><?= Html::encode($this->title) ?></h1>
     <?= $this->render('_form', [
-        'model' => $model,
-        'provinces' => $provinces
+        'model' => $model
     ]) ?>
 </div>
