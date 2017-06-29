@@ -17,14 +17,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 DINLAO.COM - Properties Advertisement
             </h1>
             <h1 class="subtitle has-text-right">
-                Where you buy & sell the land & house <br /><a class="button">What we do</a>
+                Where you buy & sell the land & house <br /><a class="button"><?= Yii::t('app','What we do') ?></a>
             </h1>
         </div>
     </div>
 </div>
 <div class="container">
     <div class="columns">
-        <div class="column is-6 is-6 is-offset-3">
+        <div class="column is-6 is-6 is-offset-3 has-text-centered">
             <?php $form = ActiveForm::begin([
                 'id' => 'login-form',
                 'layout' => 'horizontal',
@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 'fieldConfig' => [
 //                 'template' => "<div class=\"column is-12\">{input}</div>\n<div class=\"column is-12 help is-danger\">{error}</div>",
-                    'template' => "<div class=\"column is-12\">{label}\n{input}\n{error}</div>",
+                    'template' => "<div class=\"column is-12 has-text-centered\">{label}\n{input}\n{error}</div>",
                     'horizontalCssClasses' => [
                         'error' => 'help is-danger',
                     ],
@@ -43,13 +43,13 @@ $this->params['breadcrumbs'][] = $this->title;
             <p class="title has-text-centered"><?= Yii::t('app', 'Sign in by facebook') ?></p>
             <a class="button is-primary is-fullwidth" href="index.php?r=site%2Fauth&amp;authclient=facebook" title="Facebook" data-popup-width="860" data-popup-height="480">
                 <i class="fa fa-facebook"></i>
-                <?= Yii::t('app', 'Sign In') ?>
+<!--                --><?//= Yii::t('app', 'Sign In') ?>
             </a>
             <hr/>
             <p class="title"><?= Html::encode($this->title) ?></p>
             <p class="subtitle">Please fill out the following fields to sign in:</p>
-            <?= $form->field($model, 'email')->textInput(['class' => 'input', 'placeholder' => 'Email']) ?>
-            <?= $form->field($model, 'password')->passwordInput(['class' => 'input', 'placeholder' => 'Password']) ?>
+            <?= $form->field($model, 'email')->textInput(['class' => 'input has-text-centered', 'placeholder' => Yii::t('app','Email')]) ?>
+            <?= $form->field($model, 'password')->passwordInput(['class' => 'input has-text-centered', 'placeholder' => Yii::t('app', 'Password')]) ?>
             <?= $form->field($model, 'rememberMe')->checkbox([
                 'template' => "<div class=\"column is-12\">{input} {label}</div>\n<div class=\"is-8\">{error}</div>",
             ]) ?>

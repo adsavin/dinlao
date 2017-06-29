@@ -47,7 +47,9 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
             <!-- Add the modifier "is-active" to display it on mobile -->
             <div class="nav-right nav-menu">
                 <div class="nav-item is-hidden-mobile">
-                    <span>Welcome, <?php echo Yii::$app->session->get("username") ?> </span>
+                    <span>Welcome, <?php
+                        print_r(Yii::$app->user->identity);
+//                        echo Yii::$app->user->getIdentity()->first_name ?><!-- </span>-->
                 </div>
                 <div class="nav-item">
                     <a class="button is-danger is-outlined" href="index.php?r=site/logout">

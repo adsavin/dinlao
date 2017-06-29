@@ -40,3 +40,7 @@ composer.lock
 /web/upload/photo/
 /web/upload/photo/*
 /runtime/debug/
+/runtime/cache/
+/runtime/gii-2.0.10/
+/runtime/HTML/
+/runtime/logs/
