@@ -10,7 +10,7 @@ $coor = new \dosamigos\google\maps\LatLng([
 ]);
 $map = new \dosamigos\google\maps\Map([
     'center' => $coor,
-    'zoom' => 5,
+    'zoom' => 7,
     'width' => '100%',
     'height' => '600',
     'mapTypeId' => 'hybrid'

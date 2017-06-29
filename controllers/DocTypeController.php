@@ -37,10 +37,6 @@ class DocTypeController extends Controller
         if(Yii::$app->language != Yii::$app->session->get("lang") ) {
             Yii::$app->language = Yii::$app->session->get("lang");
         }
-
-        if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
-            Yii::$app->user->login(Yii::$app->session['user']);
-        }
     }
 
     /**
@@ -49,6 +45,13 @@ class DocTypeController extends Controller
      */
     public function actionIndex()
     {
+        if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
+            Yii::$app->user->login(Yii::$app->session['user']);
+        } else {
+            Yii::$app->user->logout();
+            return $this->redirect(['site/login']);
+        }
+
         $searchModel = new DocTypeSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -65,6 +68,13 @@ class DocTypeController extends Controller
      */
     public function actionView($id)
     {
+        if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
+            Yii::$app->user->login(Yii::$app->session['user']);
+        } else {
+            Yii::$app->user->logout();
+            return $this->redirect(['site/login']);
+        }
+
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -77,6 +87,13 @@ class DocTypeController extends Controller
      */
     public function actionCreate()
     {
+        if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
+            Yii::$app->user->login(Yii::$app->session['user']);
+        } else {
+            Yii::$app->user->logout();
+            return $this->redirect(['site/login']);
+        }
+
         $model = new DocType();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -96,6 +113,13 @@ class DocTypeController extends Controller
      */
     public function actionUpdate($id)
     {
+        if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
+            Yii::$app->user->login(Yii::$app->session['user']);
+        } else {
+            Yii::$app->user->logout();
+            return $this->redirect(['site/login']);
+        }
+
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -115,6 +139,13 @@ class DocTypeController extends Controller
      */
     public function actionDelete($id)
     {
+        if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
+            Yii::$app->user->login(Yii::$app->session['user']);
+        } else {
+            Yii::$app->user->logout();
+            return $this->redirect(['site/login']);
+        }
+
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);

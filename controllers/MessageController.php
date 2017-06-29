@@ -36,10 +36,6 @@ class MessageController extends Controller
         if(Yii::$app->language != Yii::$app->session->get("lang") ) {
             Yii::$app->language = Yii::$app->session->get("lang");
         }
-
-        if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
-            Yii::$app->user->login(Yii::$app->session['user']);
-        }
     }
 
     /**
@@ -48,6 +44,13 @@ class MessageController extends Controller
      */
     public function actionIndex()
     {
+        if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
+            Yii::$app->user->login(Yii::$app->session['user']);
+        } else {
+            Yii::$app->user->logout();
+            return $this->redirect(['site/login']);
+        }
+
         $searchModel = new MessageSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -66,6 +69,13 @@ class MessageController extends Controller
      */
     public function actionView($id, $language)
     {
+        if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
+            Yii::$app->user->login(Yii::$app->session['user']);
+        } else {
+            Yii::$app->user->logout();
+            return $this->redirect(['site/login']);
+        }
+
         return $this->render('view', [
             'model' => $this->findModel($id, $language),
         ]);
@@ -78,6 +88,13 @@ class MessageController extends Controller
      */
     public function actionCreate()
     {
+        if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
+            Yii::$app->user->login(Yii::$app->session['user']);
+        } else {
+            Yii::$app->user->logout();
+            return $this->redirect(['site/login']);
+        }
+
         $model = new Message();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -98,6 +115,13 @@ class MessageController extends Controller
      */
     public function actionUpdate($id, $language)
     {
+        if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
+            Yii::$app->user->login(Yii::$app->session['user']);
+        } else {
+            Yii::$app->user->logout();
+            return $this->redirect(['site/login']);
+        }
+
         $model = $this->findModel($id, $language);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -118,6 +142,13 @@ class MessageController extends Controller
      */
     public function actionDelete($id, $language)
     {
+        if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
+            Yii::$app->user->login(Yii::$app->session['user']);
+        } else {
+            Yii::$app->user->logout();
+            return $this->redirect(['site/login']);
+        }
+
         $this->findModel($id, $language)->delete();
 
         return $this->redirect(['index']);

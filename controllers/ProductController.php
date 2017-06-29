@@ -46,10 +46,6 @@ class ProductController extends Controller
         if(Yii::$app->language != Yii::$app->session->get("lang") ) {
             Yii::$app->language = Yii::$app->session->get("lang");
         }
-
-        if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
-            Yii::$app->user->login(Yii::$app->session['user']);
-        }
     }
 
     /**
@@ -58,6 +54,13 @@ class ProductController extends Controller
      */
     public function actionIndex()
     {
+        if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
+            Yii::$app->user->login(Yii::$app->session['user']);
+        } else {
+            Yii::$app->user->logout();
+            return $this->redirect(['site/login']);
+        }
+
         $searchModel = new ProductSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -74,6 +77,13 @@ class ProductController extends Controller
      */
     public function actionView($id)
     {
+        if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
+            Yii::$app->user->login(Yii::$app->session['user']);
+        } else {
+            Yii::$app->user->logout();
+            return $this->redirect(['site/login']);
+        }
+
         $model = $this->findModel($id);
         if($model->user_id != Yii::$app->user->identity->getId()) {
             Yii::$app->session->setFlash('danger', Yii::t('app', "Permission denied"));
@@ -90,6 +100,13 @@ class ProductController extends Controller
      * @return mixed
      */
     public function actionCreate($code) {
+        if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
+            Yii::$app->user->login(Yii::$app->session['user']);
+        } else {
+            Yii::$app->user->logout();
+            return $this->redirect(['site/login']);
+        }
+
         if(!in_array($code, ["L", "H"])) {
             Yii::$app->session->setFlash("danger", Yii::t("app", "Not Found!"));
             return $this->redirect(["site/home"]);
@@ -175,6 +192,13 @@ class ProductController extends Controller
     }
 
     public function actionUpdate($id) {
+        if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
+            Yii::$app->user->login(Yii::$app->session['user']);
+        } else {
+            Yii::$app->user->logout();
+            return $this->redirect(['site/login']);
+        }
+
         $model = $this->findModel($id);
         if(!isset($model)) {
             Yii::$app->session->setFlash("warning", Yii::t("app", "Not Found"));
@@ -272,6 +296,13 @@ class ProductController extends Controller
      */
     public function actionDelete($id)
     {
+        if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
+            Yii::$app->user->login(Yii::$app->session['user']);
+        } else {
+            Yii::$app->user->logout();
+            return $this->redirect(['site/login']);
+        }
+
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
@@ -294,6 +325,13 @@ class ProductController extends Controller
     }
 
     public function actionMypost() {
+        if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
+            Yii::$app->user->login(Yii::$app->session['user']);
+        } else {
+            Yii::$app->user->logout();
+            return $this->redirect(['site/login']);
+        }
+
         $searchModel = new ProductSearch();
         $searchModel->user_id = Yii::$app->user->identity->getId();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);

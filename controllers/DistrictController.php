@@ -143,6 +143,13 @@ class DistrictController extends Controller
      */
     public function actionDelete($id)
     {
+        if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
+            Yii::$app->user->login(Yii::$app->session['user']);
+        } else {
+            Yii::$app->user->logout();
+            return $this->redirect(['site/login']);
+        }
+
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
