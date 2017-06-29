@@ -39,8 +39,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => function($data) {
                     if(isset($data->messages)) {
                         foreach ($data->messages as $message) {
-                            if($message->language == Yii::$app->language) {
-                                return $message;
+                            if($message->language) {
+                                return $message->translation;
                             }
                         }
                     }

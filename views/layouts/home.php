@@ -120,8 +120,14 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
                                             <?= Yii::t('app', $parent) ?>
                                         </p>
                                         <ul class="menu-list">
-                                            <?php foreach ($menus as $menu) :  ?>
-                                                <li><a class="" href="index.php?r=<?= $menu->url ?>"><?= Yii::t('app', $menu->label) ?></a></li>
+                                            <?php
+                                            foreach ($menus as $menu) :
+                                                $class = '';
+                                                if(strpos($menu->url, Yii::$app->controller->id.'/') === 0) {
+                                                    $class = 'is-active';
+                                                }
+                                                 ?>
+                                                <li><a class="<?= $class ?>" href="index.php?r=<?= $menu->url ?>"><?= Yii::t('app', $menu->label) ?></a></li>
                                             <?php endforeach; ?>
                                         </ul>
                                     <?php
