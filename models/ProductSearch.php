@@ -10,15 +10,19 @@ use yii\data\ActiveDataProvider;
  */
 class ProductSearch extends Product
 {
+    public $pricemax;
+    public $pricemin;
+    public $areamax;
+    public $areamin;
+
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['id', 'district_id', 'user_id', 'currency_id', 'product_type_id', 'doc_type_id', 'unit_id'], 'integer'],
+            [['id', 'district_id', 'province_id', 'user_id', 'currency_id', 'product_type_id', 'doc_type_id', 'unit_id'], 'integer'],
             [['village', 'description', 'created_date', 'status', 'lat', 'lon', 'tel', 'email', 'whatsapp', 'line', 'facebook', 'wechat', 'photo', 'urlmap'], 'safe'],
-            [['product_id'], 'safe'],
             [['price', 'area', 'width', 'height'], 'number'],
         ];
     }
@@ -59,6 +63,8 @@ class ProductSearch extends Product
         ];
 
         $this->load($params);
+        if(isset($params["province_id"]))
+        $this->province_id = $params["province_id"];
 
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
@@ -80,7 +86,11 @@ class ProductSearch extends Product
             'width' => $this->width,
             'height' => $this->height,
             'unit_id' => $this->unit_id,
-            'province_id' => $this->province_id
+        ]);
+
+        if($this->province_id !="")
+        $query->join("JOIN", "district", "district.id=product.id and district.province_id=:p", [
+            ":p" => $this->province_id
         ]);
 
         $query->andFilterWhere(['like', 'village', $this->village])

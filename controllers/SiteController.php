@@ -222,6 +222,10 @@ class SiteController extends Controller
         return $this->render('viewall', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'provinces' => Province::find()->all(),
+            'docTypes' => DocType::find()->all(),
+            'currencies' => Currency::find()->all(),
+            'units' => Unit::find()->all()
         ]);
     }
 }

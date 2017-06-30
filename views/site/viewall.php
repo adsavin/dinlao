@@ -25,7 +25,13 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 <div class="container">
     <h1 class="title is-3"><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?= $this->render('_search', [
+        'model' => $searchModel,
+        "provinces" => $provinces,
+        "docTypes" => $docTypes,
+        'currencies' => \app\models\Currency::find()->all(),
+        'units' => \app\models\Unit::find()->all()
+    ]); ?>
 
     <?php Pjax::begin(); ?>
     <?= GridView::widget([
@@ -34,26 +40,22 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [
-                'attribute' => 'village',
+                'label' => Yii::t('app', 'Province'),
+                'attribute' => 'province_id',
+                'value' => function($data) {
+                    return Yii::$app->language == "la-LA"?$data->district->province->namelao:$data->district->province->name;
+                },
+                'filter' => \yii\helpers\ArrayHelper::map(\app\models\Province::find()->all(), "id" ,Yii::$app->language == "la-LA"?"namelao":"name"),
                 'filterInputOptions' => ['class'=>'input'],
             ],
             [
                 'label' => Yii::t('app', 'District'),
                 'attribute' => 'district_id',
                 'value' => function($data) {
-                    return Yii::$app->language == "la-LA"?$data->district->namelao:$data->distict->name;
+                    return Yii::$app->language == "la-LA"?$data->district->namelao:$data->district->name;
                 },
                 'filterInputOptions' => ['class'=>'select'],
                 'filter' => \yii\helpers\ArrayHelper::map(\app\models\District::find()->all(), "id" ,Yii::$app->language == "la-LA"?"namelao":"name"),
-                'filterInputOptions' => ['class'=>'select'],
-            ],
-            [
-                'label' => Yii::t('app', 'Province'),
-                'attribute' => 'province_id',
-                'value' => function($data) {
-                    return Yii::$app->language == "la-LA"?$data->district->province->namelao:$data->distict->province->name;
-                },
-                'filter' => \yii\helpers\ArrayHelper::map(\app\models\Province::find()->asArray()->all(), "id" ,Yii::$app->language == "la-LA"?"namelao":"name"),
                 'filterInputOptions' => ['class'=>'input'],
             ],
             [
@@ -62,14 +64,20 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             [
                 'attribute' => 'price',
+                'value' => function($data) {
+                    return number_format($data->price);
+                },
                 'filterInputOptions' => ['class'=>'input'],
             ],
             [
                 'attribute' => 'area',
+                'value' => function($data) {
+                    return number_format($data->area)." (".number_format($data->width).$data->unit->code." x ".number_format($data->height).$data->unit->code.")";
+                },
                 'filterInputOptions' => ['class'=>'input'],
             ],
             [
-                'label' => Yii::t('app', 'Actions'),
+                'label' => Yii::t('app', 'View'),
                 'format' => 'raw',
                 'value' => function($data) {
                     return Html::a("<i class='fa fa-search'></i>", ["view", "id" => $data->id], ["class" => "is-info"]);
