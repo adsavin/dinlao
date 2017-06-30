@@ -125,9 +125,8 @@ class SourceMessageController extends Controller
 
         $model = $this->findModel($id);
         if(isset($model->messages))
-            if(count($model->messages) > 0) {
+            if(count($model->messages) > 0)
                 $model->translation = $model->messages[0]->translation;
-            }
 
         if ($model->load(Yii::$app->request->post())) {
             $connection = Yii::$app->db->beginTransaction();
