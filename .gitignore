@@ -44,3 +44,4 @@ composer.lock
 /runtime/gii-2.0.10/
 /runtime/HTML/
 /runtime/logs/
+/tests/
