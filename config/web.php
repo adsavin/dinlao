@@ -93,9 +93,9 @@ $config = [
                 'app*' => [
                     'class' => 'yii\i18n\DbMessageSource',
                     'sourceLanguage' => 'en-US',
-                    'forceTranslation' => true,
-                    'enableCaching' => true,
-                    'cachingDuration' => 864000, // 10 day
+//                    'forceTranslation' => true,
+//                    'enableCaching' => true,
+//                    'cachingDuration' => 864000, // 10 day
                     'on missingTranslation' => ['app\components\TranslationEventHandler', 'handleMissingTranslation']
                 ],
             ],

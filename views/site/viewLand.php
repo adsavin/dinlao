@@ -101,61 +101,54 @@
                     <?= $model->description ?>
                 </p>
 
-                <nav class="level">
-                    <?php if ($model->tel != "") : ?>
-                        <div class="level-item has-text-centered">
-                            <div>
-                                <p class="heading"> <i class="fa fa-phone"></i> <?= Yii::t("app", "Telephone") ?></p>
-                                <p class="title"><?= $model->tel ?></p>
-                            </div>
+                <?php if ($model->tel != "") : ?>
+                <div class="columns">
+                    <div class="column has-text-centered">
+                        <p class="heading"> <i class="fa fa-phone"></i> <?= Yii::t("app", "Telephone") ?></p>
+                        <p class="title"><?= $model->tel ?></p>
+                    </div>
+                </div>
+                <?php endif; ?>
+                <?php if ($model->whatsapp != "") : ?>
+                <div class="columns">
+                    <div class="column has-text-centered">
+                        <p class="heading"><i class="fa fa-whatsapp"></i><?= Yii::t("app", "Whatsapp") ?> </p>
+                        <p class="title"><?= $model->whatsapp ?></p>
+                    </div>
+                </div>
+                <?php endif; ?>
+                <?php if ($model->facebook != "") : ?>
+                    <div class="columns">
+                        <div class="column has-text-centered">
+                            <p class="heading"><i class="fa fa-facebook"></i><?= Yii::t("app", "acebook") ?> </p>
+                            <p class="title"><?= $model->facebook ?></p>
                         </div>
-                    <?php endif; ?>
-                    <?php if ($model->whatsapp != "") : ?>
-                        <div class="level-item has-text-centered">
-                            <div>
-                                <p class="heading"><i class="fa fa-whatsapp"></i><?= Yii::t("app", "Whatsapp") ?> </p>
-                                <p class="title"><?= $model->whatsapp ?></p>
-                            </div>
+                    </div>
+                <?php endif; ?>
+                <?php if ($model->email != "") : ?>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading"> <i class="fa fa-envelope"></i> <?= Yii::t("app", "Email") ?></p>
+                            <p class="title"><?= $model->email ?></p>
                         </div>
-                    <?php endif; ?>
-                </nav>
-
-                <nav class="level">
-                    <?php if ($model->facebook != "") : ?>
-                        <div class="level-item has-text-centered">
-                            <div>
-                                <p class="heading"><i class="fa fa-facebook"></i><?= Yii::t("app", "acebook") ?> </p>
-                                <p class="title"><?= $model->facebook ?></p>
-                            </div>
+                    </div>
+                <?php endif; ?>
+                <?php if ($model->wechat != "") : ?>
+                    <div class="columns">
+                        <div class="column has-text-centered">
+                            <p class="heading"><i class="fa fa-wechat"></i><?= Yii::t("app", "Wechat") ?> </p>
+                            <p class="title"><?= $model->wechat ?></p>
                         </div>
-                    <?php endif; ?>
-                    <?php if ($model->email != "") : ?>
-                        <div class="level-item has-text-centered">
-                            <div>
-                                <p class="heading"> <i class="fa fa-envelope"></i> <?= Yii::t("app", "Email") ?></p>
-                                <p class="title"><?= $model->email ?></p>
-                            </div>
+                    </div>
+                <?php endif; ?>
+                <?php if ($model->line != "") : ?>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading"><i class="fa fa-line-chart"></i><?= Yii::t("app", "Line") ?> </p>
+                            <p class="title"><?= $model->line ?></p>
                         </div>
-                    <?php endif; ?>
-                </nav>
-                <nav class="level">
-                    <?php if ($model->wechat != "") : ?>
-                        <div class="level-item has-text-centered">
-                            <div>
-                                <p class="heading"><i class="fa fa-wechat"></i><?= Yii::t("app", "Wechat") ?> </p>
-                                <p class="title"><?= $model->wechat ?></p>
-                            </div>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ($model->line != "") : ?>
-                        <div class="level-item has-text-centered">
-                            <div>
-                                <p class="heading"><i class="fa fa-line-chart"></i><?= Yii::t("app", "Line") ?> </p>
-                                <p class="title"><?= $model->line ?></p>
-                            </div>
-                        </div>
-                    <?php endif; ?>
-                </nav>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
 

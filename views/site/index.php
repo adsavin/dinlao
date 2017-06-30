@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $models app\models\ProductType[] */
 
 $this->title = 'DINLAO.COM - HOME';
 
@@ -30,7 +31,7 @@ $map = new \dosamigos\google\maps\Map([
 </div>
 <div class="container">
     <?php foreach ($models as $model):
-        if(count($model->products) == 0) continue;
+        if(count($model->getProducts()->where(["status" => 'A'])->all()) == 0) continue;
         ?>
         <div class="columns">
             <div class="column">

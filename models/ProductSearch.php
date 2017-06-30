@@ -18,6 +18,7 @@ class ProductSearch extends Product
         return [
             [['id', 'district_id', 'user_id', 'currency_id', 'product_type_id', 'doc_type_id', 'unit_id'], 'integer'],
             [['village', 'description', 'created_date', 'status', 'lat', 'lon', 'tel', 'email', 'whatsapp', 'line', 'facebook', 'wechat', 'photo', 'urlmap'], 'safe'],
+            [['product_id'], 'safe'],
             [['price', 'area', 'width', 'height'], 'number'],
         ];
     }
@@ -48,6 +49,15 @@ class ProductSearch extends Product
             'query' => $query,
         ]);
 
+        // Important: here is how we set up the sorting
+        // The key is the attribute name on our "TourSearch" instance
+        $dataProvider->sort->attributes['province_id'] = [
+            // The tables are the ones our relation are configured to
+            // in my case they are prefixed with "tbl_"
+            'asc' => ['district.province_id' => SORT_ASC],
+            'desc' => ['district.province_id' => SORT_DESC],
+        ];
+
         $this->load($params);
 
         if (!$this->validate()) {
@@ -70,6 +80,7 @@ class ProductSearch extends Product
             'width' => $this->width,
             'height' => $this->height,
             'unit_id' => $this->unit_id,
+            'province_id' => $this->province_id
         ]);
 
         $query->andFilterWhere(['like', 'village', $this->village])
@@ -84,7 +95,8 @@ class ProductSearch extends Product
             ->andFilterWhere(['like', 'facebook', $this->facebook])
             ->andFilterWhere(['like', 'wechat', $this->wechat])
             ->andFilterWhere(['like', 'photo', $this->photo])
-            ->andFilterWhere(['like', 'urlmap', $this->urlmap]);
+            ->andFilterWhere(['like', 'urlmap', $this->urlmap])
+        ;
 
         return $dataProvider;
     }
