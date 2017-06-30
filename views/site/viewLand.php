@@ -2,6 +2,15 @@
 /* @var $model \app\models\Product */
 ?>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1869360129980672";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
 <div class="hero is-primary" style="height: 13rem;padding-top: 3rem">
     <div class="hero-body">
         <div class="container has-text-centered">
@@ -158,6 +167,7 @@
                 </nav>
             </div>
         </div>
-        <div class="fb-comments" data-href="<?= $model->facebook_url ?>" data-numposts="5"></div>
+
+        <div class="fb-comments" data-href="http://www.dinlao.com/web/index.php?r=site/view&amp;id=" data-numposts="5"></div>
     </div>
 </div>
