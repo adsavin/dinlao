@@ -41,6 +41,15 @@ use yii\helpers\Html;
     </style>
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1869360129980672";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
 <?php $this->beginBody() ?>
 <?= $content ?>
 <footer class="footer" style="margin-top: 50px">
@@ -66,11 +75,7 @@ use yii\helpers\Html;
         <div class="columns">
             <div class="column is-12 has-text-centered">
                 <div class="fb-like" data-href="<?= Yii::$app->params["facebookpage"] ?>"
-                     data-layout="button_count"
-                     data-action="like"
-                     data-size="large"
-                     data-show-faces="true"
-                     data-share="true"></div>
+                     data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
             </div>
         </div>
     </div>
