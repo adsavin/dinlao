@@ -56,16 +56,16 @@ $map = new \dosamigos\google\maps\Map([
                                 'animation' => \dosamigos\google\maps\overlays\Animation::BOUNCE,
             //                    'animation' => \dosamigos\google\maps\overlays\Animation::DROP
                             ]);
-
-                            $marker->attachInfoWindow(
-                                new \dosamigos\google\maps\overlays\InfoWindow([
-                                    'content' => '<a href="index.php?r=site/view&id='.$product->id.'">
-                                        <p>' . $product->village . ' 
-                                            <strong>'.number_format($product->width).' x '.number_format($product->height).' '.$product->unit->code.'</strong>
-                                        </p>
+                            $info = new \dosamigos\google\maps\overlays\InfoWindow([
+                                'content' => '<a href="index.php?r=site/view&id='.$product->id.'">
+                                        <p>' . $product->village . ',</p>
+                                        <p>' . (@Yii::$app->language=="la-LA"? $product->district->namelao:$product->district->name) . ',</p>
+                                        <p>' . (@Yii::$app->language=="la-LA"? $product->district->province->namelao:$product->district->province->name) . '</p>
+                                        <p><strong>'.number_format($product->width).' x '.number_format($product->height).''.$product->unit->code.'</strong></p>
+                                        <p><strong>'.number_format($product->price).' '.$product->currency->code.'</strong></p>
                                     </a>'
-                                ])
-                            );
+                            ]);
+                            $marker->attachInfoWindow($info);
                             $map->addOverlay($marker);
                         }
                         ?>
@@ -80,7 +80,7 @@ $map = new \dosamigos\google\maps\Map([
                                     <div class="card-content">
                                         <div class="media">
                                             <div class="media-left">
-                                                <figure class="image is-48x48 is-hidden-desktop">
+                                                <figure class="image is-128x128 is-hidden-desktop">
                                                     <img src="upload/photo/<?= $product->photo ?>" alt="Image">
                                                 </figure>
                                             </div>
