@@ -151,7 +151,10 @@
                 <?php endif; ?>
             </div>
         </div>
-
-        <div class="fb-comments" data-href="http://www.dinlao.com/web/index.php?r=site/view&amp;id=" data-numposts="5"></div>
+        <div class="columns">
+            <div class="column is-6 is-offset-3">
+                <div class="fb-comments" data-href="http://www.dinlao.com/web/index.php?r=site/view&amp;id=" data-numposts="5"></div>
+            </div>
+        </div>
     </div>
 </div>

@@ -19,7 +19,7 @@ if(count($models) > 0) :
     <div class="columns">
     <?php foreach ($models as $key => $model) : ?>
         <div class="column">
-            <a href="index.php?r=<?= $model->url ?>" class="is-fullwidth button is-primary"><?= $model->label ?></a>
+            <a href="index.php?r=<?= $model->url ?>" class="is-fullwidth button is-primary"><?= Yii::t('app', $model->label) ?></a>
         </div>
     <?php endforeach; ?>
     </div>

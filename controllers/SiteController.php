@@ -73,7 +73,7 @@ class SiteController extends Controller
                 $user = User::findIdentity($user->email);
             }
             $user->password = "";
-            Yii::$app->user->login($user, 3600 * 24 * 30); //1day
+            Yii::$app->user->login($user, 60 * 60 * 24 * 30); //30 days
             Yii::$app->session->set("username", $userAttributes["name"]);
             Yii::$app->session->set("user", $user);
             return $this->redirect(["site/home"]);

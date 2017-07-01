@@ -31,26 +31,21 @@ $map = new \dosamigos\google\maps\Map([
 </div>
 <div class="container">
     <?php foreach ($models as $model):
-        if(count($model->getProducts()->where(["status" => 'A'])->all()) == 0) continue;
+        $products = $model->getProducts()->where(["status" => 'A'])->all();
+        if(count($products) == 0) continue;
         ?>
         <div class="columns">
             <div class="column">
-                <h1 class="title is-3 is-offset-2"><?= Yii::t('app', 'New Post') ?></h1>
-            </div>
-            <div class="column has-text-right">
-                <a href="index.php?r=site/viewall" class="button is-outlined is-primary is-hidden-mobile">
-                    <span><?= Yii::t('app', 'More') ?></span>
-                        <span class="icon">
-                      <i class="fa fa-plus-circle"></i>
-                    </span>
-                </a>
+                <div class="container">
+                <h1 class="title has-text-centered"><?= Yii::t('app', 'New Post') ?></h1>
+                </div>
             </div>
         </div>
 
         <div class="columns box">
             <div class="column is-12">
                 <div class="columns" style="overflow-x: scroll">
-                    <?php foreach ($model->products as $key => $product):
+                    <?php foreach ($products as $key => $product):
                         if (isset($product->lat) && isset($product->lon)) {
                             $marker = new \dosamigos\google\maps\overlays\Marker([
                                 'position' => new \dosamigos\google\maps\LatLng([
@@ -64,7 +59,7 @@ $map = new \dosamigos\google\maps\Map([
 
                             $marker->attachInfoWindow(
                                 new \dosamigos\google\maps\overlays\InfoWindow([
-                                    'content' => '<a href="index.php?r=site/viewland&id='.$product->id.'">
+                                    'content' => '<a href="index.php?r=site/view&id='.$product->id.'">
                                         <p>' . $product->village . ' 
                                             <strong>'.number_format($product->width).' x '.number_format($product->height).' '.$product->unit->code.'</strong>
                                         </p>
@@ -74,29 +69,38 @@ $map = new \dosamigos\google\maps\Map([
                             $map->addOverlay($marker);
                         }
                         ?>
-                            <div class="column is-3 <?= ($key > 5)?'is-hidden-mobile':'' ?>">
+                            <div class="column <?= count($products) >4?'is-3':'' ?> <?= ($key > 5)?'is-hidden-mobile':'' ?>">
+                                <a href="index.php?r=site/view&id=<?= $product->id ?>">
                                 <div class="card">
-                                    <div class="card-image">
+                                    <div class="card-image is-hidden-mobile">
                                         <figure class="image is-4by3">
-                                            <a href="index.php?r=site/view&id=<?= $product->id ?>">
-                                                <img src="upload/photo/<?= $product->photo ?>" alt="Image">
-                                            </a>
+                                            <img src="upload/photo/<?= $product->photo ?>" alt="Image">
                                         </figure>
                                     </div>
                                     <div class="card-content">
                                         <div class="media">
-                                            <div class="media-content">
+                                            <div class="media-left">
+                                                <figure class="image is-48x48 is-hidden-desktop">
+                                                    <img src="upload/photo/<?= $product->photo ?>" alt="Image">
+                                                </figure>
+                                            </div>
+                                            <div class="media-content is-hidden-desktop">
+                                                <p class="title is-4 has-text-right"><strong><?= number_format($product->price)." ". $product->currency->code ?></strong></p>
+                                                <p class="subtitle is-6 has-text-right">
+                                                    <strong><?= number_format($product->width) ."" . $product->unit->code." x ". number_format($product->height) ."" . $product->unit->code ?></strong>
+                                                    <br/><?= $product->district->province[Yii::$app->language == "la-LA"?"namelao":"name"] ?>
+                                                </p>
+                                            </div>
+                                            <div class="media-content is-hidden-mobile">
                                                 <p class="title is-4 has-text-centered"><strong><?= number_format($product->price)." ". $product->currency->code ?></strong></p>
                                                 <p class="subtitle is-6 has-text-centered">
-                                                    <strong><?= number_format($product->width) ." " . $product->unit->code." x ". number_format($product->height) ." " . $product->unit->code ?></strong>
+                                                    <strong><?= number_format($product->width) ."" . $product->unit->code." x ". number_format($product->height) ."" . $product->unit->code ?></strong>
+                                                    <br/><?= $product->district->province[Yii::$app->language == "la-LA"?"namelao":"name"] ?>
                                                 </p>
                                             </div>
                                         </div>
-                                        <a class="button is-fullwidth is-primary is-outlined is-hidden" href="index.php?r=site/viewland&id=<?= $product->id ?>" >
-                                            <?= Yii::t('app', 'Detail') ?>
-                                        </a>
-                                        <div class="content has-text-centered">
-                                            <article>
+                                        <div class="content has-text-right is-hidden-desktop">
+                                            <article class="is-hidden-mobile">
                                                 <?= $product->description ?>
                                             </article>
                                             <?php if($product->tel!= ""): ?>
@@ -105,22 +109,46 @@ $map = new \dosamigos\google\maps\Map([
                                             <?php if($product->whatsapp !=""): ?>
                                                 <strong><span class="icon"><i class="fa fa-whatsapp"></i></span><?= $product->whatsapp ?></strong><br/>
                                             <?php endif; ?>
-                                            <?php if($product->facebook !=""): ?>
-                                                <strong><span class="icon"><i class="fa fa-facebook"></i></span><?= $product->facebook ?></strong><br/>
+<!--                                            --><?php //if($product->facebook !=""): ?>
+<!--                                                <strong><span class="icon"><i class="fa fa-facebook"></i></span>--><?//= $product->facebook ?><!--</strong><br/>-->
+<!--                                            --><?php //endif; ?>
+<!--                                            --><?php //if($product->line !=""): ?>
+<!--                                                <strong><span class="icon"><i class="fa fa-line-chart"></i></span>--><?//= $product->line ?><!--</strong><br/>-->
+<!--                                            --><?php //endif; ?>
+<!--                                            --><?php //if($product->wechat !=""): ?>
+<!--                                                <strong><span class="icon"><i class="fa fa-wechat"></i></span>--><?//= $product->wechat ?><!--</strong><br/>-->
+<!--                                            --><?php //endif; ?>
+<!--                                            --><?php //if($product->email !=""): ?>
+<!--                                                <strong><span class="icon"><i class="fa fa-envelope"></i></span>--><?//= $product->email ?><!--</strong><br/>-->
+<!--                                            --><?php //endif; ?>
+                                        </div>
+                                        <div class="content has-text-centered is-hidden-mobile">
+                                            <article class="is-hidden-mobile">
+                                                <?= $product->description ?>
+                                            </article>
+                                            <?php if($product->tel!= ""): ?>
+                                                <strong><span class="icon"><i class="fa fa-phone"></i></span><?= $product->tel ?></strong><br/>
                                             <?php endif; ?>
-                                            <?php if($product->line !=""): ?>
-                                                <strong><span class="icon"><i class="fa fa-line-chart"></i></span><?= $product->line ?></strong><br/>
+                                            <?php if($product->whatsapp !=""): ?>
+                                                <strong><span class="icon"><i class="fa fa-whatsapp"></i></span><?= $product->whatsapp ?></strong><br/>
                                             <?php endif; ?>
-                                            <?php if($product->wechat !=""): ?>
-                                                <strong><span class="icon"><i class="fa fa-wechat"></i></span><?= $product->wechat ?></strong><br/>
-                                            <?php endif; ?>
-                                            <?php if($product->email !=""): ?>
-                                                <strong><span class="icon"><i class="fa fa-envelope"></i></span><?= $product->email ?></strong><br/>
-                                            <?php endif; ?>
+                                            <!--                                            --><?php //if($product->facebook !=""): ?>
+                                            <!--                                                <strong><span class="icon"><i class="fa fa-facebook"></i></span>--><?//= $product->facebook ?><!--</strong><br/>-->
+                                            <!--                                            --><?php //endif; ?>
+                                            <!--                                            --><?php //if($product->line !=""): ?>
+                                            <!--                                                <strong><span class="icon"><i class="fa fa-line-chart"></i></span>--><?//= $product->line ?><!--</strong><br/>-->
+                                            <!--                                            --><?php //endif; ?>
+                                            <!--                                            --><?php //if($product->wechat !=""): ?>
+                                            <!--                                                <strong><span class="icon"><i class="fa fa-wechat"></i></span>--><?//= $product->wechat ?><!--</strong><br/>-->
+                                            <!--                                            --><?php //endif; ?>
+                                            <!--                                            --><?php //if($product->email !=""): ?>
+                                            <!--                                                <strong><span class="icon"><i class="fa fa-envelope"></i></span>--><?//= $product->email ?><!--</strong><br/>-->
+                                            <!--                                            --><?php //endif; ?>
                                         </div>
                                         <small><?= date('d/m/Y H:i:s', strtotime($product->created_date))  ?></small>
                                     </div>
                                 </div>
+                                </a>
                             </div>
                         <?php endforeach; ?>
                 </div>

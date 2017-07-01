@@ -23,7 +23,7 @@ class ProductSearch extends Product
         return [
             [['id', 'district_id', 'province_id', 'user_id', 'currency_id', 'product_type_id', 'doc_type_id', 'unit_id'], 'integer'],
             [['village', 'description', 'created_date', 'status', 'lat', 'lon', 'tel', 'email', 'whatsapp', 'line', 'facebook', 'wechat', 'photo', 'urlmap'], 'safe'],
-            [['price', 'area', 'width', 'height'], 'number'],
+            [['price', 'area', 'width', 'height', 'pricemin', 'pricemax', 'areamin', 'areamax'], 'number'],
         ];
     }
 
@@ -63,8 +63,33 @@ class ProductSearch extends Product
         ];
 
         $this->load($params);
-        if(isset($params["province_id"]))
-        $this->province_id = $params["province_id"];
+        if(isset($params['ProductSearch']["province_id"]))
+            $this->province_id = $params['ProductSearch']["province_id"];
+
+        if(isset($params['ProductSearch']["pricemin"]))
+            if($this->pricemin > 0 || $this->pricemin != "") {
+                $query->andWhere("price is null or price >= :pricemin", [":pricemin" => $this->pricemin]);
+                $this->pricemin = $params['ProductSearch']["pricemin"];
+            }
+        if(isset($params['ProductSearch']["pricemax"]))
+            if($this->pricemax > 0 || $this->pricemax != "") {
+                $this->pricemax = $params['ProductSearch']["pricemax"];
+                $query->andWhere("price is null or price <= :pricemax", [":pricemax" => $this->pricemax]);
+            }
+
+
+        if(isset($params['ProductSearch']["areamin"]))
+            if($this->areamin > 0 || $this->areamin != "") {
+                $query->andWhere("area is null or area >= :areamin", [":areamin" => $this->areamin]);
+                $this->areamin = $params['ProductSearch']["areamin"];
+            }
+
+        if(isset($params['ProductSearch']["areamax"]))
+            if($this->areamax > 0 || $this->areamax != "") {
+                $query->andWhere("area is null or area <= :areamax", [":areamax" => $this->areamax]);
+                $this->areamax = $params['ProductSearch']["areamax"];
+            }
+
 
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails

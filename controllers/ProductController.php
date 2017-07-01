@@ -99,7 +99,7 @@ class ProductController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate($code) {
+    public function actionCreate($code="L") {
         if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
             Yii::$app->user->login(Yii::$app->session['user']);
         } else {

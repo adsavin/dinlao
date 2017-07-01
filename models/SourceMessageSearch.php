@@ -65,6 +65,8 @@ class SourceMessageSearch extends SourceMessage
         $query->andFilterWhere(['like', 'category', $this->category])
             ->andFilterWhere(['like', 'message', $this->message]);
 
+        $query->orderBy("messages.translation, message");
+
         return $dataProvider;
     }
 }

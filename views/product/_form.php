@@ -32,7 +32,7 @@ use yii\helpers\Html;
         <div class="column is-8">
             <?= $form->field($model, 'doc_type_id', [
                 'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
-            ])->dropDownList(\yii\helpers\ArrayHelper::map($docTypes, "id", "name")) ?>
+            ])->dropDownList(\yii\helpers\ArrayHelper::map($docTypes, "id", Yii::$app->language == "la-LA"?"namelao":"name")) ?>
             <div class="columns">
                 <div class="column is-9">
                     <?= $form->field($model, 'price')->textInput(['class'=>'input', 'maxlength' => true]) ?>
@@ -44,10 +44,13 @@ use yii\helpers\Html;
                 </div>
             </div>
             <div class="columns">
-                <div class="column is-9">
-                    <?= $form->field($model, 'area')->textInput(['class'=>'input', 'maxlength' => true]) ?>
+                <div class="column is-4">
+                    <?= $form->field($model, 'width')->textInput(['class'=>'input', 'maxlength' => true]) ?>
                 </div>
-                <div class="column is-3">
+                <div class="column is-4">
+                    <?= $form->field($model, 'height')->textInput(['class'=>'input', 'maxlength' => true]) ?>
+                </div>
+                <div class="column is-2">
                     <?= $form->field($model, 'unit_id', [
                         'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
                     ])->dropDownList(\yii\helpers\ArrayHelper::map(
@@ -56,11 +59,8 @@ use yii\helpers\Html;
                 </div>
             </div>
             <div class="columns">
-                <div class="column is-half">
-                    <?= $form->field($model, 'width')->textInput(['class'=>'input', 'maxlength' => true]) ?>
-                </div>
-                <div class="column is-half">
-                    <?= $form->field($model, 'height')->textInput(['class'=>'input', 'maxlength' => true]) ?>
+                <div class="column">
+                    <?= $form->field($model, 'area')->textInput(['class'=>'input', 'maxlength' => true]) ?>
                 </div>
             </div>
         </div>
@@ -242,6 +242,17 @@ $this->registerJs("
             }
         });
     });
+    $('#product-width, #product-height').change(function() {
+        var w = $('#product-width').val().replace(/[^0-9]/g, '');        
+        var h = $('#product-height').val().replace(/[^0-9]/g, '');
+        if(w !='' && h != '') $('#product-area').val(w*h);
+    });
+    $('#product-unit_id').change(function() {
+        var u = $(this).val(); 
+        var t = $('#product-unit_id option[value=\"'+u+'\"]').html();        
+        $('label[for=\"product-area\"]').html('".Yii::t('app', 'Area')." ('+t+'<sup>2</sup>)');
+    });
+    $('#product-unit_id').change();
 
   function previewImage(input, \$preview) {
         if (input.files && input.files[0]) {
@@ -252,4 +263,3 @@ $this->registerJs("
           reader.readAsDataURL(input.files[0]);
         }
   }");
-?>
