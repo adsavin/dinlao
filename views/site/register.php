@@ -7,7 +7,7 @@
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 
-$this->title = Yii::t('app','Sign In');
+$this->title = Yii::t('app','Register');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
@@ -33,7 +33,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     'class' => 'box',
                 ],
                 'fieldConfig' => [
-//                 'template' => "<div class=\"column is-12\">{input}</div>\n<div class=\"column is-12 help is-danger\">{error}</div>",
                     'template' => "<div class=\"column is-12 has-text-centered\">{label}\n{input}\n{error}</div>",
                     'horizontalCssClasses' => [
                         'error' => 'help is-danger',
@@ -41,21 +40,16 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 'errorCssClass' => 'is-danger'
             ]); ?>
-            <p class="title has-text-centered"><?= Yii::t('app', 'Sign in by facebook') ?></p>
-            <a class="button is-primary is-fullwidth" href="index.php?r=site%2Fauth&amp;authclient=facebook" title="Facebook" data-popup-width="860" data-popup-height="480">
-                <i class="fa fa-facebook"></i>
-<!--                --><?//= Yii::t('app', 'Sign In') ?>
-            </a>
-            <hr/>
             <p class="title"><?= Html::encode($this->title) ?></p>
-            <p class="subtitle"><?= Yii::t('app', 'Please fill out the following fields to sign in') ?>:</p>
+            <p class="subtitle"><?= Yii::t('app', 'Please fill out the following fields to register') ?></p>
             <?= $form->field($model, 'email')->textInput(['class' => 'input has-text-centered', 'placeholder' => Yii::t('app','Email')]) ?>
             <?= $form->field($model, 'password')->passwordInput(['class' => 'input has-text-centered', 'placeholder' => Yii::t('app', 'Password')]) ?>
-            <?= $form->field($model, 'rememberMe')->checkbox([
-                'template' => "<div class=\"column is-12\">{input} {label}</div>\n<div class=\"is-8\">{error}</div>",
-            ]) ?>
+            <?= $form->field($model, 'confirmpassword')->passwordInput(['class' => 'input has-text-centered', 'placeholder' => Yii::t('app', 'Confirm Password')]) ?>
+            <?= $form->field($model, 'firstname')->textInput(['class' => 'input has-text-centered', 'placeholder' => Yii::t('app','Firstname')]) ?>
+            <?= $form->field($model, 'lastname')->textInput(['class' => 'input has-text-centered', 'placeholder' => Yii::t('app','Lastname')]) ?>
+<!--            I'm not robot-->
             <div class="column is-12">
-                <?= Html::submitButton(Yii::t('app','Sign In'), ['class' => 'button is-primary', 'name' => 'login-button']) ?>
+                <?= Html::submitButton(Yii::t('app','Register'), ['class' => 'button is-primary', 'name' => 'login-button']) ?>
             </div>
             <?php ActiveForm::end(); ?>
         </div>

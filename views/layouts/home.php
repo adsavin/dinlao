@@ -1,7 +1,14 @@
 <?php
 /* @var $this yii\web\View */
 $this->beginContent('@app/views/layouts/main.php'); ?>
-
+<style>
+    a.is-active {
+        background-color: #620001 !important;
+    }
+    .menu-list a:hover {
+        color: #620001 !important;
+    }
+</style>
 <div class="container is-hidden-mobile">
     <a href="index.php" class="nav-item has-shadow is-outlined" style="position: absolute;z-index: 33">
         <img class="" src="image/logo.png" alt="DINLAO.COM" style="max-height: 12rem;">
@@ -159,8 +166,6 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
     </div>
 </div>
 <?php $this->endContent(); ?>
-
-
 <script>
     $(document).ready(function () {
         $(".nav-toggle").click(function () {

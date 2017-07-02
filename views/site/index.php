@@ -71,43 +71,42 @@ $map = new \dosamigos\google\maps\Map([
                         ?>
                             <div class="column <?= count($products) >4?'is-3':'' ?> <?= ($key > 5)?'is-hidden-mobile':'' ?>">
                                 <a href="index.php?r=site/view&id=<?= $product->id ?>">
-                                <div class="card">
+                                <div class="card" style="background-image: url('upload/photo/<?= $product->photo ?>'); background-size: 100% auto;background-repeat: no-repeat">
                                     <div class="card-image is-hidden-mobile">
                                         <figure class="image is-4by3">
-                                            <img src="upload/photo/<?= $product->photo ?>" alt="Image">
+<!--                                            <img src="upload/photo/--><?//= $product->photo ?><!--" alt="Image">-->
                                         </figure>
                                     </div>
-                                    <div class="card-content">
+                                    <div class="card-content" style="background-color: #333333;opacity: 0.7">
                                         <div class="media">
-                                            <div class="media-left">
+                                            <div class="media-left is-hidden">
                                                 <figure class="image is-64x64 is-hidden-desktop">
                                                     <img src="upload/photo/<?= $product->photo ?>" alt="Image">
                                                 </figure>
                                             </div>
                                             <div class="media-content is-hidden-desktop">
-                                                <p class="title is-4 has-text-right"><strong><?= number_format($product->price)." ". $product->currency->code ?></strong></p>
-                                                <p class="subtitle is-6 has-text-right">
-                                                    <strong><?= number_format($product->width) ."" . $product->unit->code." x ". number_format($product->height) ."" . $product->unit->code ?></strong>
-                                                    <br/><?= $product->district->province[Yii::$app->language == "la-LA"?"namelao":"name"] ?>
+                                                <p class="title is-4 has-text-right" style="color: #ffffff"><strong><?= number_format($product->price)." ". $product->currency->code ?></strong></p>
+                                                <p class="subtitle is-6 has-text-right" style="color: #ffffff">
+                                                    <strong  style="color: #ffffff"><?= number_format($product->width) ."" . $product->unit->code." x ". number_format($product->height) ."" . $product->unit->code ?></strong>
+                                                    <br/>
+                                                    <strong style="color: #ffffff"><?= $product->district->province[Yii::$app->language == "la-LA"?"namelao":"name"] ?></strong>
                                                 </p>
                                             </div>
                                             <div class="media-content is-hidden-mobile">
-                                                <p class="title is-4 has-text-centered"><strong><?= number_format($product->price)." ". $product->currency->code ?></strong></p>
-                                                <p class="subtitle is-6 has-text-centered">
-                                                    <strong><?= number_format($product->width) ."" . $product->unit->code." x ". number_format($product->height) ."" . $product->unit->code ?></strong>
-                                                    <br/><?= $product->district->province[Yii::$app->language == "la-LA"?"namelao":"name"] ?>
+                                                <p class="title is-4 has-text-centered" style="color: #ffffff"><strong><?= number_format($product->price)." ". $product->currency->code ?></strong></p>
+                                                <p class="subtitle is-6 has-text-centered" style="color: #ffffff">
+                                                    <strong style="color: #ffffff"><?= number_format($product->width) ."" . $product->unit->code." x ". number_format($product->height) ."" . $product->unit->code ?></strong>
+                                                    <br/>
+                                                    <strong style="color: #ffffff"><?= $product->district->province[Yii::$app->language == "la-LA"?"namelao":"name"] ?></strong>
                                                 </p>
                                             </div>
                                         </div>
                                         <div class="content has-text-right is-hidden-desktop">
-                                            <article class="is-hidden-mobile">
-                                                <?= $product->description ?>
-                                            </article>
                                             <?php if($product->tel!= ""): ?>
-                                                <strong><span class="icon"><i class="fa fa-phone"></i></span><?= $product->tel ?></strong><br/>
+                                                <strong style="color: #ffffff"><span class="icon"><i class="fa fa-phone"></i></span><?= $product->tel ?></strong><br/>
                                             <?php endif; ?>
                                             <?php if($product->whatsapp !=""): ?>
-                                                <strong><span class="icon"><i class="fa fa-whatsapp"></i></span><?= $product->whatsapp ?></strong><br/>
+                                                <strong style="color: #ffffff"><span class="icon"><i class="fa fa-whatsapp"></i></span><?= $product->whatsapp ?></strong><br/>
                                             <?php endif; ?>
 <!--                                            --><?php //if($product->facebook !=""): ?>
 <!--                                                <strong><span class="icon"><i class="fa fa-facebook"></i></span>--><?//= $product->facebook ?><!--</strong><br/>-->
@@ -123,14 +122,14 @@ $map = new \dosamigos\google\maps\Map([
 <!--                                            --><?php //endif; ?>
                                         </div>
                                         <div class="content has-text-centered is-hidden-mobile">
-                                            <article class="is-hidden-mobile">
+                                            <article class="is-hidden-mobile" style="color: #ffffff">
                                                 <?= $product->description ?>
                                             </article>
                                             <?php if($product->tel!= ""): ?>
-                                                <strong><span class="icon"><i class="fa fa-phone"></i></span><?= $product->tel ?></strong><br/>
+                                                <strong style="color: #ffffff"><span class="icon"><i class="fa fa-phone"></i></span><?= $product->tel ?></strong><br/>
                                             <?php endif; ?>
                                             <?php if($product->whatsapp !=""): ?>
-                                                <strong><span class="icon"><i class="fa fa-whatsapp"></i></span><?= $product->whatsapp ?></strong><br/>
+                                                <strong style="color: #ffffff"><span class="icon"><i class="fa fa-whatsapp"></i></span><?= $product->whatsapp ?></strong><br/>
                                             <?php endif; ?>
                                             <!--                                            --><?php //if($product->facebook !=""): ?>
                                             <!--                                                <strong><span class="icon"><i class="fa fa-facebook"></i></span>--><?//= $product->facebook ?><!--</strong><br/>-->
@@ -145,7 +144,7 @@ $map = new \dosamigos\google\maps\Map([
                                             <!--                                                <strong><span class="icon"><i class="fa fa-envelope"></i></span>--><?//= $product->email ?><!--</strong><br/>-->
                                             <!--                                            --><?php //endif; ?>
                                         </div>
-                                        <small><?= date('d/m/Y H:i:s', strtotime($product->created_date))  ?></small>
+                                        <small style="color: #ffffff"><?= date('d/m/Y H:i:s', strtotime($product->created_date))  ?></small>
                                     </div>
                                 </div>
                                 </a>

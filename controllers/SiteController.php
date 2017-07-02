@@ -229,4 +229,35 @@ class SiteController extends Controller
             'units' => Unit::find()->all()
         ]);
     }
+
+    public function actionRegister() {
+        $this->layout = "index";
+        $model = new User();
+        if($model->load(Yii::$app->request->post())) {
+            $post = Yii::$app->request->post();
+            $model->confirmpassword = $post["User"]["confirmpassword"];
+
+            if($model->confirmpassword != $model->password) {
+                $model->addError("confirmpassword", Yii::t('app', 'Confirm Password is not matched'));
+                return $this->render("register", ['model' => $model]);
+            }
+
+            $model->registerd_date = date("Y-m-d H:i:s");
+            $model->birthdate = date('Y-m-d');
+            $model->role = "U";
+            $model->status = "A";
+            if(!$model->save()) {
+                return $this->render("register", ['model' => $model]);
+            }
+
+            Yii::$app->user->login($model, 60*60*24*10); //7 days
+            Yii::$app->session->set("user", $model);
+
+            return $this->redirect(["site/home"]);
+        }
+
+        return $this->render("register", [
+            "model" => $model
+        ]);
+    }
 }

@@ -1,21 +1,17 @@
 .hero.is-primary {
     background-color: #620001 !important;
 }
-
 .button.is-primary.is-outlined {
     background-color: #ffffff;
     border-color: #620001 !important;
     color: #620001 !important;
 }
-
 .button.is-primary.is-outlined:hover {
     background-color: #ffffff !important;
 }
-
 .button.is-primary, .button.is-primary:hover {
     background-color: #620001;
 }
-
 a {
     color: #620001;
 }
