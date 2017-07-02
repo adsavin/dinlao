@@ -31,12 +31,12 @@ use yii\helpers\Html;
     <style rel="stylesheet">
         <?php if(Yii::$app->language == "la-LA"): ?>
         body, button, input, select, textarea {
-            font-family: "Noto Sans Lao", "Noto Sans Southeast Asian", "Noto Serif Southeast Asian", "Noto Serif Lao", "Saysettha OT","Phetsarath OT", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+            font-family: "Noto Sans Lao", "Noto Sans Southeast Asian", "Noto Serif Southeast Asian", "Noto Serif Lao", "Saysettha OT","Phetsarath OT", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
         }
         <?php endif; ?>
-        <?php if(Yii::$app->language == "en-US"): ?>
+        <?php if(Yii::$app->language != "la-LA"): ?>
         #changelang {
-            font-family: "Noto Sans Lao", "Noto Sans Southeast Asian", "Noto Serif Southeast Asian", "Noto Serif Lao", "Saysettha OT","Phetsarath OT", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+            font-family: "Noto Sans Lao", "Noto Sans Southeast Asian", "Noto Serif Southeast Asian", "Noto Serif Lao", "Saysettha OT","Phetsarath OT", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
         }
         <?php endif; ?>
     </style>
