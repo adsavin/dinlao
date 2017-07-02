@@ -23,7 +23,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
             [
                 'attribute' => 'filename',
-                'filterInputOptions' => ['class'=>'input'],
+                'format' => 'html',
+                'value' => function($data) {
+                    return Html::img("upload/picture/". $data->filename);
+                }
             ],
             [
                 'attribute' => 'product_id',

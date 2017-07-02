@@ -123,7 +123,7 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
                                             <?php
                                             foreach ($menus as $menu) :
                                                 $class = '';
-                                                if(strpos($menu->url, Yii::$app->controller->id.'/') === 0) {
+                                                if(strpos($menu->url, Yii::$app->controller->id.'/'.Yii::$app->controller->action->id) === 0) {
                                                     $class = 'is-active';
                                                 }
                                                  ?>

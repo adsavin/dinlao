@@ -21,7 +21,7 @@ $products = $dataProviderForMobile->models;
             <h1 class="subtitle has-text-right">
                 <?= Yii::t("app","Properties Advertisement") ?><br />
                 <?= Yii::t('app', 'Where buyers & sellers meet') ?> <br />
-                <a href="index.php?r=site/aboutus" class="button"><?= Yii::t('app','What we do') ?></a>
+                <a href="index.php?r=site/about" class="button"><?= Yii::t('app','What we do') ?></a>
             </h1>
         </div>
     </div>

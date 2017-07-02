@@ -24,6 +24,10 @@ use Yii;
  */
 class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
+    public $picturefile;
+    public $newpassword;
+    public $confirmpassword;
+
     public static function findIdentity($id)
     {
         // TODO: Implement findIdentity() method.
@@ -74,6 +78,8 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             [['email', 'password', 'firstname', 'lastname', 'picture'], 'string', 'max' => 255],
             [['status', 'role'], 'string', 'max' => 1],
             [['email'], 'unique'],
+
+            [['picturefile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
         ];
     }
 
@@ -93,6 +99,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'registerd_date' => Yii::t('app', 'Registerd Date'),
             'role' => Yii::t('app', 'Role'),
             'picture' => Yii::t('app', 'Picture'),
+            'picturefile' => Yii::t('app', 'Picture'),
         ];
     }
 
