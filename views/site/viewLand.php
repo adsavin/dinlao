@@ -28,16 +28,13 @@
     </div>
     <div class="columns">
         <div class="column has-text-right">
-            <div class="fb-share-button"
+            <div class="fb-like"
                  data-href="http://dinlao.com/web/index.php?r=site/view&amp;id=<?= $model->id ?>"
                  data-layout="button_count"
+                 data-action="like"
                  data-size="large"
-                 data-mobile-iframe="true">
-                <a class="fb-xfbml-parse-ignore"
-                   target="_blank"
-                   href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdinlao.com%2Fweb%2Findex.php%3Fr%3Dsite%252Fview%26id%3D<?= $model->id ?>&amp;src=sdkpreparse">
-                    <?= Yii::t('app', 'Share to Facebook') ?>
-                </a>
+                 data-show-faces="true"
+                 data-share="true">
             </div>
         </div>
     </div>
