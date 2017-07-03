@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <?php if(count($model->pictures) > 0): ?>
-    <h1 class="title is-4"><?= Yii::t('app', 'Attached Photos') ?></h1>
+    <h1 class="subtitle has-text-centered"><?= Yii::t('app', 'Attached Photos') ?></h1>
     <div class="columns">
         <?php foreach ($model->pictures as $picture): ?>
             <div class="column">
@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <?php endif; ?>
 
-    <h1 class="title is-4"><?= Yii::t('app', 'Detail') ?></h1>
+    <h1 class="subtitle has-text-centered"><?= Yii::t('app', 'Detail') ?></h1>
     <div class="columns">
         <div class="column is-10 is-offset-1 has-text-centered">
             <?= DetailView::widget([
@@ -53,17 +53,57 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attributes' => [
                     [
                         'attribute' => 'price',
-                        'value' => number_format($model->price, 2) ." ". $model->currency->code
+                        'value' => number_format($model->price) ." ". $model->currency->code
                     ],
                     [
                         'attribute' => 'area',
                         'format' =>'raw',
-                        'value' => number_format($model->area, 2) ." ".$model->unit->code."<sup>2</sup> (W: ".number_format($model->width, 2) .", H: ". number_format($model->height, 2).")",
+                        'value' => number_format($model->area) ." ".$model->unit->code."<sup>2</sup> (W: ".number_format($model->width) .", H: ". number_format($model->height).")",
                     ],
                     [
                         'attribute' => 'doc_type_id',
                         'value' => $model->docType->name
                     ],
+                ],
+            ]) ?>
+        </div>
+    </div>
+
+    <div class="columns">
+        <div class="column is-6 is-offset-3 has-text-centered">
+            <h1 class="subtitle"><?= Yii::t('app', 'Retails Lands Details') ?></h1>
+            <?php
+            if(isset($model->productDetails))
+                if($model->productType->code == "R" && count($model->productDetails) > 0): ?>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th><?= Yii::t('app', 'Width') ?></th>
+                        <th><?= Yii::t('app', 'Height') ?></th>
+                        <th style="text-align: right !important;"><?= Yii::t('app', 'Price') ?></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($model->productDetails as $detail): ?>
+                        <tr>
+                            <td><?= number_format($detail->width) ?></td>
+                            <td><?= number_format($detail->height) ?></td>
+                            <td class="has-text-right"><?= number_format($detail->price) ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+            <?php
+                endif; ?>
+        </div>
+    </div>
+
+    <div class="columns">
+        <div class="column is-10 is-offset-1 has-text-centered">
+            <h1 class="subtitle"><?= Yii::t('app', 'Location') ?></h1>
+            <?= DetailView::widget([
+                'model' => $model,
+                'attributes' => [
                     'village',
                     [
                         'label' => Yii::t("app", "District"),
@@ -140,10 +180,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
 </div>
 <style>
-    th {
+    .detail-view th {
         width: 50%;
     }
-    tr th:first-child {
+    .detail-view tr th:first-child {
         text-align: right;
     }
 </style>

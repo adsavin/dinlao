@@ -1,7 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $models app\models\ProductType[] */
+/* @var $models app\models\Product[] */
 
 $this->title = 'DINLAO.COM - HOME';
 
@@ -30,9 +30,9 @@ $map = new \dosamigos\google\maps\Map([
     </div>
 </div>
 <div class="container">
-    <?php foreach ($models as $model):
-        $products = $model->getProducts()->where(["status" => 'A'])->all();
-        if(count($products) == 0) continue;
+    <?php
+        $products = $models;
+        if(count($products) > 0) :
         ?>
         <div class="columns">
             <div class="column">
@@ -84,6 +84,11 @@ $map = new \dosamigos\google\maps\Map([
                                                 </figure>
                                             </div>
                                             <div class="media-content is-hidden-desktop">
+                                                <p class="subtitle is-6 has-text-right" style="color: #ffffff">
+                                                    <strong>
+                                                        <?= Yii::$app->language == "la-LA"?$product->productType->namelao:$product->productType->name ?>
+                                                    </strong>
+                                                </p>
                                                 <p class="title is-4 has-text-right" style="color: #ffffff"><strong><?= number_format($product->price)." ". $product->currency->code ?></strong></p>
                                                 <p class="subtitle is-6 has-text-right" style="color: #ffffff">
                                                     <strong  style="color: #ffffff"><?= number_format($product->width) ."" . $product->unit->code." x ". number_format($product->height) ."" . $product->unit->code ?></strong>
@@ -101,6 +106,11 @@ $map = new \dosamigos\google\maps\Map([
                                                 </p>
                                             </div>
                                             <div class="media-content is-hidden-mobile">
+                                                <p class="subtitle is-6 has-text-centered" style="color: #ffffff">
+                                                    <strong style="color: #ffffff;">
+                                                        <?= Yii::$app->language == "la-LA"?$product->productType->namelao:$product->productType->name ?>
+                                                    </strong>
+                                                </p>
                                                 <p class="title is-4 has-text-centered" style="color: #ffffff"><strong><?= number_format($product->price)." ". $product->currency->code ?></strong></p>
                                                 <p class="subtitle is-6 has-text-centered" style="color: #ffffff">
                                                     <strong style="color: #ffffff"><?= number_format($product->width) ."" . $product->unit->code." x ". number_format($product->height) ."" . $product->unit->code ?></strong>
@@ -149,7 +159,7 @@ $map = new \dosamigos\google\maps\Map([
             </div>
         </div>
         <hr />
-    <?php endforeach; ?>
+    <?php endif; ?>
     <div class="columns">
         <div class="column is-10 is-offset-1">
             <h1 class="title is-2 has-text-centered"><?= Yii::t("app", "All in one map") ?></h1>

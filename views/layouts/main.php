@@ -20,7 +20,14 @@ use yii\helpers\Html;
     <meta property="og:title" content="dinlao.com - Properties Advertisement" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<?= Yii::t('app', 'DinLao.com - Properties Advertisement, where buyers & sellers meet') ?>" />
-    <meta property="og:image" content="http://dinlao.com/web/image/logo.png" />
+
+    <?php
+    if(isset($this->params['fbphoto'])): ?>
+        <meta property="og:image" content="http://dinlao.com/web/upload/photo/<?= $this->params['fbphoto'] ?>" />
+    <?php else: ?>
+        <meta property="og:image" content="http://dinlao.com/web/image/logo.png" />
+    <?php endif; ?>
+
     <meta property="og:description" content="dinlao.com - The Advertisement for buyers & sellers" />
 
     <?= Html::csrfMetaTags() ?>
@@ -61,8 +68,8 @@ use yii\helpers\Html;
                 <p><a href="index.php?r=site/register"><?= Yii::t("app","Register") ?></a></p>
             </div>
             <div class="column has-text-centered">
-                <p><a href="index.php?r=site/login"><?= Yii::t("app","Contact Us") ?></a></p>
-                <p><a href="index.php?r=site/register"><?= Yii::t("app","Terms & Conditions") ?></a></p>
+                <p><a href="index.php?r=site/about"><?= Yii::t("app","Contact Us") ?></a></p>
+                <p><a href="index.php?r=site/terms"><?= Yii::t("app","Terms & Conditions") ?></a></p>
             </div>
             <div class="column has-text-centered">
                     <p>

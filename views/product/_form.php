@@ -76,7 +76,6 @@ use yii\helpers\Html;
     </div>
 
     <?php
-    print_r($model->productDetails);
     if(isset($model->productDetails)):
         if(count($model->productDetails) > 0) : ?>
             <table class="table">
@@ -90,7 +89,7 @@ use yii\helpers\Html;
                 </thead>
                 <tbody>
                 <?php foreach ($model->productDetails as $key => $detail): ?>
-                    <tr>
+                    <tr data-id="<?= $detail->id ?>" >
                         <td><?= $detail->width ?></td>
                         <td><?= $detail->height ?></td>
                         <td><?= $detail->price ?></td>
@@ -105,7 +104,7 @@ use yii\helpers\Html;
     endif;
     ?>
 
-    <div class="productdetail is-hidden">
+    <div class="productdetail <?= ($model->productType->code == "R")?'':'is-hidden' ?>">
         <h1 class="title"><?= Yii::t('app', 'Retails Lands Details') ?></h1>
         <div class="columns">
             <div class="column is-12">
@@ -292,8 +291,9 @@ $this->registerJs("
     
     $('.deleteproductdetail').click(function() {
         var id = $(this).data('id');
-        $.post('index.php?r=product/deleteProductDetail', {'id': id}, function(data) {
+        $.post('index.php?r=product/deleteproductdetail', {'id': id}, function(data) {
             if(!$.isNumeric(data)) alert(data);
+            else $('tr[data-id='+id+']').remove();
         });
     });
     

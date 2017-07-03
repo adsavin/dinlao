@@ -325,18 +325,27 @@ class ProductController extends Controller
         ]);
     }
 
-    public function actionDeleteProductDetail() {
-        echo "sd";
+    public function actionDeleteproductdetail() {
         if(Yii::$app->request->isAjax) {
-            $post = Yii::$app->request->post();
-            $detail = ProductDetail::findOne();
-            if(!isset($detail))
-                echo Yii::t("app", "Incorrect ID");
+            try{
+                $post = Yii::$app->request->post();
+                $detail = ProductDetail::find()->where(['id' => $post["id"]])->one();
+                if(!isset($detail)) {
+                    echo Yii::t("app", "Incorrect ID");
+                    exit;
+                }
 
-            if($detail->product->user_id != Yii::$app->user->identity->id )
-                echo Yii::t("app", "Permission Denied");
+                if($detail->product->user_id != Yii::$app->user->identity->id ) {
+                    echo Yii::t("app", "Permission Denied");
+                    exit;
+                }
 
-            echo ProductDetail::deleteAll(["id" => $post["id"]]);
+                echo ProductDetail::deleteAll(["id" => $post["id"]]);
+                exit;
+            } catch (Exception $ex) {
+                echo json_encode($ex->getMessage());
+                exit;
+            }
         }
     }
 }
