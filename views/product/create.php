@@ -13,6 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1 class="title is-3"><?= Html::encode($this->title) ?></h1>
     <?= $this->render('_form', [
         'model' => $model,
+        'productTypes' => $productTypes,
         'docTypes' => $docTypes,
         'currencies' => $currencies,
         'provinces' => $provinces,

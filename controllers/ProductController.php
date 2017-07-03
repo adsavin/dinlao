@@ -164,6 +164,7 @@ class ProductController extends Controller
         return $this->render("create", [
             "model" => $model,
             'code' => $code,
+            'productTypes' => ProductType::find()->all(),
             'docTypes' => DocType::find()->all(),
             'currencies' => Currency::find()->all(),
             'provinces' => $provinces,
@@ -255,6 +256,7 @@ class ProductController extends Controller
         return $this->render("update", [
             "model" => $model,
             'code' => $model->productType->code,
+            'productTypes' => ProductType::find()->all(),
             'docTypes' => DocType::find()->all(),
             'currencies' => Currency::find()->all(),
             'provinces' => $provinces,

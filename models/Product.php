@@ -41,6 +41,7 @@ use Yii;
  * @property Unit $unit
  * @property User $user
  * @property Picture[] $pictures
+ * @property ProductDetail[] $productDetails
  */
 class Product extends \yii\db\ActiveRecord
 {
@@ -177,5 +178,10 @@ class Product extends \yii\db\ActiveRecord
     public static function find()
     {
         return new ProductQuery(get_called_class());
+    }
+
+    public function getProductDetails()
+    {
+        return $this->hasMany(ProductDetail::className(), ['product_id' => 'id']);
     }
 }

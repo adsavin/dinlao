@@ -112,8 +112,7 @@ $map = new \dosamigos\google\maps\Map([
                                                     </strong>
                                                     <br/>
                                                     <strong style="color: #ffffff">
-                                                        <?= Yii::$app->language == "la-LA"? $product->district->province->namelao : $product->district->province->name
-                                                        ?>
+                                                        <?= Yii::$app->language == "la-LA"? $product->district->province->namelao : $product->district->province->name ?>
                                                     </strong>
                                                 </p>
                                             </div>

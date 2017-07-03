@@ -30,38 +30,97 @@ use yii\helpers\Html;
             </figure>
         </div>
         <div class="column is-8">
-            <?= $form->field($model, 'doc_type_id', [
-                'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
-            ])->dropDownList(\yii\helpers\ArrayHelper::map($docTypes, "id", Yii::$app->language == "la-LA"?"namelao":"name")) ?>
-            <div class="columns">
-                <div class="column is-9">
-                    <?= $form->field($model, 'price')->textInput(['class'=>'input', 'maxlength' => true]) ?>
-                </div>
-                <div class="column is-3">
-                    <?= $form->field($model, 'currency_id', [
-                        'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
-                    ])->dropDownList(\yii\helpers\ArrayHelper::map($currencies, "id" ,"code")) ?>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column is-4">
-                    <?= $form->field($model, 'width')->textInput(['class'=>'input', 'maxlength' => true]) ?>
-                </div>
-                <div class="column is-4">
-                    <?= $form->field($model, 'height')->textInput(['class'=>'input', 'maxlength' => true]) ?>
-                </div>
-                <div class="column is-2">
-                    <?= $form->field($model, 'unit_id', [
-                        'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
-                    ])->dropDownList(\yii\helpers\ArrayHelper::map(
-                        $units, "id", "code"
-                    )) ?>
-                </div>
-            </div>
             <div class="columns">
                 <div class="column">
-                    <?= $form->field($model, 'area')->textInput(['class'=>'input', 'maxlength' => true]) ?>
+                    <?= $form->field($model, 'product_type_id', [
+                        'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
+                    ])->dropDownList(\yii\helpers\ArrayHelper::map($productTypes, "id", Yii::$app->language == "la-LA"?"namelao":"name")) ?>
                 </div>
+                <div class="column">
+                    <?= $form->field($model, 'doc_type_id', [
+                        'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
+                    ])->dropDownList(\yii\helpers\ArrayHelper::map($docTypes, "id", Yii::$app->language == "la-LA"?"namelao":"name")) ?>
+                </div>
+            </div>
+                <div class="columns">
+                    <div class="column is-9">
+                        <?= $form->field($model, 'price')->textInput(['class'=>'input', 'maxlength' => true]) ?>
+                    </div>
+                    <div class="column is-3">
+                        <?= $form->field($model, 'currency_id', [
+                            'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
+                        ])->dropDownList(\yii\helpers\ArrayHelper::map($currencies, "id" ,"code")) ?>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column is-4">
+                        <?= $form->field($model, 'width')->textInput(['class'=>'input', 'maxlength' => true]) ?>
+                    </div>
+                    <div class="column is-4">
+                        <?= $form->field($model, 'height')->textInput(['class'=>'input', 'maxlength' => true]) ?>
+                    </div>
+                    <div class="column is-2">
+                        <?= $form->field($model, 'unit_id', [
+                            'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
+                        ])->dropDownList(\yii\helpers\ArrayHelper::map(
+                            $units, "id", "code"
+                        )) ?>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <?= $form->field($model, 'area')->textInput(['class'=>'input', 'maxlength' => true]) ?>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="productdetail is-hidden">
+        <h1 class="title"><?= Yii::t('app', 'Retails Lands Details') ?></h1>
+        <div class="columns">
+            <div class="column is-12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th><?= Yii::t('app', 'Width') ?></th>
+                        <th><?= Yii::t('app', 'Height') ?></th>
+                        <th><?= Yii::t('app', 'Price') ?></th>
+                        <th><span class="is-hidden-mobile"><?= Yii::t('app', 'Remove') ?></span> </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-id="0">
+                            <td>
+                                <input class="input" name="Product[productDetails][0][width]">
+                            </td>
+                            <td>
+                                <input class="input" name="Product[productDetails][0][height]">
+                            </td>
+                            <td>
+                                <input class="input" name="Product[productDetails][0][price]">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr data-id="1">
+                            <td>
+                                <input class="input" name="Product[productDetails][1][width]">
+                            </td>
+                            <td>
+                                <input class="input" name="Product[productDetails][1][height]">
+                            </td>
+                            <td>
+                                <input class="input" name="Product[productDetails][1][price]">
+                            </td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4" class="has-text-centered">
+                                <button type="button" class="button is-success btnaddrow"><span class="icon"><i class="fa fa-plus"></i></span></button>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
         </div>
     </div>
@@ -70,7 +129,6 @@ use yii\helpers\Html;
         <div class="columns">
             <?php
             $pictures =$model->getPictures()->all();
-
             for($j=0; $j<4; $j++): ?>
             <div class="column is-3">
                 <?= $form->field($model, "photofiles[".$j."]")->fileInput(["class" => "is-hidden photos", 'accept' => 'image/*', "data-id" =>$j])->label(false) ?>
@@ -207,7 +265,24 @@ use yii\helpers\Html;
 </div>
 
 <?php
-$this->registerJs("
+$this->registerJs("        
+    var totalrow = 1;
+    \$('.btnaddrow').click(function() {
+        totalrow++;
+        var \$tr = $('<tr>');
+        \$tr.append(\"<td><input class='input' name='Product[productDetails][\"+totalrow+\"][width]' /></td>\")
+            .append(\"<td><input class='input' name='Product[productDetails][\"+totalrow+\"][height]' /></td>\")
+            .append(\"<td><input class='input' name='Product[productDetails][\"+totalrow+\"][price]' /></td>\")
+            .append(\"<td><button type='button' onclick='\$(this).parent().parent().remove()' class='button is-danger'><span><i class='fa fa-minus'></i></span></button></td>\");
+        \$('.table tbody').append(\$tr);
+    });
+    
+    $('#product-product_type_id').change(function() {
+        var id = $(this).val();
+        if(id==3) $('.productdetail').removeClass('is-hidden');
+        else $('.productdetail').addClass('is-hidden');
+    });
+    
     $(\".addphoto\").click(function() {
         var id = $(this).data(\"id\");
         $(\"#product-photofiles-\"+id).click();
