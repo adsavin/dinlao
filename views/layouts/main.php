@@ -15,12 +15,15 @@ use yii\helpers\Html;
 
     <meta charset="<?= Yii::$app->charset ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+
     <?php if(isset($this->params['fbtitle'])): ?>
         <meta property="og:title" content="<?= $this->params['fbtitle'] ?>" />
     <?php else: ?>
         <meta property="og:title" content="<?= Yii::t('app', 'DinLao.com - Properties Advertisement, where buyers & sellers meet') ?>" />
     <?php endif; ?>
+
+    <meta property="fb:admins" content="dinlaocom" />
+    <meta property="fb:app_id" content="1869360129980672" />
 
     <meta property="og:type" content="website" />
 
@@ -38,8 +41,6 @@ use yii\helpers\Html;
 
     <meta property="og:description" content="dinlao.com - The Advertisement for buyers & sellers" />
 
-    <hreflang></hreflang>
-
     <link rel="stylesheet" href="css/bulma.css" />
     <link rel="stylesheet" href="css/font-awesome.css" />
     <link rel="stylesheet" href="css/site.css" />
@@ -55,7 +56,7 @@ use yii\helpers\Html;
         }
         <?php endif; ?>
     </style>
-    <?= Html::csrfMetaTags() ?>
+<!--    --><?//= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
 </head>
 <body>
