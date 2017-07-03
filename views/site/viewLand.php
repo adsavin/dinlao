@@ -88,11 +88,11 @@
                         ],
                         [
                             'attribute' => 'doc_type_id',
-                            'value' => $model->docType->name
+                            'value' => Yii::$app->language == "la-LA"?$model->docType->namelao:$model->docType->name
                         ],
                         [
                             'label' => Yii::t('app', 'Address'),
-                            'value' => $model->village . ", " . $model->district->name .", ". $model->district->province->name
+                            'value' => $model->village . ", " . (Yii::$app->language == "la-LA"?$model->district->namelao:$model->district->name) .", ". (Yii::$app->language == "la-LA"?$model->district->province->namelao:$model->district->province->name)
                         ],
                     ],
                 ]) ?>
