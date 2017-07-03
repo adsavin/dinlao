@@ -7,9 +7,9 @@ use yii\helpers\Html;
 
 $this->title = Yii::t('app', 'Update {modelClass}: ', [
     'modelClass' => 'Doc Type',
-]) . $model->name;
+]) . (Yii::$app->language == "la-LA"?$model->namelao:$model->name);
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Doc Types'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = ['label' => Yii::$app->language == "la-LA"?$model->namelao:$model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>
 <div class="doc-type-update">

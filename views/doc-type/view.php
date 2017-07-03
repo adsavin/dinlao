@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\DocType */
 
-$this->title = $model->name;
+$this->title = Yii::$app->language == "la-LA"?$model->namelao:$model->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Doc Types'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

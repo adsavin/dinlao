@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Currency */
 
-$this->title = $model->name;
+$this->title = Yii::$app->language == "la-LA"?$model->namelao:$model->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Currencies'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
