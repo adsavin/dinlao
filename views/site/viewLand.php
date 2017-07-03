@@ -6,17 +6,23 @@
     <div class="hero-body">
         <div class="container has-text-centered">
             <div class="columns">
-                <div class="column is-4 is-offset-4">
-                    <figure class="image" style="">
-                        <img src="upload/photo/<?= $model->photo ?>" alt="Image" >
-                    </figure>
+                <div class="column is-12 has-text-right is-hidden">
+                    DINLAO.COM
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container" style="margin-top: 20%">
+<div class="container" style="margin-top: -10%">
+    <div class="columns">
+        <div class="column is-4 is-offset-4">
+            <figure class="image">
+                <img src="upload/photo/<?= $model->photo ?>" alt="Image" >
+            </figure>
+        </div>
+    </div>
+
     <div class="columns">
         <?php foreach ($model->pictures as $picture): ?>
         <div class="column">
