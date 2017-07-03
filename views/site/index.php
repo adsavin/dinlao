@@ -89,8 +89,16 @@ $map = new \dosamigos\google\maps\Map([
                                                     <strong  style="color: #ffffff"><?= number_format($product->width) ."" . $product->unit->code." x ". number_format($product->height) ."" . $product->unit->code ?></strong>
                                                     <br/>
                                                     <strong style="color: #ffffff">
-                                                        <?= $product->district[Yii::$app->language == "la-LA"?"namelao":"name"] ?>
-                                                        <?= $product->district->province[Yii::$app->language == "la-LA"?"namelao":"name"] ?>
+                                                        <?= Yii::$app->language == "la-LA"?
+                                                            (Yii::t('app', "Province")." ".$product->district->province->namelao) :
+                                                            ($product->district->province->name . " ". Yii::t('app', "Province"))
+                                                        ?>
+                                                    </strong>
+                                                    <strong style="color: #ffffff">
+                                                        <?= Yii::$app->language == "la-LA"?
+                                                            (Yii::t('app', "District")." ".$product->district->namelao) :
+                                                            ($product->district->name . " ". Yii::t('app', "District"))
+                                                        ?>
                                                     </strong>
                                                 </p>
                                             </div>
