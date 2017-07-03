@@ -17,12 +17,16 @@ use yii\helpers\Html;
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:title" content="dinlao.com - Properties Advertisement" />
+    <?php if(isset($this->params['fbtitle'])): ?>
+        <meta property="og:title" content="<?= $this->params['fbtitle'] ?>" />
+    <?php else: ?>
+        <meta property="og:title" content="<?= Yii::t('app', 'dinlao.com - Properties Advertisement') ?>" />
+    <?php endif; ?>
+
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<?= Yii::t('app', 'DinLao.com - Properties Advertisement, where buyers & sellers meet') ?>" />
 
-    <?php
-    if(isset($this->params['fbphoto'])): ?>
+    <?php if(isset($this->params['fbphoto'])): ?>
         <meta property="og:image" content="http://dinlao.com/web/upload/photo/<?= $this->params['fbphoto'] ?>" />
     <?php else: ?>
         <meta property="og:image" content="http://dinlao.com/web/image/logo.png" />

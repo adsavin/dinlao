@@ -197,7 +197,8 @@ class SiteController extends Controller
         }
         $this->layout = "index";
         $this->view->params['fbphoto'] = $model->photo;
-        return $this->render("viewLand", [
+        $this->view->params['fbtitle'] = (Yii::$app->language == "la-LA"?$model->productType->namelao:$model->productType->name)." - ". $model->village;
+        return $this->render("view", [
             'model' => $model
         ]);
     }
