@@ -9,36 +9,12 @@ use yii\helpers\Html;
 //AppAsset::register($this);
 
 ?>
-<?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
-    <hreflang></hreflang>
-    <meta charset="<?= Yii::$app->charset ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <?php if(isset($this->params['fbtitle'])): ?>
-        <meta property="og:title" content="<?= $this->params['fbtitle'] ?>" />
-    <?php else: ?>
-        <meta property="og:title" content="<?= Yii::t('app', 'dinlao.com - Properties Advertisement') ?>" />
-    <?php endif; ?>
-
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="<?= Yii::t('app', 'DinLao.com - Properties Advertisement, where buyers & sellers meet') ?>" />
-
-    <?php if(isset($this->params['fbphoto'])): ?>
-        <meta property="og:image" content="http://dinlao.com/web/upload/photo/<?= $this->params['fbphoto'] ?>" />
-    <?php else: ?>
-        <meta property="og:image" content="http://dinlao.com/web/image/logo.png" />
-    <?php endif; ?>
-
-    <meta property="og:description" content="dinlao.com - The Advertisement for buyers & sellers" />
-
-    <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
     <link rel="stylesheet" href="css/bulma.css" />
     <link rel="stylesheet" href="css/font-awesome.css" />
-    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/site.css" />
     <style rel="stylesheet">
         <?php if(Yii::$app->language == "la-LA"): ?>
         body, button, input, select, textarea {
@@ -51,8 +27,36 @@ use yii\helpers\Html;
         }
         <?php endif; ?>
     </style>
+    <?= Html::csrfMetaTags() ?>
+    <title><?= Html::encode($this->title) ?></title>
 </head>
 <body>
+<?php if(isset($this->params['fbtitle'])): ?>
+    <meta property="og:title" content="<?= $this->params['fbtitle'] ?>" />
+<?php else: ?>
+    <meta property="og:title" content="<?= Yii::t('app', 'DinLao.com - Properties Advertisement, where buyers & sellers meet') ?>" />
+<?php endif; ?>
+
+<meta property="og:type" content="website" />
+
+<?php if(isset($this->params['fburl'])): ?>
+    <meta property="og:url" content="<?= $this->params['fburl'] ?>" />
+<?php else: ?>
+    <meta property="og:url" content="http://www.dinlao.com/web/index.php" />
+<?php endif; ?>
+
+<?php if(isset($this->params['fbphoto'])): ?>
+    <meta property="og:image" content="http://dinlao.com/web/upload/photo/<?= $this->params['fbphoto'] ?>" />
+<?php else: ?>
+    <meta property="og:image" content="http://dinlao.com/web/image/logo.png" />
+<?php endif; ?>
+
+<meta property="og:description" content="dinlao.com - The Advertisement for buyers & sellers" />
+
+<hreflang></hreflang>
+<meta charset="<?= Yii::$app->charset ?>" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -106,4 +110,3 @@ use yii\helpers\Html;
 <?php $this->endBody() ?>
 </body>
 </html>
-<?php $this->endPage() ?>

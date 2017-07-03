@@ -70,12 +70,7 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
         </div>
     </nav>
 <?= $content ?>
-<?php $this->endContent(); ?>
-
-<script>
-  $(document).ready(function () {
-      $(".nav-toggle").click(function () {
-          $(".nav-menu").toggleClass("is-active");
-      });
-  })
-</script>
+<?php $this->endContent();
+Yii::$app->view->registerJs("$(\".nav-toggle\").click(function () {
+          $(\".nav-menu\").toggleClass(\"is-active\");
+      });");

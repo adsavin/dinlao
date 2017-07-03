@@ -197,6 +197,7 @@ class SiteController extends Controller
         }
         $this->layout = "index";
         $this->view->params['fbphoto'] = $model->photo;
+        $this->view->params['fburl'] = "http://www.dinlao.com/web/index.php?r=site/view&id=".$model->id;
         $this->view->params['fbtitle'] = (Yii::$app->language == "la-LA"?$model->productType->namelao:$model->productType->name)." - ". $model->village;
         return $this->render("view", [
             'model' => $model
