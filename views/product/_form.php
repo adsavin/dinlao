@@ -223,12 +223,12 @@ use yii\helpers\Html;
         <div class="column is-one-third">
             <?= $form->field($model, 'province_id', [
                 'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
-            ])->dropDownList(\yii\helpers\ArrayHelper::map($provinces, "id", "name")) ?>
+            ])->dropDownList(\yii\helpers\ArrayHelper::map($provinces, "id", $this->title = Yii::$app->language == "la-LA"?"namelao":"name")) ?>
         </div>
         <div class="column is-one-third">
             <?= $form->field($model, 'district_id', [
                 'inputTemplate' => '<p class="control"><span class="select">{input}</span></p>',
-            ])->dropDownList(\yii\helpers\ArrayHelper::map($districts, "id", "name")) ?>
+            ])->dropDownList(\yii\helpers\ArrayHelper::map($districts, "id", $this->title = Yii::$app->language == "la-LA"?"namelao":"name")) ?>
         </div>
         <div class="column is-one-third">
             <?= $form->field($model, 'village')->textInput(['class'=>'input', 'maxlength' => true]) ?>
@@ -264,9 +264,9 @@ use yii\helpers\Html;
             <?= $form->field($model, 'status', [
                 'inputTemplate' => '<p class="control" style="text-align: center"><span class="select">{input}</span></p>',
             ])->dropDownList([
-                "A" => 'Available',
-                "H" => 'Hide',
-                "S" => 'Show',
+                "A" => Yii::t('app','Available'),
+                "H" => Yii::t('app','Available'),
+                "S" => Yii::t('app','Sold'),
             ]) ?>
         </div>
     </div>

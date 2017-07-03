@@ -29,6 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             [
                 'attribute' => 'province',
+                'label' => Yii::t('app', 'Province'),
                 'value' => Yii::$app->language =="la-LA"?$model->province->namelao:$model->province->name
             ]
         ],

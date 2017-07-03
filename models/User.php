@@ -100,6 +100,8 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'role' => Yii::t('app', 'Role'),
             'picture' => Yii::t('app', 'Picture'),
             'picturefile' => Yii::t('app', 'Picture'),
+            'newpassword' => Yii::t('app', 'New Password'),
+            'confirmpassword' => Yii::t('app', 'Confirm Password'),
         ];
     }
 

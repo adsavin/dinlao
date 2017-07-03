@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="columns">
         <div class="column is-12 has-text-centered">
-            <h1 class="title"><?= $model->productType->name ?></h1>
+            <h1 class="title"><?= Yii::$app->language == "la-LA"? $model->productType->namelao:$model->productType->name ?></h1>
             <figure class="is-fullwidth">
                 <img class="is-fullwidth" src="upload/photo/<?= $model->photo ?>">
             </figure>
