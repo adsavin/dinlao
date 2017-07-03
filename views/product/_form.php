@@ -74,42 +74,55 @@ use yii\helpers\Html;
                 </div>
         </div>
     </div>
-    <div class="productdetail is-hidden">
-        <h1 class="title"><?= Yii::t('app', 'Retails Lands Details') ?></h1>
-        <div class="columns">
-            <div class="column is-12">
-                <table class="table">
-                    <thead>
+
+    <?php
+    print_r($model->productDetails);
+    if(isset($model->productDetails)):
+        if(count($model->productDetails) > 0) : ?>
+            <table class="table">
+                <thead>
                     <tr>
                         <th><?= Yii::t('app', 'Width') ?></th>
                         <th><?= Yii::t('app', 'Height') ?></th>
                         <th><?= Yii::t('app', 'Price') ?></th>
                         <th><span class="is-hidden-mobile"><?= Yii::t('app', 'Remove') ?></span> </th>
                     </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($model->productDetails as $key => $detail): ?>
+                    <tr>
+                        <td><?= $detail->width ?></td>
+                        <td><?= $detail->height ?></td>
+                        <td><?= $detail->price ?></td>
+                        <td><button type="button" class="button is-danger deleteproductdetail" data-id="<?= $detail->id ?>"><i class="fa fa-minus"></i> </button> </td>
+                    </tr>
+                    <?php
+                endforeach;?>
+                </tbody>
+            </table>
+            <?php
+        endif;
+    endif;
+    ?>
+
+    <div class="productdetail is-hidden">
+        <h1 class="title"><?= Yii::t('app', 'Retails Lands Details') ?></h1>
+        <div class="columns">
+            <div class="column is-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th><?= Yii::t('app', 'Width') ?></th>
+                            <th><?= Yii::t('app', 'Height') ?></th>
+                            <th><?= Yii::t('app', 'Price') ?></th>
+                            <th><span class="is-hidden-mobile"><?= Yii::t('app', 'Remove') ?></span> </th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr data-id="0">
-                            <td>
-                                <input class="input" name="Product[productDetails][0][width]">
-                            </td>
-                            <td>
-                                <input class="input" name="Product[productDetails][0][height]">
-                            </td>
-                            <td>
-                                <input class="input" name="Product[productDetails][0][price]">
-                            </td>
-                            <td></td>
-                        </tr>
-                        <tr data-id="1">
-                            <td>
-                                <input class="input" name="Product[productDetails][1][width]">
-                            </td>
-                            <td>
-                                <input class="input" name="Product[productDetails][1][height]">
-                            </td>
-                            <td>
-                                <input class="input" name="Product[productDetails][1][price]">
-                            </td>
+                            <td><input class="input" name="Product[productDetails][0][width]"></td>
+                            <td><input class="input" name="Product[productDetails][0][height]"></td>
+                            <td><input class="input" name="Product[productDetails][0][price]"></td>
                             <td></td>
                         </tr>
                     </tbody>
@@ -266,7 +279,7 @@ use yii\helpers\Html;
 
 <?php
 $this->registerJs("        
-    var totalrow = 1;
+    var totalrow = 0;
     \$('.btnaddrow').click(function() {
         totalrow++;
         var \$tr = $('<tr>');
@@ -275,6 +288,13 @@ $this->registerJs("
             .append(\"<td><input class='input' name='Product[productDetails][\"+totalrow+\"][price]' /></td>\")
             .append(\"<td><button type='button' onclick='\$(this).parent().parent().remove()' class='button is-danger'><span><i class='fa fa-minus'></i></span></button></td>\");
         \$('.table tbody').append(\$tr);
+    });
+    
+    $('.deleteproductdetail').click(function() {
+        var id = $(this).data('id');
+        $.post('index.php?r=product/deleteProductDetail', {'id': id}, function(data) {
+            if(!$.isNumeric(data)) alert(data);
+        });
     });
     
     $('#product-product_type_id').change(function() {

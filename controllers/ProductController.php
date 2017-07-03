@@ -7,6 +7,7 @@ use app\models\District;
 use app\models\DocType;
 use app\models\Picture;
 use app\models\Product;
+use app\models\ProductDetail;
 use app\models\ProductSearch;
 use app\models\ProductType;
 use app\models\Province;
@@ -110,14 +111,22 @@ class ProductController extends Controller
                 $model->photofile = UploadedFile::getInstance($model, "photofile");
                 if(isset($model->photofile)) {
                     $model->photo = date("YmdHis") . rand(100, 999) . "." . $model->photofile->extension;
-                    if(!$model->save()) {
+                    if(!$model->save())
                         throw new Exception(json_encode($model->errors));
-                    }
                     $filename = "upload/photo/" . $model->photo;
                     if (!file_exists($filename))
-                        if (!$model->photofile->saveAs($filename)) {
+                        if (!$model->photofile->saveAs($filename))
                             throw new Exception(Yii::t("app", "Cannot Upload Photo " . $model->photofile->error));
-                        }
+                }
+
+                foreach (Yii::$app->request->post("Product")["productDetails"] as $detail) {
+                    $d = new ProductDetail();
+                    $d->width = $detail["width"];
+                    $d->height = $detail["height"];
+                    $d->price = $detail["price"];
+                    $d->product_id = $model->id;
+                    if(!$d->save())
+                        throw new Exception(Yii::t("app", "Cannot Save Product Details " . $detail->id));
                 }
 
                 $model->photofiles = UploadedFile::getInstances($model, "photofiles");
@@ -202,6 +211,16 @@ class ProductController extends Controller
 
                 if(!$model->save())
                     throw new Exception(json_encode($model->errors));
+
+                foreach (Yii::$app->request->post("Product")["productDetails"] as $detail) {
+                    $d = new ProductDetail();
+                    $d->width = $detail["width"];
+                    $d->height = $detail["height"];
+                    $d->price = $detail["price"];
+                    $d->product_id = $model->id;
+                    if(!$d->save())
+                        throw new Exception(Yii::t("app", "Cannot Save Product Details " . $detail->id));
+                }
 
                 $photos = UploadedFile::getInstances($model, "photofiles");
                 if(isset($photos)) {
@@ -304,5 +323,20 @@ class ProductController extends Controller
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+    }
+
+    public function actionDeleteProductDetail() {
+        echo "sd";
+        if(Yii::$app->request->isAjax) {
+            $post = Yii::$app->request->post();
+            $detail = ProductDetail::findOne();
+            if(!isset($detail))
+                echo Yii::t("app", "Incorrect ID");
+
+            if($detail->product->user_id != Yii::$app->user->identity->id )
+                echo Yii::t("app", "Permission Denied");
+
+            echo ProductDetail::deleteAll(["id" => $post["id"]]);
+        }
     }
 }
