@@ -54,14 +54,13 @@ $map = new \dosamigos\google\maps\Map([
                                 ]),
                                 'title' => $product->village,
                                 'animation' => \dosamigos\google\maps\overlays\Animation::BOUNCE,
-            //                    'animation' => \dosamigos\google\maps\overlays\Animation::DROP
                             ]);
                             $info = new \dosamigos\google\maps\overlays\InfoWindow([
                                 'content' => '<a href="index.php?r=site/view&id='.$product->id.'">
                                         <p>' . $product->village . ',</p>
                                         <p>' . (@Yii::$app->language=="la-LA"? $product->district->namelao:$product->district->name) . ',</p>
                                         <p>' . (@Yii::$app->language=="la-LA"? $product->district->province->namelao:$product->district->province->name) . '</p>
-                                        <p><strong>'.number_format($product->width).' x '.number_format($product->height).''.$product->unit->code.'</strong></p>
+                                        <p><strong>'.number_format($product->width).' x '.number_format($product->height).$product->unit->code.'</strong></p>
                                         <p><strong>'.number_format($product->price).' '.$product->currency->code.'</strong></p>
                                     </a>'
                             ]);
@@ -108,18 +107,6 @@ $map = new \dosamigos\google\maps\Map([
                                             <?php if($product->whatsapp !=""): ?>
                                                 <strong style="color: #ffffff"><span class="icon"><i class="fa fa-whatsapp"></i></span><?= $product->whatsapp ?></strong><br/>
                                             <?php endif; ?>
-<!--                                            --><?php //if($product->facebook !=""): ?>
-<!--                                                <strong><span class="icon"><i class="fa fa-facebook"></i></span>--><?//= $product->facebook ?><!--</strong><br/>-->
-<!--                                            --><?php //endif; ?>
-<!--                                            --><?php //if($product->line !=""): ?>
-<!--                                                <strong><span class="icon"><i class="fa fa-line-chart"></i></span>--><?//= $product->line ?><!--</strong><br/>-->
-<!--                                            --><?php //endif; ?>
-<!--                                            --><?php //if($product->wechat !=""): ?>
-<!--                                                <strong><span class="icon"><i class="fa fa-wechat"></i></span>--><?//= $product->wechat ?><!--</strong><br/>-->
-<!--                                            --><?php //endif; ?>
-<!--                                            --><?php //if($product->email !=""): ?>
-<!--                                                <strong><span class="icon"><i class="fa fa-envelope"></i></span>--><?//= $product->email ?><!--</strong><br/>-->
-<!--                                            --><?php //endif; ?>
                                         </div>
                                         <div class="content has-text-centered is-hidden-mobile">
                                             <article class="is-hidden-mobile" style="color: #ffffff">
@@ -131,18 +118,6 @@ $map = new \dosamigos\google\maps\Map([
                                             <?php if($product->whatsapp !=""): ?>
                                                 <strong style="color: #ffffff"><span class="icon"><i class="fa fa-whatsapp"></i></span><?= $product->whatsapp ?></strong><br/>
                                             <?php endif; ?>
-                                            <!--                                            --><?php //if($product->facebook !=""): ?>
-                                            <!--                                                <strong><span class="icon"><i class="fa fa-facebook"></i></span>--><?//= $product->facebook ?><!--</strong><br/>-->
-                                            <!--                                            --><?php //endif; ?>
-                                            <!--                                            --><?php //if($product->line !=""): ?>
-                                            <!--                                                <strong><span class="icon"><i class="fa fa-line-chart"></i></span>--><?//= $product->line ?><!--</strong><br/>-->
-                                            <!--                                            --><?php //endif; ?>
-                                            <!--                                            --><?php //if($product->wechat !=""): ?>
-                                            <!--                                                <strong><span class="icon"><i class="fa fa-wechat"></i></span>--><?//= $product->wechat ?><!--</strong><br/>-->
-                                            <!--                                            --><?php //endif; ?>
-                                            <!--                                            --><?php //if($product->email !=""): ?>
-                                            <!--                                                <strong><span class="icon"><i class="fa fa-envelope"></i></span>--><?//= $product->email ?><!--</strong><br/>-->
-                                            <!--                                            --><?php //endif; ?>
                                         </div>
                                         <small style="color: #ffffff"><?= date('d/m/Y H:i:s', strtotime($product->created_date))  ?></small>
                                     </div>
@@ -154,25 +129,6 @@ $map = new \dosamigos\google\maps\Map([
                 <a href="index.php?r=site/viewall" class="button is-outlined is-primary is-fullwidth">
                     <span><?= Yii::t('app', 'More') ?></span>
                 </a>
-<!--                <div class="columns">-->
-<!--                    <div class="column is-offset-half is-half box">-->
-<!--                        <nav class="pagination">-->
-<!--                            <a class="pagination-previous" title="This is the first page" disabled><i class="fa fa-arrow-left"></i></a>-->
-<!--                            <a class="pagination-next"><i class="fa fa-arrow-right"></i></a>-->
-<!--                            <ul class="pagination-list">-->
-<!--                                <li>-->
-<!--                                    <a class="pagination-link is-current">1</a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a class="pagination-link">2</a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a class="pagination-link">3</a>-->
-<!--                                </li>-->
-<!--                            </ul>-->
-<!--                        </nav>-->
-<!--                    </div>-->
-<!--                </div>-->
             </div>
         </div>
         <hr />

@@ -58,20 +58,22 @@ $products = $dataProviderForMobile->models;
                     return Yii::$app->language == "la-LA"?$data->district->province->namelao:$data->district->province->name;
                 },
                 'filter' => \yii\helpers\ArrayHelper::map(\app\models\Province::find()->all(), "id" ,Yii::$app->language == "la-LA"?"namelao":"name"),
-                'filterInputOptions' => ['class'=>'input'],
+                'filterInputOptions' => ['class'=>'select', 'prompt' => Yii::t('app', 'All Province')],
             ],
             [
                 'label' => Yii::t('app', 'District'),
                 'attribute' => 'district_id',
                 'value' => function($data) {
-                    return Yii::$app->language == "la-LA"?$data->district->namelao:$data->district->name;
+                    return Yii::$app->language == "la-LA" ? $data->district->namelao : $data->district->name;
                 },
-                'filterInputOptions' => ['class'=>'select'],
+                'filterInputOptions' => ['class'=>'select', 'prompt' => Yii::t('app', 'All District')],
                 'filter' => \yii\helpers\ArrayHelper::map(\app\models\District::find()->all(), "id" ,Yii::$app->language == "la-LA"?"namelao":"name"),
-                'filterInputOptions' => ['class'=>'input'],
             ],
             [
                 'attribute' => 'village',
+                'options' => [
+                    'placeholder' => Yii::t('app', 'Search'),
+                ],
                 'filterInputOptions' => ['class'=>'input'],
             ],
             [
@@ -79,6 +81,12 @@ $products = $dataProviderForMobile->models;
                 'value' => function($data) {
                     return number_format($data->price). " ". $data->currency->code;
                 },
+                'headerOptions' => [
+                        'class' => 'has-text-right'
+                ],
+                'contentOptions' => [
+                        'class' => 'has-text-right'
+                ],
                 'filterInputOptions' => ['class'=>'input'],
             ],
             [

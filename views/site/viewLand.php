@@ -1,7 +1,7 @@
 <?php
 /* @var $model \app\models\Product */
 ?>
-
+<meta property="og:image"         content="http://dinlao.com/web/upload/photo/<?= $model->photo ?>" />
 <div class="hero is-primary" style="height: 13rem;padding-top: 3rem">
     <div class="hero-body">
         <div class="container has-text-centered">
@@ -29,10 +29,12 @@
     <div class="columns">
         <div class="column has-text-right">
             <div class="fb-share-button"
-                 data-href="http://dinlao.com/web/index.php?r=site/view&amp;id=1"
-                 data-layout="button" data-size="large"
+                 data-href="http://dinlao.com/web/index.php?r=site/view&amp;id=<?= $model->id ?>"
+                 data-layout="button_count"
+                 data-size="large"
                  data-mobile-iframe="true">
-                <a class="fb-xfbml-parse-ignore" target="_blank"
+                <a class="fb-xfbml-parse-ignore"
+                   target="_blank"
                    href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdinlao.com%2Fweb%2Findex.php%3Fr%3Dsite%252Fview%26id%3D<?= $model->id ?>&amp;src=sdkpreparse">
                     <?= Yii::t('app', 'Share to Facebook') ?>
                 </a>
@@ -153,7 +155,7 @@
         </div>
         <div class="columns">
             <div class="column is-6 is-offset-3">
-                <div class="fb-comments" data-href="http://www.dinlao.com/web/index.php?r=site/view&amp;id=" data-numposts="5"></div>
+                <div class="fb-comments" data-href="http://dinlao.com/web/index.php?r=site/view&amp;id=<?= $model->id ?>" data-numposts="5"></div>
             </div>
         </div>
     </div>
