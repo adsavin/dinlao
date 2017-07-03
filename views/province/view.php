@@ -28,7 +28,34 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'code',
             'name',
+            'namelao',
         ],
     ]) ?>
 
+    <?php if(isset($model->districts)) ?>
+    <?php if(count($model->districts) > 0): ?>
+    <h2 class="subtitle"><?= Yii::t('app', 'Districts') ?></h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th></th>
+                <th style="width: 40%"><?= Yii::t('app', 'Lao Name') ?></th>
+                <th style="width: 40%"><?= Yii::t('app', 'Name') ?></th>
+                <th><?= Yii::t('app', 'View') ?></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($model->districts as $key => $district): ?>
+                <tr>
+                    <td><?= $key +1; ?></td>
+                    <td><?= $district->namelao?></td>
+                    <td><?= $district->name?></td>
+                    <td><a class="button is-primary is-outlined" href="index.php?r=district/view&id=<?= $district->id ?>">
+                            <i class="fa fa-search"></i><?= Yii::t('app', "View") ?>
+                        </a> </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php endif; ?>
 </div>
