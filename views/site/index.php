@@ -88,7 +88,10 @@ $map = new \dosamigos\google\maps\Map([
                                                 <p class="subtitle is-6 has-text-right" style="color: #ffffff">
                                                     <strong  style="color: #ffffff"><?= number_format($product->width) ."" . $product->unit->code." x ". number_format($product->height) ."" . $product->unit->code ?></strong>
                                                     <br/>
-                                                    <strong style="color: #ffffff"><?= $product->district->province[Yii::$app->language == "la-LA"?"namelao":"name"] ?></strong>
+                                                    <strong style="color: #ffffff">
+                                                        <?= $product->district[Yii::$app->language == "la-LA"?"namelao":"name"] ?>
+                                                        <?= $product->district->province[Yii::$app->language == "la-LA"?"namelao":"name"] ?>
+                                                    </strong>
                                                 </p>
                                             </div>
                                             <div class="media-content is-hidden-mobile">
