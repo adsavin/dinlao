@@ -38,13 +38,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <br />
     <h1 class="title"><?= Yii::t('app', 'Our Developments') ?></h1>
     <p class="subtitle">
-    <ul>
-        <li>- <a href="#">LUMS - <?= Yii::t('app','Lao University Management System') ?></a> - <?= Yii::t('app','In Progress') ?></li>
-        <li>- <a href="http://www.jobweb.la">JOBWEB.LA - <?= Yii::t('app','Job Advertisement Website') ?></a> - 2015</li>
-        <li>- <a href="http://www.ntp.org"><?= Yii::t('app','Lao Tuberculosis Statistic Management System - Lao National Tuber Center') ?></a> - 2014</li>
-        <li>- <a href="http://www.aipa35laos.gov.la"><?= Yii::t('app','The 35<sup>th</sup> AIPA Summit in Vientiane, Laos') ?></a> - 2013</li>
-        <li>- <?= Yii::t('app', 'The National Assembly Internal Document Flow Management System') ?> - 2012</li>
-    </ul>
+        <ul>
+            <li>- <a href="#">LUMS - <?= Yii::t('app','Lao University Management System') ?></a> - <?= Yii::t('app','In Progress') ?></li>
+            <li>- <a href="http://www.jobweb.la" target="_blank">JOBWEB.LA - <?= Yii::t('app','Job Advertisement Website') ?></a> - 2015</li>
+            <li>- <a href="http://ntp.org.la/stat/index.php?r=site/login" target="_blank"><?= Yii::t('app','Lao Tuberculosis Statistic Management System - Lao National Tuber Center') ?></a> - 2014</li>
+            <li>- <a href="http://www.aipa35laos.gov.la"><?= Yii::t('app','The 35<sup>th</sup> AIPA Summit in Vientiane, Laos') ?></a> - 2013</li>
+            <li>- <?= Yii::t('app', 'The National Assembly Internal Document Flow Management System') ?> - 2012</li>
+        </ul>
     </p>
 
     <br />
