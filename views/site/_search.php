@@ -31,12 +31,12 @@ use yii\bootstrap\ActiveForm;
         <div class="column">
             <?= $form->field($model, 'pricemin')->textInput([
                 "class" => "input"
-            ]) ?>
+            ])->label(Yii::t('app', 'Min Price')) ?>
         </div>
         <div class="column">
             <?= $form->field($model, 'pricemax')->textInput([
                 "class" => "input"
-            ]) ?>
+            ])->label(Yii::t('app', 'Max Price')) ?>
         </div>
     </div>
     <div class="columns">
@@ -50,12 +50,12 @@ use yii\bootstrap\ActiveForm;
         <div class="column">
             <?= $form->field($model, 'areamin')->textInput([
                 "class" => "input"
-            ]) ?>
+            ])->label(Yii::t('app', 'Min Area')) ?>
         </div>
         <div class="column">
             <?= $form->field($model, 'areamax')->textInput([
                 "class" => "input"
-            ]) ?>
+            ])->label(Yii::t('app', 'Max Area')) ?>
         </div>
     </div>
 
