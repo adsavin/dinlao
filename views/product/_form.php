@@ -265,7 +265,7 @@ use yii\helpers\Html;
                 'inputTemplate' => '<p class="control" style="text-align: center"><span class="select">{input}</span></p>',
             ])->dropDownList([
                 "A" => Yii::t('app','Available'),
-                "H" => Yii::t('app','Available'),
+                "H" => Yii::t('app','Hidden'),
                 "S" => Yii::t('app','Sold'),
             ]) ?>
         </div>
