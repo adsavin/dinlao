@@ -156,7 +156,7 @@ use yii\helpers\Html;
 
     <div class="columns">
         <div class="column is-12">
-            <?= $form->field($model, 'description')->textarea(['class'=>'input', 'rows' => 6]) ?>
+            <?= $form->field($model, 'description')->textarea(['class'=>'textarea', 'rows' => 6]) ?>
         </div>
     </div>
 
