@@ -49,6 +49,10 @@ class SiteController extends Controller
 
     public function beforeAction($action)
     {
+        if(Yii::$app->session->get("lang") == null && isset(Yii::$app->language)) {
+            Yii::$app->language = "la-LA";
+            Yii::$app->session->set("lang", 'la-LA');
+        }
         if(Yii::$app->language != Yii::$app->session->get("lang") )
             Yii::$app->language = Yii::$app->session->get("lang");
 
@@ -86,7 +90,6 @@ class SiteController extends Controller
             Yii::$app->session->set("user", $user);
             return $this->redirect(["site/home"]);
         } catch (Exception $ex) {
-            Yii::error($ex);
             Yii::$app->session->setFlash('danger', $ex->getMessage());
             return $this->redirect(["site/index"]);
         }
@@ -268,7 +271,7 @@ class SiteController extends Controller
     public function actionRegister() {
         if(Yii::$app->language != Yii::$app->session->get("lang") )
             Yii::$app->language = Yii::$app->session->get("lang");
-        
+
         $this->layout = "index";
         $model = new User();
         if($model->load(Yii::$app->request->post())) {
