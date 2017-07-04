@@ -92,7 +92,10 @@ class SiteController extends Controller
         }
     }
 
-    public function actionHome() {
+    public function actionHome()
+    {
+        if(Yii::$app->language != Yii::$app->session->get("lang") )
+            Yii::$app->language = Yii::$app->session->get("lang");
 
         if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
             Yii::$app->user->login(Yii::$app->session['user']);
@@ -111,6 +114,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        if(Yii::$app->language != Yii::$app->session->get("lang") )
+            Yii::$app->language = Yii::$app->session->get("lang");
+
         $user = Yii::$app->session->get('user');
         if(isset($user)) {
             return $this->redirect(["site/home"]);
@@ -130,6 +136,9 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
+        if(Yii::$app->language != Yii::$app->session->get("lang") )
+            Yii::$app->language = Yii::$app->session->get("lang");
+
         if (!Yii::$app->user->isGuest)
             return $this->goHome();
 
@@ -185,11 +194,17 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
+        if(Yii::$app->language != Yii::$app->session->get("lang") )
+            Yii::$app->language = Yii::$app->session->get("lang");
+
         $this->layout = "index";
         return $this->render('about');
     }
 
     public function actionView($id) {
+        if(Yii::$app->language != Yii::$app->session->get("lang") )
+            Yii::$app->language = Yii::$app->session->get("lang");
+
         $model = $this->findProduct($id);
         if($model->status != "A") {
             Yii::$app->session->setFlash('warning', Yii::t('app', 'Not Found'));
@@ -233,6 +248,8 @@ class SiteController extends Controller
     }
 
     public function actionViewall() {
+        if(Yii::$app->language != Yii::$app->session->get("lang") )
+            Yii::$app->language = Yii::$app->session->get("lang");
         $searchModel = new ProductSearch();
         $searchModel->status = "A";
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
@@ -249,6 +266,9 @@ class SiteController extends Controller
     }
 
     public function actionRegister() {
+        if(Yii::$app->language != Yii::$app->session->get("lang") )
+            Yii::$app->language = Yii::$app->session->get("lang");
+        
         $this->layout = "index";
         $model = new User();
         if($model->load(Yii::$app->request->post())) {
