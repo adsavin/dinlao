@@ -49,10 +49,6 @@ class SiteController extends Controller
 
     public function beforeAction($action)
     {
-        if(Yii::$app->session->get("lang") == null && isset(Yii::$app->language)) {
-            Yii::$app->language = "la-LA";
-            Yii::$app->session->set("lang", 'la-LA');
-        }
         if(Yii::$app->language != Yii::$app->session->get("lang") )
             Yii::$app->language = Yii::$app->session->get("lang");
 
@@ -229,6 +225,9 @@ class SiteController extends Controller
     }
 
     public function actionChangelang() {
+        Yii::$app->language = Yii::$app->language == "en-US" ? "la-LA":"en-US";
+        Yii::$app->session->set("lang", Yii::$app->language);
+
         return $this->goBack();
     }
 
