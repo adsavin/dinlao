@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= $form->field($model, 'password')->passwordInput(['class' => 'input has-text-centered', 'placeholder' => Yii::t('app', 'Password')]) ?>
             <?= $form->field($model, 'rememberMe')->checkbox([
                 'template' => "<div class=\"column is-12\">{input} {label}</div>\n<div class=\"is-8\">{error}</div>",
-            ]) ?>
+            ])->label(Yii::t('app', 'Remember Me')) ?>
             <div class="column is-12">
                 <?= Html::submitButton(Yii::t('app','Sign In'), ['class' => 'button is-primary', 'name' => 'login-button']) ?>
             </div>
