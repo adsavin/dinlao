@@ -4,18 +4,6 @@
 /* @var $models app\models\Product[] */
 
 $this->title = 'DINLAO.COM - HOME';
-
-$coor = new \dosamigos\google\maps\LatLng([
-    'lat' => 17.96333505412437,
-    'lng' => 102.60682459920645
-]);
-$map = new \dosamigos\google\maps\Map([
-    'center' => $coor,
-    'zoom' => 7,
-    'width' => '100%',
-    'height' => '600',
-    'mapTypeId' => 'hybrid'
-]);
 ?>
 <div class="hero is-primary" style="margin-bottom: 50px;padding-top: 4rem">
     <div class="hero-body">
@@ -36,9 +24,12 @@ $map = new \dosamigos\google\maps\Map([
         ?>
         <div class="columns">
             <div class="column">
-                <div class="container">
-                <h1 class="title has-text-centered"><?= Yii::t('app', 'New Post') ?></h1>
-                </div>
+                <h1 class="title has-text-centered"><?= Yii::t('app', 'New Post') . " (".count($products).")" ?></h1>
+                <h1 class="subtitle has-text-centered is-hidden-mobile">
+                    <i class="fa fa-arrow-left"></i>
+                    <?= Yii::t('app', 'Scroll Left-Right To See More') ?>
+                    <i class="fa fa-arrow-right"></i>
+                </h1>
             </div>
         </div>
 
@@ -46,27 +37,6 @@ $map = new \dosamigos\google\maps\Map([
             <div class="column is-12">
                 <div class="columns" style="overflow-x: scroll">
                     <?php foreach ($products as $key => $product):
-                        if (isset($product->lat) && isset($product->lon)) {
-                            $marker = new \dosamigos\google\maps\overlays\Marker([
-                                'position' => new \dosamigos\google\maps\LatLng([
-                                    'lat' => $product->lat,
-                                    'lng' => $product->lon
-                                ]),
-                                'title' => $product->village,
-                                'animation' => \dosamigos\google\maps\overlays\Animation::BOUNCE,
-                            ]);
-                            $info = new \dosamigos\google\maps\overlays\InfoWindow([
-                                'content' => '<a href="index.php?r=site/view&id='.$product->id.'">
-                                        <p>' . $product->village . ',</p>
-                                        <p>' . (@Yii::$app->language=="la-LA"? $product->district->namelao:$product->district->name) . ',</p>
-                                        <p>' . (@Yii::$app->language=="la-LA"? $product->district->province->namelao:$product->district->province->name) . '</p>
-                                        <p><strong>'.number_format($product->width).' x '.number_format($product->height).$product->unit->code.'</strong></p>
-                                        <p><strong>'.number_format($product->price).' '.$product->currency->code.'</strong></p>
-                                    </a>'
-                            ]);
-                            $marker->attachInfoWindow($info);
-                            $map->addOverlay($marker);
-                        }
                         ?>
                             <div class="column <?= count($products) >4?'is-3':'' ?> <?= ($key > 5)?'is-hidden-mobile':'' ?>">
                                 <a href="index.php?r=site/view&id=<?= $product->id ?>">
@@ -164,7 +134,6 @@ $map = new \dosamigos\google\maps\Map([
         <div class="column is-10 is-offset-1">
             <h1 class="title is-2 has-text-centered"><?= Yii::t("app", "All in one map") ?></h1>
             <h1 class="subtitle has-text-centered"><?= Yii::t("app", "Click on the pin ") ?><i class="fa fa-map-marker"></i> <?= Yii::t('app'," to see more detail") ?></h1>
-            <?=  $map->display(); ?>
             <div id="map" style="height: 40rem">
 
             </div>
