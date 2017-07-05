@@ -73,7 +73,7 @@ $map = new \dosamigos\google\maps\Map([
                                 <div class="card" style="background-image: url('upload/photo/<?= $product->photo ?>'); background-size: 100% auto;background-repeat: no-repeat">
                                     <div class="card-image is-hidden-mobile">
                                         <figure class="image is-4by3">
-<!--                                            <img src="upload/photo/--><?//= $product->photo ?><!--" alt="Image">-->
+
                                         </figure>
                                     </div>
                                     <div class="card-content" style="background-color: #333333;opacity: 0.7">
@@ -165,6 +165,77 @@ $map = new \dosamigos\google\maps\Map([
             <h1 class="title is-2 has-text-centered"><?= Yii::t("app", "All in one map") ?></h1>
             <h1 class="subtitle has-text-centered"><?= Yii::t("app", "Click on the pin ") ?><i class="fa fa-map-marker"></i> <?= Yii::t('app'," to see more detail") ?></h1>
             <?=  $map->display(); ?>
+            <div id="map" style="height: 40rem">
+
+            </div>
         </div>
     </div>
 </div>
+
+<script>
+    var map;
+    var center = {'lat' : 17.96333505412437, 'lng' : 102.60682459920645};
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: center,
+            zoom: 7,
+            streetViewControl: false,
+            mapTypeId: 'hybrid',
+        });
+
+        $.get("index.php?r=site/getproducts",{}, function(products) {
+            try {
+                products = JSON.parse(products);
+            } catch (ex) {
+                console.log(ex);
+            }
+            var markers = [];
+            var infowindows = [];
+            products.forEach(function(p) {
+                markers[p.id] = new google.maps.Marker({
+                    position: {'lat': parseFloat(p.lat), 'lng': parseFloat(p.lon)},
+                    map: map,
+                    animation: google.maps.Animation.BOUNCE,
+                    title: p.typename
+                });
+                var content = "<a href='index.php?r=site/view&id="+p.id+"'> <span style='overflow: hidden'> <p class='title is-5'><strong>"+p.typename+"</strong></p>" +
+                    "<p class='subtitle is-6'>"+p.districtname
+                    +"<br/>"+ p.provincename;
+                if(p.typecode != "R")
+                    content += "<br/>"+formatNumber(p.width)+" x "+ formatNumber(p.height)+ " "+p.unitcode;
+
+                content += "<br/><strong>"+formatNumber(p.price) + " " + p.currencycode +"</strong></p></span></a>";
+                content += "<div class='has-text-right'><a href='index.php?r=site/view&id="+p.id+"' style='text-decoration: underline;'><?= Yii::t('app', 'More Details') ?> >></a></div>";
+                infowindows[p.id] = new google.maps.InfoWindow({
+                    content: content
+                });
+
+                markers[p.id].addListener('click', function() {
+                    markers.forEach(function (m) {
+                        m.setAnimation(google.maps.Animation.BOUNCE);
+                    });
+                    infowindows.forEach(function (f) {
+                        f.close();
+                    });
+                    this.setAnimation(google.maps.Animation.DROP);
+                    infowindows[p.id].open(map, this);
+                });
+            });
+        });
+    }
+
+    function formatNumber(num, dec) {
+        if (dec === undefined) dec = 2;
+        var r = "" + Math.abs(parseFloat(num).toFixed(dec));
+        var decimals = "";
+        if (r.lastIndexOf(".") != -1) {
+            decimals = "." + r.substring(r.lastIndexOf(".") + 1);
+            decimals = decimals.substring(0, Math.min(dec + 1, decimals.length)); // Take only 2 digits after decimals
+            r = r.substring(0, r.lastIndexOf("."));
+        }
+        for (var i = r.length - 3; i > 0; i -= 3)
+            r = r.substr(0, i) + "," + r.substr(i);
+        return (num < 0 ? "-" : "") + r + decimals;
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLYB1UvUkxUnghDV35dT1vQx886cN-Cac&callback=initMap" async defer></script>

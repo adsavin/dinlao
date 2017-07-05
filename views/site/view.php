@@ -143,35 +143,7 @@
                 </div>
                 <div class="columns">
                     <div class="column is-10 is-offset-1">
-                        <?php
-                        $coor = new \dosamigos\google\maps\LatLng([
-                            'lat' => isset($model->lat) ? $model->lat : 17.96333505412437,
-                            'lng' => isset($model->lon) ? $model->lon : 102.60682459920645
-                        ]);
-                        $map = new \dosamigos\google\maps\Map([
-                            'center' => $coor,
-                            'zoom' => 12,
-                            'width' => '100%',
-                            'height' => '400',
-                            'mapTypeId' => 'hybrid',
-                        ]);
-                        if (isset($model->lat) && isset($model->lon)) {
-                            $marker = new \dosamigos\google\maps\overlays\Marker([
-                                'position' => $coor,
-                                'title' => $model->village,
-                                'animation' => \dosamigos\google\maps\overlays\Animation::BOUNCE,
-                            ]);
-
-                            // Provide a shared InfoWindow to the marker
-                            $marker->attachInfoWindow(
-                                new \dosamigos\google\maps\overlays\InfoWindow([
-                                    'content' => '<p>' . $model->village . '</p>'
-                                ])
-                            );
-                            $map->addOverlay($marker);
-                        }
-                        echo $map->display();
-                        ?>
+                        <div id="map" style="height: 500px"></div>
                     </div>
                 </div>
                 <div class="columns">
@@ -201,11 +173,13 @@
                                 ],
                                 [
                                     'attribute' => 'doc_type_id',
+                                    'label' => Yii::t('app','Document Type'),
                                     'value' => Yii::$app->language == "la-LA"?$model->docType->namelao:$model->docType->name
                                 ],
                                 [
                                     'label' => Yii::t('app', 'Address'),
-                                    'value' => $model->village . ", " . (Yii::$app->language == "la-LA"?$model->district->namelao:$model->district->name) .", ". (Yii::$app->language == "la-LA"?$model->district->province->namelao:$model->district->province->name)
+                                    'value' => $model->village . ", " . (Yii::$app->language == "la-LA"?$model->district->namelao.", ".$model->district->province->namelao
+                                            :$model->district->name) .", ".$model->district->province->name
                                 ],
                             ],
                         ]) ?>
@@ -238,8 +212,8 @@
                             </div>
                         <?php endif; ?>
                         <?php if ($model->email != "") : ?>
-                            <div class="level-item has-text-centered">
-                                <div>
+                            <div class="columns">
+                                <div class="column has-text-centered">
                                     <p class="subtitle"> <i class="fa fa-envelope"></i> <?= Yii::t("app", "Email") ?></p>
                                     <p class="title"><?= $model->email ?></p>
                                 </div>
@@ -254,8 +228,8 @@
                             </div>
                         <?php endif; ?>
                         <?php if ($model->line != "") : ?>
-                            <div class="level-item has-text-centered">
-                                <div>
+                            <div class="columns">
+                                <div class="column has-text-centered">
                                     <p class="subtitle"><i class="fa fa-line-chart"></i><?= Yii::t("app", "Line") ?> </p>
                                     <p class="title"><?= $model->line ?></p>
                                 </div>
@@ -263,35 +237,7 @@
                         <?php endif; ?>
                     </div>
                     <div class="column is-5">
-                        <?php
-                        $coor = new \dosamigos\google\maps\LatLng([
-                            'lat' => isset($model->lat) ? $model->lat : 17.96333505412437,
-                            'lng' => isset($model->lon) ? $model->lon : 102.60682459920645
-                        ]);
-                        $map = new \dosamigos\google\maps\Map([
-                            'center' => $coor,
-                            'zoom' => 12,
-                            'width' => '100%',
-                            'height' => '400',
-                            'mapTypeId' => 'hybrid',
-                        ]);
-                        if (isset($model->lat) && isset($model->lon)) {
-                            $marker = new \dosamigos\google\maps\overlays\Marker([
-                                'position' => $coor,
-                                'title' => $model->village,
-                                'animation' => \dosamigos\google\maps\overlays\Animation::BOUNCE,
-                            ]);
-
-                            // Provide a shared InfoWindow to the marker
-                            $marker->attachInfoWindow(
-                                new \dosamigos\google\maps\overlays\InfoWindow([
-                                    'content' => '<p>' . $model->village . '</p>'
-                                ])
-                            );
-                            $map->addOverlay($marker);
-                        }
-                        echo $map->display();
-                        ?>
+                        <div id="map" style="height: 500px"></div>
                     </div>
                 </div>
                 <div class="columns">
@@ -303,3 +249,20 @@
     <?php endif; ?>
 
 </div>
+
+<script type="text/javascript">
+    function initMap() {
+        var myLatLng = {lat: <?= $model->lat ?>, lng: <?= $model->lon ?>};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            animation: google.maps.Animation.BOUNCE
+        });
+    }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLYB1UvUkxUnghDV35dT1vQx886cN-Cac&callback=initMap"> </script>

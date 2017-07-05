@@ -204,51 +204,51 @@ use yii\helpers\Html;
     </div>
     <?php ActiveForm::end(); ?>
 </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".addphoto").click(function() {
+            var id = $(this).data("id");
+            $("#product-photofiles-"+id).click();
+        });
 
-<?php
-$this->registerJs("
-    $(\".addphoto\").click(function() {
-        var id = $(this).data(\"id\");
-        $(\"#product-photofiles-\"+id).click();
-    });
+        $(".photos").change(function () {
+            var id = $(this).data("id");
+            previewImage(this, $("#previewphoto-"+id));
+        })
 
-    $(\".photos\").change(function () {
-        var id = $(this).data(\"id\");
-        previewImage(this, $(\"#previewphoto-\"+id));
-    })
-    
-    $('#addphoto').click(function() {
-        $(\"#product-photofile\").click();
-    });
-    
-    $('#product-photofile').change(function() {
-        previewImage(this, $(\"#previewphoto\"));
-    });      
-     
-    $('#product-province_id').change(function() {
-        $('#product-district_id').empty();
-        var id = $(this).val();
-        $.get('index.php?r=site/getdistricts', {'province': id}, function(responses) {
-            try{
-                responses = JSON.parse(responses);
-            } catch(ex) {
-                alert('Error');
-            }
-            if(responses) {
-                for(var i=0;i<responses.length;i++) {
-                    $('#product-district_id').append('<option value=\"'+responses[i].id+'\">'+responses[i].name+'</option>');
+        $('#addphoto').click(function() {
+            $("#product-photofile").click();
+        });
+
+        $('#product-photofile').change(function() {
+            previewImage(this, $("#previewphoto"));
+        });
+
+        $('#product-province_id').change(function() {
+            $('#product-district_id').empty();
+            var id = $(this).val();
+            $.get('index.php?r=site/getdistricts', {'province': id}, function(responses) {
+                try{
+                    responses = JSON.parse(responses);
+                } catch(ex) {
+                    alert('Error');
                 }
-            }
+                if(responses) {
+                    for(var i=0;i<responses.length;i++) {
+                        $('#product-district_id').append('<option value="'+responses[i].id+'">'+responses[i].name+'</option>');
+                    }
+                }
+            });
         });
     });
 
-  function previewImage(input, \$preview) {
+    function previewImage(input, $preview) {
         if (input.files && input.files[0]) {
-          var reader = new FileReader();
-          reader.onload = function (e) {
-            \$preview.attr('src', e.target.result);
-          };
-          reader.readAsDataURL(input.files[0]);
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $preview.attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
         }
-  }");
-?>
+    }
+</script>

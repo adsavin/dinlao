@@ -156,7 +156,7 @@ use yii\helpers\Html;
 
     <div class="columns">
         <div class="column is-12">
-            <?= $form->field($model, 'description')->textarea(['class'=>'input', 'rows' => 6]) ?>
+            <?= $form->field($model, 'description')->textarea(['class'=>'textarea', 'rows' => 6]) ?>
         </div>
     </div>
 
@@ -164,49 +164,8 @@ use yii\helpers\Html;
     <h1 class="title is-4"><?= Yii::t("app", "Location") ?></h1>
     <h1 class="subtitle is-5"><?= Yii::t("app", "Click on map to locate the location") ?></h1>
     <div class="columns">
-        <div class="column is-10 is-offset-1">
-            <?php
-            $coor = new \dosamigos\google\maps\LatLng([
-                'lat' => isset($model->lat) ? $model->lat : 17.96333505412437,
-                'lng' => isset($model->lon) ? $model->lon : 102.60682459920645
-            ]);
-            $map = new \dosamigos\google\maps\Map([
-                'center' => $coor,
-                'zoom' => 12,
-                'width' => '100%',
-                'height' => '400',
-                'mapTypeId' => 'hybrid'
-            ]);
-            $map->appendScript("var markers = []");
-            $onclick = new \dosamigos\google\maps\Event([
-                "trigger" => "click",
-                "js" => "
-                    for (var i = 0; i < markers.length; i++) markers[i].setMap(null);
-                    document.getElementById('product-lat').value = event.latLng.lat();
-                    document.getElementById('product-lon').value = event.latLng.lng();
-                    markers.push(new google.maps.Marker({
-                        position: {lat: event.latLng.lat(), lng: event.latLng.lng()},
-                        map: gmap0,
-                      }));
-                "
-            ]);
-            $map->addEvent($onclick);
-            if (isset($model->lat) && isset($model->lon)) {
-                $marker = new \dosamigos\google\maps\overlays\Marker([
-                    'position' => $coor,
-                    'title' => $model->village
-                ]);
+        <div class="column is-10 is-offset-1" id="map" style="height: 500px">
 
-                // Provide a shared InfoWindow to the marker
-                $marker->attachInfoWindow(
-                    new \dosamigos\google\maps\overlays\InfoWindow([
-                        'content' => '<p>' . $model->village . '</p>'
-                    ])
-                );
-                $map->addOverlay($marker);
-            }
-            echo $map->display();
-            ?>
         </div>
     </div>
 
@@ -265,7 +224,7 @@ use yii\helpers\Html;
                 'inputTemplate' => '<p class="control" style="text-align: center"><span class="select">{input}</span></p>',
             ])->dropDownList([
                 "A" => Yii::t('app','Available'),
-                "H" => Yii::t('app','Available'),
+                "H" => Yii::t('app','Hidden'),
                 "S" => Yii::t('app','Sold'),
             ]) ?>
         </div>
@@ -276,85 +235,113 @@ use yii\helpers\Html;
     <?php ActiveForm::end(); ?>
 </div>
 
-<?php
-$this->registerJs("        
-    var totalrow = 0;
-    \$('.btnaddrow').click(function() {
-        totalrow++;
-        var \$tr = $('<tr>');
-        \$tr.append(\"<td><input class='input' name='Product[productDetails][\"+totalrow+\"][width]' /></td>\")
-            .append(\"<td><input class='input' name='Product[productDetails][\"+totalrow+\"][height]' /></td>\")
-            .append(\"<td><input class='input' name='Product[productDetails][\"+totalrow+\"][price]' /></td>\")
-            .append(\"<td><button type='button' onclick='\$(this).parent().parent().remove()' class='button is-danger'><span><i class='fa fa-minus'></i></span></button></td>\");
-        \$('.table tbody').append(\$tr);
-    });
-    
-    $('.deleteproductdetail').click(function() {
-        var id = $(this).data('id');
-        $.post('index.php?r=product/deleteproductdetail', {'id': id}, function(data) {
-            if(!$.isNumeric(data)) alert(data);
-            else $('tr[data-id='+id+']').remove();
+<script type="text/javascript">
+    $(document).ready(function() {
+        var totalrow = 0;
+        $('.btnaddrow').click(function() {
+            totalrow++;
+            var $tr = $('<tr>');
+            $tr.append("<td><input class='input' name='Product[productDetails]["+totalrow+"][width]' /></td>")
+                .append("<td><input class='input' name='Product[productDetails]["+totalrow+"][height]' /></td>")
+                .append("<td><input class='input' name='Product[productDetails]["+totalrow+"][price]' /></td>")
+                .append("<td><button type='button' onclick='$(this).parent().parent().remove()' class='button is-danger'><span><i class='fa fa-minus'></i></span></button></td>");
+            $('.table tbody').append($tr);
         });
-    });
-    
-    $('#product-product_type_id').change(function() {
-        var id = $(this).val();
-        if(id==3) $('.productdetail').removeClass('is-hidden');
-        else $('.productdetail').addClass('is-hidden');
-    });
-    
-    $(\".addphoto\").click(function() {
-        var id = $(this).data(\"id\");
-        $(\"#product-photofiles-\"+id).click();
-    });
 
-    $(\".photos\").change(function () {
-        var id = $(this).data(\"id\");
-        previewImage(this, $(\"#previewphoto-\"+id));
-    })
-    
-    $('#addphoto').click(function() {
-        $(\"#product-photofile\").click();
-    });
-    
-    $('#product-photofile').change(function() {
-        previewImage(this, $(\"#previewphoto\"));
-    });      
-     
-    $('#product-province_id').change(function() {
-        $('#product-district_id').empty();
-        var id = $(this).val();
-        $.get('index.php?r=site/getdistricts', {'province': id}, function(responses) {
-            try{
-                responses = JSON.parse(responses);
-            } catch(ex) {
-                alert('Error');
-            }
-            if(responses) {
-                for(var i=0;i<responses.length;i++) {
-                    $('#product-district_id').append('<option value=\"'+responses[i].id+'\">'+responses[i].name+'</option>');
+        $('.deleteproductdetail').click(function() {
+            var id = $(this).data('id');
+            $.post('index.php?r=product/deleteproductdetail', {'id': id}, function(data) {
+                if(!$.isNumeric(data)) alert(data);
+                else $('tr[data-id='+id+']').remove();
+            });
+        });
+
+        $('#product-product_type_id').change(function() {
+            var id = $(this).val();
+            if(id==3) $('.productdetail').removeClass('is-hidden');
+            else $('.productdetail').addClass('is-hidden');
+        });
+
+        $(".addphoto").click(function() {
+            var id = $(this).data("id");
+            $("#product-photofiles-"+id).click();
+        });
+
+        $(".photos").change(function () {
+            var id = $(this).data("id");
+            previewImage(this, $("#previewphoto-"+id));
+        })
+
+        $('#addphoto').click(function() {
+            $("#product-photofile").click();
+        });
+
+        $('#product-photofile').change(function() {
+            previewImage(this, $("#previewphoto"));
+        });
+
+        $('#product-province_id').change(function() {
+            $('#product-district_id').empty();
+            var id = $(this).val();
+            $.get('index.php?r=site/getdistricts', {'province': id}, function(responses) {
+                try{
+                    responses = JSON.parse(responses);
+                } catch(ex) {
+                    alert('Error');
                 }
-            }
+                if(responses) {
+                    for(var i=0;i<responses.length;i++) {
+                        $('#product-district_id').append('<option value="'+responses[i].id+'">'+responses[i].name+'</option>');
+                    }
+                }
+            });
         });
+        $('#product-width, #product-height').change(function() {
+            var w = $('#product-width').val().replace(/[^0-9]/g, '');
+            var h = $('#product-height').val().replace(/[^0-9]/g, '');
+            if(w !='' && h != '') $('#product-area').val(w*h);
+        });
+        $('#product-unit_id').change(function() {
+            var u = $(this).val();
+            var t = $('#product-unit_id option[value="'+u+'"]').html();
+            $('label[for="product-area"]').html('<?= Yii::t('app', 'Area') ?> ('+t+'<sup>2</sup>)');
+        });
+        $('#product-unit_id').change();
     });
-    $('#product-width, #product-height').change(function() {
-        var w = $('#product-width').val().replace(/[^0-9]/g, '');        
-        var h = $('#product-height').val().replace(/[^0-9]/g, '');
-        if(w !='' && h != '') $('#product-area').val(w*h);
-    });
-    $('#product-unit_id').change(function() {
-        var u = $(this).val(); 
-        var t = $('#product-unit_id option[value=\"'+u+'\"]').html();        
-        $('label[for=\"product-area\"]').html('".Yii::t('app', 'Area')." ('+t+'<sup>2</sup>)');
-    });
-    $('#product-unit_id').change();
 
-  function previewImage(input, \$preview) {
+    function previewImage(input, $preview) {
         if (input.files && input.files[0]) {
-          var reader = new FileReader();
-          reader.onload = function (e) {
-            \$preview.attr('src', e.target.result);
-          };
-          reader.readAsDataURL(input.files[0]);
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $preview.attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
         }
-  }");
+    }
+</script>
+
+<script>
+    function initMap() {
+        var center = {lat: <?= isset($model->lat) ? $model->lat : 17.96333505412437 ?>, lng: <?= isset($model->lon) ? $model->lon : 102.60682459920645 ?>};
+        var marker = new google.maps.Marker();
+        <?php if(!$model->isNewRecord && isset($model->lat) && isset($model->lon)): ?>
+            marker.setPosition({lat: <?= $model->lat ?>, lng: <?= $model->lon ?>});
+        <?php endif; ?>
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: center,
+            width: '100%',
+            height: '500px',
+            mapTypeId: 'hybrid'
+        });
+
+        map.addListener('click', function(e) {
+            marker.setPosition({lat: e.latLng.lat(), lng: e.latLng.lng()});
+            marker.setMap(this);
+            document.getElementById('product-lat').value = e.latLng.lat();
+            document.getElementById('product-lon').value = e.latLng.lng();
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLYB1UvUkxUnghDV35dT1vQx886cN-Cac&callback=initMap" async defer></script>

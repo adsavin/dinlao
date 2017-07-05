@@ -86,14 +86,13 @@ class SiteController extends Controller
             Yii::$app->session->set("user", $user);
             return $this->redirect(["site/home"]);
         } catch (Exception $ex) {
-            Yii::error($ex);
             Yii::$app->session->setFlash('danger', $ex->getMessage());
             return $this->redirect(["site/index"]);
         }
     }
 
-    public function actionHome() {
-
+    public function actionHome()
+    {
         if(!isset(Yii::$app->user->identity) && isset(Yii::$app->session['user'])) {
             Yii::$app->user->login(Yii::$app->session['user']);
         } else {
@@ -153,9 +152,8 @@ class SiteController extends Controller
      */
     public function actionLogout()
     {
-        Yii::$app->session->destroy();
-        Yii::$app->session->destroySession("user");
         Yii::$app->session->set("user", null);
+        Yii::$app->session->destroySession("user");
         Yii::$app->user->logout();
         return $this->redirect(["site/index"]);
     }
@@ -229,6 +227,7 @@ class SiteController extends Controller
     public function actionChangelang() {
         Yii::$app->language = Yii::$app->language == "en-US" ? "la-LA":"en-US";
         Yii::$app->session->set("lang", Yii::$app->language);
+
         return $this->goBack();
     }
 
@@ -277,5 +276,22 @@ class SiteController extends Controller
         return $this->render("register", [
             "model" => $model
         ]);
+    }
+
+    public function actionGetproducts() {
+        $lang = Yii::$app->language == "la-LA"?"lao":"";
+        $models = Product::find()
+            ->select("product.id, price, currency.code currencycode, height, width, unit.code as unitcode, 
+            village, district.name$lang districtname, province.name$lang provincename, 
+            lat, lon, product_type.name$lang typename, product_type.code typecode")
+            ->where(["status" => "A"])
+            ->join("join", "currency", "currency_id=currency.id")
+            ->join("join", "unit", "unit_id=unit.id")
+            ->join("join", "district", "district_id=district.id")
+            ->join("join", "province", "district.province_id=province.id")
+            ->join("join", "product_type", "product_type_id=product_type.id")
+            ->asArray()->all();
+
+        echo json_encode($models);
     }
 }

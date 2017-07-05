@@ -37,23 +37,24 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Change Password');
         <?php ActiveForm::end(); ?>
     </div>
 </div>
-<?php
-$this->registerJs("
-    $('#addphoto').click(function() {
-        $('#user-picturefile').click();
-    });
-    
-    $('#user-picturefile').change(function() {
-        previewImage(this, $('#previewphoto'));
-    });
-         
-    function previewImage(input, \$preview) {
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#addphoto').click(function() {
+            $('#user-picturefile').click();
+        });
+
+        $('#user-picturefile').change(function() {
+            previewImage(this, $('#previewphoto'));
+        });
+    })
+
+    function previewImage(input, $preview) {
         if (input.files && input.files[0]) {
-          var reader = new FileReader();
-          reader.onload = function (e) {
-            \$preview.attr('src', e.target.result);
-          };
-          reader.readAsDataURL(input.files[0]);
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $preview.attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
         }
     }
-");
+</script>
