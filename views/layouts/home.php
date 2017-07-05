@@ -166,10 +166,3 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
     </div>
 </div>
 <?php $this->endContent(); ?>
-<script>
-    $(document).ready(function () {
-        $(".nav-toggle").click(function () {
-            $(".nav-menu").toggleClass("is-active");
-        });
-    })
-</script>

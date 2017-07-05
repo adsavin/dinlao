@@ -1,8 +1,8 @@
 <?php
 $this->title = Yii::t('app', 'Home');
-foreach (Yii::$app->params["topmenu"] as $item): ?>
-<?php
 $user = Yii::$app->session->get("user");
+
+foreach (Yii::$app->params["topmenu"] as $item):
 $models = \app\models\Menu::find();
 $models->andWhere(["parent" => $item]);
 switch ($user->role) {

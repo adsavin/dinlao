@@ -103,6 +103,13 @@ use yii\helpers\Html;
         </div>
     </div>
 </footer>
+<<<<<<< HEAD
+=======
+<?php
+$this->registerJsFile("js/jquery.min.js");
+?>
+
+>>>>>>> origin/master
 <?php $this->endBody() ?>
 <script type="text/javascript">
     $(document).ready(function() {
