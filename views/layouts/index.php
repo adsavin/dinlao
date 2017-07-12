@@ -70,4 +70,4 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
         </div>
     </nav>
 <?= $content ?>
-<?php $this->endContent();?>
+<?php $this->endContent(); ?>

@@ -44,6 +44,7 @@ use yii\helpers\Html;
     <link rel="stylesheet" href="css/bulma.css" />
     <link rel="stylesheet" href="css/font-awesome.css" />
     <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="css/common.css" />
     <style rel="stylesheet">
         <?php if(Yii::$app->language == "la-LA"): ?>
         body, button, input, select, textarea {
@@ -111,5 +112,7 @@ use yii\helpers\Html;
         });
     });
 </script>
+<script type="text/javascript" src="js/modernizr.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
 </body>
 </html>

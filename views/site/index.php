@@ -4,6 +4,7 @@
 /* @var $models app\models\Product[] */
 
 $this->title = 'DINLAO.COM - HOME';
+$products = $models;
 ?>
 <div class="hero is-primary" style="margin-bottom: 50px;padding-top: 4rem">
     <div class="hero-body">
@@ -18,8 +19,68 @@ $this->title = 'DINLAO.COM - HOME';
     </div>
 </div>
 <div class="container">
+    <h1 class="title is-2 has-text-centered"><?= Yii::t("app", "All in one map") ?></h1>
+    <h1 class="subtitle has-text-centered"><?= Yii::t("app", "Click on the pin ") ?><i class="fa fa-map-marker"></i> <?= Yii::t('app'," to see more detail") ?></h1>
+    <div id="carousel">
+        <a href="" class="navigation previous" style=""><</a>
+        <a href="" class="navigation next" style="z-index: 9;">></a>
+        <ul>
+            <?php foreach ($products as $key => $product): ?>
+            <li>
+                <a href="index.php?r=site/view&id=<?= $product->id ?>">
+                    <div class="card" style="
+                        background-image: url('upload/photo/<?= $product->photo ?>');
+                        background-size: 100% auto;
+                        background-repeat: no-repeat;
+                        height: 100%">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+
+                            </figure>
+                        </div>
+                        <div class="card-content" style="background-color: #333333;opacity: 0.7;bottom: 0">
+                            <p class="subtitle is-6 has-text-centered">
+                                <strong style="color: #ffffff !important;">
+                                    <?= Yii::$app->language == "la-LA"?$product->productType->namelao:$product->productType->name ?>
+                                </strong>
+                            </p>
+                            <p class="title is-4 has-text-centered" style="color: #ffffff">
+                                <strong>
+                                    <?= number_format($product->price)." ". $product->currency->code ?>
+                                </strong>
+                            </p>
+                            <p class="subtitle is-6 has-text-centered" style="color: #ffffff">
+                                <strong  style="color: #ffffff">
+                                    <?= number_format($product->width) ."" . $product->unit->code." x ". number_format($product->height) ."" . $product->unit->code ?>
+                                </strong>
+                                <br/>
+                                <strong style="color: #ffffff">
+                                    <?= Yii::$app->language == "la-LA"? $product->district->namelao: $product->district->name ?>
+                                </strong>
+                                <br/>
+                                <strong style="color: #ffffff">
+                                    <?= Yii::$app->language == "la-LA"? $product->district->province->namelao : $product->district->province->name ?>
+                                </strong>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+
+    <div class="columns">
+        <div class="column is-10 is-offset-1">
+            <h1 class="title is-2 has-text-centered"><?= Yii::t("app", "All in one map") ?></h1>
+            <h1 class="subtitle has-text-centered"><?= Yii::t("app", "Click on the pin ") ?><i class="fa fa-map-marker"></i> <?= Yii::t('app'," to see more detail") ?></h1>
+            <div id="map" style="height: 40rem">
+
+            </div>
+        </div>
+    </div>
+
     <?php
-        $products = $models;
         if(count($products) > 0) :
         ?>
         <div class="columns">
@@ -59,7 +120,9 @@ $this->title = 'DINLAO.COM - HOME';
                                                         <?= Yii::$app->language == "la-LA"?$product->productType->namelao:$product->productType->name ?>
                                                     </strong>
                                                 </p>
-                                                <p class="title is-4 has-text-right" style="color: #ffffff"><strong><?= number_format($product->price)." ". $product->currency->code ?></strong></p>
+                                                <p class="title is-4 has-text-right" style="color: #ffffff">
+                                                    <strong><?= number_format($product->price)." ". $product->currency->code ?></strong>
+                                                </p>
                                                 <p class="subtitle is-6 has-text-right" style="color: #ffffff">
                                                     <strong  style="color: #ffffff"><?= number_format($product->width) ."" . $product->unit->code." x ". number_format($product->height) ."" . $product->unit->code ?></strong>
                                                     <br/>
@@ -130,18 +193,8 @@ $this->title = 'DINLAO.COM - HOME';
         </div>
         <hr />
     <?php endif; ?>
-    <div class="columns">
-        <div class="column is-10 is-offset-1">
-            <h1 class="title is-2 has-text-centered"><?= Yii::t("app", "All in one map") ?></h1>
-            <h1 class="subtitle has-text-centered"><?= Yii::t("app", "Click on the pin ") ?><i class="fa fa-map-marker"></i> <?= Yii::t('app'," to see more detail") ?></h1>
-            <div id="map" style="height: 40rem">
-
-            </div>
-        </div>
-    </div>
 </div>
-
-<script>
+<script type="text/javascript">
     var map;
     var center = {'lat' : 17.96333505412437, 'lng' : 102.60682459920645};
     function initMap() {
