@@ -115,7 +115,7 @@ class SiteController extends Controller
             return $this->redirect(["site/home"]);
         }
 
-        $models = Product::find()->where(["status" => "A"])->all();
+        $models = Product::find()->where(["status" => "A"])->orderBy("created_date desc")->all();
         $this->layout = "index";
         return $this->render('index', [
             "models" => $models

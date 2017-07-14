@@ -170,7 +170,7 @@ $products = $models;
                                         </div>
                                         <div class="content has-text-centered is-hidden-mobile">
                                             <article class="is-hidden-mobile" style="color: #ffffff">
-                                                <?= $product->description ?>
+                                                <?= strlen($product->description) > 200 ? substr($product->description, 0, 200)." ..." : $product->description ?>
                                             </article>
                                             <?php if($product->tel!= ""): ?>
                                                 <strong style="color: #ffffff"><span class="icon"><i class="fa fa-phone"></i></span><?= $product->tel ?></strong><br/>
