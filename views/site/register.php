@@ -47,6 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= $form->field($model, 'confirmpassword')->passwordInput(['class' => 'input has-text-centered', 'placeholder' => Yii::t('app', 'Confirm Password')]) ?>
             <?= $form->field($model, 'firstname')->textInput(['class' => 'input has-text-centered', 'placeholder' => Yii::t('app','Firstname')]) ?>
             <?= $form->field($model, 'lastname')->textInput(['class' => 'input has-text-centered', 'placeholder' => Yii::t('app','Lastname')]) ?>
+            <?= $form->field($model, 'captcha')->widget(\yii\captcha\Captcha::className()) ?>
 <!--            I'm not robot-->
             <div class="column is-12">
                 <?= Html::submitButton(Yii::t('app','Register'), ['class' => 'button is-primary', 'name' => 'login-button']) ?>

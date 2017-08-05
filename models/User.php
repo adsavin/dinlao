@@ -19,6 +19,7 @@ use Yii;
  * @property string $picture
  * @property string $facebookid
  * @property string $facebookname
+ * @property string $captcha
  *
  * @property Product[] $products
  */
@@ -27,6 +28,10 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public $picturefile;
     public $newpassword;
     public $confirmpassword;
+    /**
+     * @var string
+     */
+    public $captcha;
 
     public static function findIdentity($id)
     {
@@ -78,6 +83,8 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             [['email', 'password', 'firstname', 'lastname', 'picture'], 'string', 'max' => 255],
             [['status', 'role'], 'string', 'max' => 1],
             [['email'], 'unique'],
+            [['captcha'], 'required'],
+            [['captcha'], 'captcha'],
 
             [['picturefile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
         ];
